@@ -17,8 +17,7 @@ namespace WCFServiceWebRole1
 
         public static SqlConnection GetConnection()
         {
-            if (con == null)
-                con = new SqlConnection(connectionString);
+            con = new SqlConnection(connectionString);
             return con;
         }
 

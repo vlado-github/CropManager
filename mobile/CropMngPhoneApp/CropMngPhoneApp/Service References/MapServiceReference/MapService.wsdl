@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MapService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/MapService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/MapService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/MapService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMapService_InsertMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMap" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_InsertMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_DeleteMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMap" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_DeleteMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_SelectMapById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMapById" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_SelectMapById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMapByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_SelectMaps_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMaps" />
+  </wsdl:message>
+  <wsdl:message name="IMapService_SelectMaps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMapsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMapService">
+    <wsdl:operation name="InsertMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/InsertMap" message="tns:IMapService_InsertMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/InsertMapResponse" message="tns:IMapService_InsertMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/DeleteMap" message="tns:IMapService_DeleteMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/DeleteMapResponse" message="tns:IMapService_DeleteMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectMapById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/SelectMapById" message="tns:IMapService_SelectMapById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/SelectMapByIdResponse" message="tns:IMapService_SelectMapById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectMaps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMapService/SelectMaps" message="tns:IMapService_SelectMaps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMapService/SelectMapsResponse" message="tns:IMapService_SelectMaps_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMapService" type="tns:IMapService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertMap">
+      <soap:operation soapAction="http://tempuri.org/IMapService/InsertMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMap">
+      <soap:operation soapAction="http://tempuri.org/IMapService/DeleteMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMapById">
+      <soap:operation soapAction="http://tempuri.org/IMapService/SelectMapById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMaps">
+      <soap:operation soapAction="http://tempuri.org/IMapService/SelectMaps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MapService">
+    <wsdl:port name="BasicHttpBinding_IMapService" binding="tns:BasicHttpBinding_IMapService">
+      <soap:address location="http://127.0.0.1:81/MapService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

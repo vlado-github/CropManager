@@ -18,20 +18,24 @@ namespace AzureTestClient
             {
                 //GetData test
                 client = new CropServiceClient();
+                Crop c = client.SelectCropById(1);
+                Console.WriteLine("Result: ");
+                Console.WriteLine("name = {0}", c.name);
+
                 Crop crop = new Crop();
-                crop.Name = "Psenica";
-                crop.CropType = "MN98";
-                crop.FertilizingTime = new DateTime(2013, 04, 16);
-                crop.FieldFK = 2;
-                crop.HarvestTime = new DateTime(2013, 05, 05);
-                crop.HillingTime = new DateTime(2013, 03, 03);
-                crop.IllnessFK = 1;
-                crop.JournalFK = 1;
-                crop.timeOfPlanting = new DateTime(2013, 02, 20);
-                crop.WateringFrequency = 2;
-                crop.WateringPeriod = "mjesec";
-                
-                client.InsertCropData(crop);
+                crop.name = "Hmelj";
+                crop.croptype = "MN98";
+                crop.fertilizingtime = new DateTime(2013, 04, 16);
+                crop.fieldfk = 2;
+                crop.harvesttime = new DateTime(2013, 05, 05);
+                crop.hillingtime = new DateTime(2013, 03, 03);
+                crop.illnessfk = 1;
+                crop.journalfk = 1;
+                crop.timeofplanting = new DateTime(2013, 02, 20);
+                crop.wateringfrequency = 2;
+                crop.wateringperiod = "mjesec";
+
+                int id = client.InsertCropData(crop);
 
                 Console.WriteLine("The WCF service called returned: ");
 
@@ -51,6 +55,8 @@ namespace AzureTestClient
             {
                 Console.WriteLine("Exception encounter: {0}",
                                    e.Message);
+                Console.WriteLine("Press any key to close");
+                Console.ReadKey();
             }
             finally
             {

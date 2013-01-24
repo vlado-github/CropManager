@@ -10,7 +10,9 @@
   </xs:element>
   <xs:element name="InsertCropDataResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertCropDataResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeleteCropData">
@@ -23,6 +25,32 @@
   <xs:element name="DeleteCropDataResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectCropById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="crop_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectCropByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" minOccurs="0" name="SelectCropByIdResult" nillable="true" type="q2:Crop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectCrops">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectCropsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" minOccurs="0" name="SelectCropsResult" nillable="true" type="q3:ArrayOfCrop" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

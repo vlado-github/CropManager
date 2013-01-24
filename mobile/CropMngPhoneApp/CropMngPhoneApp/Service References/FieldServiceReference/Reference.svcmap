@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b5635cd1-7d4c-4a79-baee-4b3e1fbf656e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/FieldService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FieldService.xsd" MetadataType="Schema" ID="b7514a1d-9da4-4c4d-9232-7fbaaa504f8a" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FieldService1.xsd" MetadataType="Schema" ID="27c223d4-0d8b-4383-bc8e-bd3794571670" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FieldService.wsdl" MetadataType="Wsdl" ID="9e6e794a-f21c-4af9-a056-603e05136bae" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?wsdl" />
+    <MetadataFile FileName="FieldService.disco" MetadataType="Disco" ID="f9a380d0-9a86-42b0-8517-e1c2b42456bb" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?disco" />
+    <MetadataFile FileName="FieldService2.xsd" MetadataType="Schema" ID="2997ff81-2de8-4ecc-98cf-cb43c9a30e77" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

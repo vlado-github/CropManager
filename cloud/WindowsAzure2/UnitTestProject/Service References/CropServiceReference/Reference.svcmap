@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="24d6ddba-ec0a-4fd7-bdf6-730af0b7e5cc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="28949bbb-bee3-499d-9f15-c13077f31ee0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:21882/CropService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CropService.xsd" MetadataType="Schema" ID="395bfa84-8f85-4c48-9bd7-46eb5ce118a7" SourceId="1" SourceUrl="http://localhost:21882/CropService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CropService.disco" MetadataType="Disco" ID="0315dc53-89ff-44b5-9b29-9f463e449a72" SourceId="1" SourceUrl="http://localhost:21882/CropService.svc?disco" />
-    <MetadataFile FileName="CropService1.xsd" MetadataType="Schema" ID="64220d2b-5b3e-481c-b4f8-bcac7bca9fc8" SourceId="1" SourceUrl="http://localhost:21882/CropService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CropService.wsdl" MetadataType="Wsdl" ID="b18cba20-02a3-451f-a9f8-66b159289e36" SourceId="1" SourceUrl="http://localhost:21882/CropService.svc?wsdl" />
-    <MetadataFile FileName="CropService2.xsd" MetadataType="Schema" ID="d3b2f704-8c16-4e62-8114-bfeb81fd312b" SourceId="1" SourceUrl="http://localhost:21882/CropService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CropService.xsd" MetadataType="Schema" ID="5cb6bcfe-72b5-4bbe-9fe7-073210e9b348" SourceId="1" SourceUrl="http://localhost:21882/CropService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CropService.disco" MetadataType="Disco" ID="f345f5e1-bc9b-4672-99ac-c1451ca864d4" SourceId="1" SourceUrl="http://localhost:21882/CropService.svc?disco" />
+    <MetadataFile FileName="CropService1.xsd" MetadataType="Schema" ID="9e33247d-3c60-461c-a5ea-aa6ff50275d7" SourceId="1" SourceUrl="http://localhost:21882/CropService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CropService.wsdl" MetadataType="Wsdl" ID="52849a2d-35f4-418e-93bb-717dca39f232" SourceId="1" SourceUrl="http://localhost:21882/CropService.svc?wsdl" />
+    <MetadataFile FileName="CropService2.xsd" MetadataType="Schema" ID="6131b761-e2ab-40ef-a5e6-0524ba261f22" SourceId="1" SourceUrl="http://localhost:21882/CropService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

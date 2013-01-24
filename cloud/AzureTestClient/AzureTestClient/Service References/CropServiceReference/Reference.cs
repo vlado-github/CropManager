@@ -23,37 +23,40 @@ namespace AzureTestClient.CropServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CropTypeField;
+        private int cropidField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime FertilizingTimeField;
+        private string croptypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int FieldFKField;
+        private System.DateTime fertilizingtimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime HarvestTimeField;
+        private int fieldfkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime HillingTimeField;
+        private System.DateTime harvesttimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IllnessFKField;
+        private System.DateTime hillingtimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int JournalFKField;
+        private int illnessfkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        private int journalfkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WateringFrequencyField;
+        private string nameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WateringPeriodField;
+        private System.DateTime timeofplantingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime timeOfPlantingField;
+        private int wateringfrequencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string wateringperiodField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -66,144 +69,157 @@ namespace AzureTestClient.CropServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CropType {
+        public int cropid {
             get {
-                return this.CropTypeField;
+                return this.cropidField;
             }
             set {
-                if ((object.ReferenceEquals(this.CropTypeField, value) != true)) {
-                    this.CropTypeField = value;
-                    this.RaisePropertyChanged("CropType");
+                if ((this.cropidField.Equals(value) != true)) {
+                    this.cropidField = value;
+                    this.RaisePropertyChanged("cropid");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FertilizingTime {
+        public string croptype {
             get {
-                return this.FertilizingTimeField;
+                return this.croptypeField;
             }
             set {
-                if ((this.FertilizingTimeField.Equals(value) != true)) {
-                    this.FertilizingTimeField = value;
-                    this.RaisePropertyChanged("FertilizingTime");
+                if ((object.ReferenceEquals(this.croptypeField, value) != true)) {
+                    this.croptypeField = value;
+                    this.RaisePropertyChanged("croptype");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int FieldFK {
+        public System.DateTime fertilizingtime {
             get {
-                return this.FieldFKField;
+                return this.fertilizingtimeField;
             }
             set {
-                if ((this.FieldFKField.Equals(value) != true)) {
-                    this.FieldFKField = value;
-                    this.RaisePropertyChanged("FieldFK");
+                if ((this.fertilizingtimeField.Equals(value) != true)) {
+                    this.fertilizingtimeField = value;
+                    this.RaisePropertyChanged("fertilizingtime");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime HarvestTime {
+        public int fieldfk {
             get {
-                return this.HarvestTimeField;
+                return this.fieldfkField;
             }
             set {
-                if ((this.HarvestTimeField.Equals(value) != true)) {
-                    this.HarvestTimeField = value;
-                    this.RaisePropertyChanged("HarvestTime");
+                if ((this.fieldfkField.Equals(value) != true)) {
+                    this.fieldfkField = value;
+                    this.RaisePropertyChanged("fieldfk");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime HillingTime {
+        public System.DateTime harvesttime {
             get {
-                return this.HillingTimeField;
+                return this.harvesttimeField;
             }
             set {
-                if ((this.HillingTimeField.Equals(value) != true)) {
-                    this.HillingTimeField = value;
-                    this.RaisePropertyChanged("HillingTime");
+                if ((this.harvesttimeField.Equals(value) != true)) {
+                    this.harvesttimeField = value;
+                    this.RaisePropertyChanged("harvesttime");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IllnessFK {
+        public System.DateTime hillingtime {
             get {
-                return this.IllnessFKField;
+                return this.hillingtimeField;
             }
             set {
-                if ((this.IllnessFKField.Equals(value) != true)) {
-                    this.IllnessFKField = value;
-                    this.RaisePropertyChanged("IllnessFK");
+                if ((this.hillingtimeField.Equals(value) != true)) {
+                    this.hillingtimeField = value;
+                    this.RaisePropertyChanged("hillingtime");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int JournalFK {
+        public int illnessfk {
             get {
-                return this.JournalFKField;
+                return this.illnessfkField;
             }
             set {
-                if ((this.JournalFKField.Equals(value) != true)) {
-                    this.JournalFKField = value;
-                    this.RaisePropertyChanged("JournalFK");
+                if ((this.illnessfkField.Equals(value) != true)) {
+                    this.illnessfkField = value;
+                    this.RaisePropertyChanged("illnessfk");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public int journalfk {
             get {
-                return this.NameField;
+                return this.journalfkField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((this.journalfkField.Equals(value) != true)) {
+                    this.journalfkField = value;
+                    this.RaisePropertyChanged("journalfk");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WateringFrequency {
+        public string name {
             get {
-                return this.WateringFrequencyField;
+                return this.nameField;
             }
             set {
-                if ((this.WateringFrequencyField.Equals(value) != true)) {
-                    this.WateringFrequencyField = value;
-                    this.RaisePropertyChanged("WateringFrequency");
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WateringPeriod {
+        public System.DateTime timeofplanting {
             get {
-                return this.WateringPeriodField;
+                return this.timeofplantingField;
             }
             set {
-                if ((object.ReferenceEquals(this.WateringPeriodField, value) != true)) {
-                    this.WateringPeriodField = value;
-                    this.RaisePropertyChanged("WateringPeriod");
+                if ((this.timeofplantingField.Equals(value) != true)) {
+                    this.timeofplantingField = value;
+                    this.RaisePropertyChanged("timeofplanting");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime timeOfPlanting {
+        public int wateringfrequency {
             get {
-                return this.timeOfPlantingField;
+                return this.wateringfrequencyField;
             }
             set {
-                if ((this.timeOfPlantingField.Equals(value) != true)) {
-                    this.timeOfPlantingField = value;
-                    this.RaisePropertyChanged("timeOfPlanting");
+                if ((this.wateringfrequencyField.Equals(value) != true)) {
+                    this.wateringfrequencyField = value;
+                    this.RaisePropertyChanged("wateringfrequency");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string wateringperiod {
+            get {
+                return this.wateringperiodField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.wateringperiodField, value) != true)) {
+                    this.wateringperiodField = value;
+                    this.RaisePropertyChanged("wateringperiod");
                 }
             }
         }
@@ -223,16 +239,28 @@ namespace AzureTestClient.CropServiceReference {
     public interface ICropService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICropService/InsertCropData", ReplyAction="http://tempuri.org/ICropService/InsertCropDataResponse")]
-        void InsertCropData(AzureTestClient.CropServiceReference.Crop crop);
+        int InsertCropData(AzureTestClient.CropServiceReference.Crop crop);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICropService/InsertCropData", ReplyAction="http://tempuri.org/ICropService/InsertCropDataResponse")]
-        System.Threading.Tasks.Task InsertCropDataAsync(AzureTestClient.CropServiceReference.Crop crop);
+        System.Threading.Tasks.Task<int> InsertCropDataAsync(AzureTestClient.CropServiceReference.Crop crop);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICropService/DeleteCropData", ReplyAction="http://tempuri.org/ICropService/DeleteCropDataResponse")]
         void DeleteCropData(int crop_id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICropService/DeleteCropData", ReplyAction="http://tempuri.org/ICropService/DeleteCropDataResponse")]
         System.Threading.Tasks.Task DeleteCropDataAsync(int crop_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICropService/SelectCropById", ReplyAction="http://tempuri.org/ICropService/SelectCropByIdResponse")]
+        AzureTestClient.CropServiceReference.Crop SelectCropById(int crop_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICropService/SelectCropById", ReplyAction="http://tempuri.org/ICropService/SelectCropByIdResponse")]
+        System.Threading.Tasks.Task<AzureTestClient.CropServiceReference.Crop> SelectCropByIdAsync(int crop_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICropService/SelectCrops", ReplyAction="http://tempuri.org/ICropService/SelectCropsResponse")]
+        AzureTestClient.CropServiceReference.Crop[] SelectCrops();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICropService/SelectCrops", ReplyAction="http://tempuri.org/ICropService/SelectCropsResponse")]
+        System.Threading.Tasks.Task<AzureTestClient.CropServiceReference.Crop[]> SelectCropsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -262,11 +290,11 @@ namespace AzureTestClient.CropServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void InsertCropData(AzureTestClient.CropServiceReference.Crop crop) {
-            base.Channel.InsertCropData(crop);
+        public int InsertCropData(AzureTestClient.CropServiceReference.Crop crop) {
+            return base.Channel.InsertCropData(crop);
         }
         
-        public System.Threading.Tasks.Task InsertCropDataAsync(AzureTestClient.CropServiceReference.Crop crop) {
+        public System.Threading.Tasks.Task<int> InsertCropDataAsync(AzureTestClient.CropServiceReference.Crop crop) {
             return base.Channel.InsertCropDataAsync(crop);
         }
         
@@ -276,6 +304,22 @@ namespace AzureTestClient.CropServiceReference {
         
         public System.Threading.Tasks.Task DeleteCropDataAsync(int crop_id) {
             return base.Channel.DeleteCropDataAsync(crop_id);
+        }
+        
+        public AzureTestClient.CropServiceReference.Crop SelectCropById(int crop_id) {
+            return base.Channel.SelectCropById(crop_id);
+        }
+        
+        public System.Threading.Tasks.Task<AzureTestClient.CropServiceReference.Crop> SelectCropByIdAsync(int crop_id) {
+            return base.Channel.SelectCropByIdAsync(crop_id);
+        }
+        
+        public AzureTestClient.CropServiceReference.Crop[] SelectCrops() {
+            return base.Channel.SelectCrops();
+        }
+        
+        public System.Threading.Tasks.Task<AzureTestClient.CropServiceReference.Crop[]> SelectCropsAsync() {
+            return base.Channel.SelectCropsAsync();
         }
     }
 }

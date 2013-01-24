@@ -52,7 +52,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CropServiceReference\AzureTestClient.CropServiceReference.Crop.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CropServiceReference\CropService.wsdl" />
     <None Include="Service References\CropServiceReference\CropService.xsd">
       <SubType>Designer</SubType>

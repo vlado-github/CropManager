@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
 namespace WCFServiceWebRole1
@@ -12,36 +13,67 @@ namespace WCFServiceWebRole1
     public interface ICropService
     {
         [OperationContract]
-        void InsertCropData(Crop crop);
+        [WebInvoke(
+            Method = "POST",
+            UriTemplate = "InsertCropData",
+            BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json)]
+        int InsertCropData(Crop crop);
 
         [OperationContract]
+        [WebInvoke(
+            Method = "POST",
+            UriTemplate = "DeleteCropData",
+            BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json)]
         void DeleteCropData(int crop_id);
+
+        [OperationContract]
+        [WebInvoke(
+            Method="GET",
+            UriTemplate = "SelectCropById?crop_id={crop_id}",
+            BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json)]
+        Crop SelectCropById(int crop_id);
+
+        [OperationContract]
+        [WebGet(
+            UriTemplate = "SelectCrops",
+            BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json)]
+        List<Crop> SelectCrops();
     }
 
     [DataContract]
     public class Crop
     {
-        [DataMember]
+        [DataMember(Name="cropid")]
+        public int CropId { get; set; }
+        [DataMember(Name="name")]
         public string Name { get; set; }
-        [DataMember]
+        [DataMember(Name="croptype")]
         public string CropType { get; set; }
-        [DataMember]
+        [DataMember(Name="timeofplanting")]
         public DateTime timeOfPlanting { get; set; }
-        [DataMember]
+        [DataMember(Name = "wateringfrequency")]
         public int WateringFrequency { get; set; }
-        [DataMember]
+        [DataMember(Name = "wateringperiod")]
         public string WateringPeriod { get; set; }
-        [DataMember]
+        [DataMember(Name = "harvesttime")]
         public DateTime HarvestTime { get; set; }
-        [DataMember]
+        [DataMember(Name = "hillingtime")]
         public DateTime HillingTime { get; set; }
-        [DataMember]
+        [DataMember(Name = "fertilizingtime")]
         public DateTime FertilizingTime { get; set; }
-        [DataMember]
+        [DataMember(Name = "illnessfk")]
         public int IllnessFK { get; set; }
-        [DataMember]
+        [DataMember(Name = "fieldfk")]
         public int FieldFK { get; set; }
-        [DataMember]
+        [DataMember(Name = "journalfk")]
         public int JournalFK { get; set; }
     }
 }

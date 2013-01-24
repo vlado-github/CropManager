@@ -19,6 +19,18 @@
   <wsdl:message name="ICropService_DeleteCropData_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteCropDataResponse" />
   </wsdl:message>
+  <wsdl:message name="ICropService_SelectCropById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCropById" />
+  </wsdl:message>
+  <wsdl:message name="ICropService_SelectCropById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCropByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICropService_SelectCrops_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCrops" />
+  </wsdl:message>
+  <wsdl:message name="ICropService_SelectCrops_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCropsResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICropService">
     <wsdl:operation name="InsertCropData">
       <wsdl:input wsaw:Action="http://tempuri.org/ICropService/InsertCropData" message="tns:ICropService_InsertCropData_InputMessage" />
@@ -27,6 +39,14 @@
     <wsdl:operation name="DeleteCropData">
       <wsdl:input wsaw:Action="http://tempuri.org/ICropService/DeleteCropData" message="tns:ICropService_DeleteCropData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICropService/DeleteCropDataResponse" message="tns:ICropService_DeleteCropData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCropById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICropService/SelectCropById" message="tns:ICropService_SelectCropById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICropService/SelectCropByIdResponse" message="tns:ICropService_SelectCropById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCrops">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICropService/SelectCrops" message="tns:ICropService_SelectCrops_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICropService/SelectCropsResponse" message="tns:ICropService_SelectCrops_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICropService" type="tns:ICropService">
@@ -42,6 +62,24 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteCropData">
       <soap:operation soapAction="http://tempuri.org/ICropService/DeleteCropData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCropById">
+      <soap:operation soapAction="http://tempuri.org/ICropService/SelectCropById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCrops">
+      <soap:operation soapAction="http://tempuri.org/ICropService/SelectCrops" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
