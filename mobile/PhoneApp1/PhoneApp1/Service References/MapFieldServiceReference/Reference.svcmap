@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="921637c2-0cdd-49e5-868d-3d61c9524025" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/MapFieldService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MapFieldService.disco" MetadataType="Disco" ID="cba86311-585b-4192-9c74-9b9749eafe37" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?disco" />
+    <MetadataFile FileName="MapFieldService.xsd" MetadataType="Schema" ID="961437e6-6a27-4610-92c4-10881bbc9d8b" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MapFieldService1.xsd" MetadataType="Schema" ID="16ee7ab8-c59e-48b2-b6e0-c3fcc1ae6ed8" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MapFieldService2.xsd" MetadataType="Schema" ID="42205bcf-794b-42da-bfb3-d9aed2b92c55" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MapFieldService3.xsd" MetadataType="Schema" ID="5023c658-9681-42e6-b759-1ede85b09b39" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MapFieldService.wsdl" MetadataType="Wsdl" ID="4d8fb3d0-c795-4eb0-9a3b-ef60d21f77f1" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

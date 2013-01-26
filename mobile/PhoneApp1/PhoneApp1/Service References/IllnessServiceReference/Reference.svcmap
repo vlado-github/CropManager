@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="53941851-879d-439f-85f8-61fdd702e9e5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/IllnessService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IllnessService.xsd" MetadataType="Schema" ID="b3899a2b-a823-4e62-90b5-514f91454322" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd2" />
+    <MetadataFile FileName="IllnessService1.xsd" MetadataType="Schema" ID="bbe6f5bc-f5ec-493e-b8eb-e3ed1742ddea" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd1" />
+    <MetadataFile FileName="IllnessService.wsdl" MetadataType="Wsdl" ID="f9e9eec4-a691-4abf-a0b2-66ff9fffc5da" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?wsdl" />
+    <MetadataFile FileName="IllnessService2.xsd" MetadataType="Schema" ID="31523418-74e6-4567-bd46-5b0125244cde" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd0" />
+    <MetadataFile FileName="IllnessService.disco" MetadataType="Disco" ID="29657c25-590c-4ce7-82f8-3d5aef11a9af" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{0c686581-1f87-40a9-95e5-57415faebe37}" Title="PhoneApp1" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="PhoneApp1 author" Description="Sample description" Publisher="PhoneApp1">
+  <App xmlns="" ProductID="{9b2935be-8684-45c4-b810-a2223da9e240}" Title="PhoneApp1" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="PhoneApp1 author" Description="Sample description" Publisher="PhoneApp1">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES"/>

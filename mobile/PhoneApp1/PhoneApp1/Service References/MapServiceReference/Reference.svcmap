@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b6ed8915-d140-457c-9b85-2b18c0a178e6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/MapService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MapService.disco" MetadataType="Disco" ID="6dbf6168-496a-4e9d-b16f-791f4a1aac80" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?disco" />
+    <MetadataFile FileName="MapService.wsdl" MetadataType="Wsdl" ID="4d7fdd89-2cff-470d-805b-e14a14fffdcb" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?wsdl" />
+    <MetadataFile FileName="MapService.xsd" MetadataType="Schema" ID="5776efe7-c4fd-4317-b9c7-b5938fccdfba" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MapService1.xsd" MetadataType="Schema" ID="00343f54-de92-4938-b069-7dadc71ce314" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MapService2.xsd" MetadataType="Schema" ID="6bd5bb00-b577-43e5-9bea-819e6c717b23" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

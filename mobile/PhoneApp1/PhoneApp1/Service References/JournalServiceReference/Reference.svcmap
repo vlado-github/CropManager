@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9f2c5698-7dda-4c69-9f56-72cc74f90f10" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/JournalService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="JournalService.disco" MetadataType="Disco" ID="07ea7f26-f701-41b8-a118-abf2aad01204" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?disco" />
+    <MetadataFile FileName="JournalService.xsd" MetadataType="Schema" ID="b80f178e-0a3b-4a67-a031-877360a9e594" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?xsd=xsd2" />
+    <MetadataFile FileName="JournalService.wsdl" MetadataType="Wsdl" ID="38ebe760-fe89-4b1c-81d2-04280fd1bfe4" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?wsdl" />
+    <MetadataFile FileName="JournalService1.xsd" MetadataType="Schema" ID="effaa93b-0cea-4fac-801c-b621d017a4f2" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?xsd=xsd0" />
+    <MetadataFile FileName="JournalService2.xsd" MetadataType="Schema" ID="8affbbd0-4ae5-465d-a920-076feb7feff6" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
