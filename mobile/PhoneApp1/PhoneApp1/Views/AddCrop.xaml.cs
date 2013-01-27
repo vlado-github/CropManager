@@ -11,11 +11,14 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using PhoneApp1.Models;
+using Microsoft.Phone.Tasks;
+using System.IO;
 
 namespace PhoneApp1.Views
 {
     public partial class AddCrop : PhoneApplicationPage
     {
+        byte[] avatarImage = null;
         public AddCrop()
         {
             InitializeComponent();
@@ -27,7 +30,7 @@ namespace PhoneApp1.Views
             cropModel.Name = nameField.Text;
             cropModel.Type = typeField.Text;
             cropModel.TimeOfPlanting = timeOfPlatning.Value == null ? new DateTime() : (DateTime)timeOfPlatning.Value;
-            //cropModel.AvatarImage;
+            cropModel.AvatarImage = avatarImage;
             cropModel.FieldId = fieldPicker.SelectedItem == null ? 0 : Int16.Parse(fieldPicker.SelectedItem.ToString());
             cropModel.CoverageValue = Double.Parse(coverageValue.Text);
             cropModel.WateringFrequency = Int16.Parse(waterFreqPicker.SelectedItem.ToString());
@@ -38,6 +41,21 @@ namespace PhoneApp1.Views
             cropModel.IllnessId = 0;//Int16.Parse(illnessField.Text);
 
             cropModel.Save();
+        }
+
+        private void photoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var task = new CameraCaptureTask();
+            task.Completed += new EventHandler<PhotoResult>(photo_ChooserTaskCompleted);
+            task.Show();
+        }
+        private void photo_ChooserTaskCompleted(object sender, PhotoResult e)
+        {
+            Stream photoStream = e.ChosenPhoto;
+            photoName.Text = e.OriginalFileName;
+            var memoryStream = new MemoryStream();
+            photoStream.CopyTo(memoryStream);
+            avatarImage = memoryStream.ToArray();
         }
     }
 }

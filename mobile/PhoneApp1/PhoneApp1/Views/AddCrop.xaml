@@ -31,7 +31,7 @@
                     <TextBox Height="72" HorizontalAlignment="Left" Margin="59,110,0,0" Name="typeField" Text="" VerticalAlignment="Top" Width="342" />
                     <TextBlock Height="30" HorizontalAlignment="Left" Margin="10,230,0,0" Name="textBlock2" Text="Time Of Planting:" VerticalAlignment="Top" />
                     <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,321,0,0" Name="textBlock3" Text="Add image:" VerticalAlignment="Top" />
-                    <Button Content="Take a photo" Height="72" HorizontalAlignment="Left" Margin="8,353,0,0" Name="photoBtn" VerticalAlignment="Top" Width="230" />
+                    <Button Content="Take a photo" Height="72" HorizontalAlignment="Left" Margin="8,353,0,0" Name="photoBtn" VerticalAlignment="Top" Width="230" Click="photoBtn_Click" />
                     <TextBlock Height="30" HorizontalAlignment="Left" Margin="217,320,0,0" Name="photoName" Text="photoName" VerticalAlignment="Top" />
                 </Grid>
             </controls:PanoramaItem>
