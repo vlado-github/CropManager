@@ -26,6 +26,8 @@ namespace PhoneApp1.CropServiceReference {
         
         private System.DateTime fertilizingtimeField;
         
+        private double fieldcoverageField;
+        
         private int fieldfkField;
         
         private System.DateTime harvesttimeField;
@@ -79,6 +81,19 @@ namespace PhoneApp1.CropServiceReference {
                 if ((this.fertilizingtimeField.Equals(value) != true)) {
                     this.fertilizingtimeField = value;
                     this.RaisePropertyChanged("fertilizingtime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double fieldcoverage {
+            get {
+                return this.fieldcoverageField;
+            }
+            set {
+                if ((this.fieldcoverageField.Equals(value) != true)) {
+                    this.fieldcoverageField = value;
+                    this.RaisePropertyChanged("fieldcoverage");
                 }
             }
         }

@@ -5,6 +5,7 @@
       <xs:element minOccurs="0" name="cropid" type="xs:int" />
       <xs:element minOccurs="0" name="croptype" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="fertilizingtime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fieldcoverage" type="xs:double" />
       <xs:element minOccurs="0" name="fieldfk" type="xs:int" />
       <xs:element minOccurs="0" name="harvesttime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="hillingtime" type="xs:dateTime" />

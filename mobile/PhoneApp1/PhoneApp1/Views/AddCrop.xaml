@@ -1,0 +1,96 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="PhoneApp1.Views.AddCrop"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <controls:Panorama Title="Add Crop">
+
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="General">
+                <Grid>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="8,40,0,0" Name="nameLbl" Text="Name:" VerticalAlignment="Top" />
+                    <TextBox Height="72" HorizontalAlignment="Left" Margin="58,20,0,0" Name="nameField" Text="" VerticalAlignment="Top" Width="342" />
+                    <toolkit:DatePicker Name="timeOfPlatning" Margin="161,209,19,221" Height="68" Width="240" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="9,136,0,0" Name="textBlock1" Text="Type:" VerticalAlignment="Top" />
+                    <TextBox Height="72" HorizontalAlignment="Left" Margin="59,110,0,0" Name="typeField" Text="" VerticalAlignment="Top" Width="342" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="10,230,0,0" Name="textBlock2" Text="Time Of Planting:" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="20,321,0,0" Name="textBlock3" Text="Add image:" VerticalAlignment="Top" />
+                    <Button Content="Take a photo" Height="72" HorizontalAlignment="Left" Margin="8,353,0,0" Name="photoBtn" VerticalAlignment="Top" Width="230" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="217,320,0,0" Name="photoName" Text="photoName" VerticalAlignment="Top" />
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem Header="Select Field">
+                <Grid>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="29,106,0,0" Name="textBlock5" Text="Pick field:" VerticalAlignment="Top" />
+                    <toolkit:ListPicker Name="fieldPicker" Margin="119,91,23,273" Height="134" Width="278">
+                        
+                    </toolkit:ListPicker>
+                    <Slider Height="84" HorizontalAlignment="Left" Margin="24,218,0,0" Name="coverageSlider" VerticalAlignment="Top" Width="364" Value="50" Maximum="100" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="27,166,0,0" Name="textBlock6" Text="Field coverage [%]:" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="199,260,0,0" Name="coverageValue" Text="{Binding Path=Value, ElementName=coverageSlider}" VerticalAlignment="Top" />
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--Panorama item three-->
+            <controls:PanoramaItem Header="Maintainance">
+                <Grid>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="27,47,0,0" Name="textBlock8" Text="Watering:" VerticalAlignment="Top" />
+                    <toolkit:ListPicker Name="waterFreqPicker" Margin="124,26,238,369" Height="103" Width="58">
+                        <sys:String>1</sys:String>
+                        <sys:String>2</sys:String>
+                        <sys:String>3</sys:String>
+                        <sys:String>4</sys:String>
+                        <sys:String>5</sys:String>
+                        <sys:String>6</sys:String>
+                        <sys:String>7</sys:String>
+                        <sys:String>8</sys:String>
+                        <sys:String>9</sys:String>
+                        <sys:String>10</sys:String>
+                    </toolkit:ListPicker>
+                    <toolkit:ListPicker Name="timeSortPicker" Margin="220,25,19,391" Height="82" Width="181">
+                        
+                    </toolkit:ListPicker>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="191,43,0,0" Name="textBlock9" Text="X" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="17,128,0,0" Name="textBlock10" Text="Harvest Time:" VerticalAlignment="Top" />
+                    <toolkit:DatePicker Name="timeOfHarvest" Margin="148,111,32,319" Height="68" Width="240" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="13,190,0,0" Name="textBlock11" Text="Hilling Time:" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="11,254,0,0" Name="textBlock12" Text="Fertilizing Time:" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="9,317,0,0" Name="textBlock13" Text="Previous illnesses:" VerticalAlignment="Top" />
+                    <Button Content="Add illness" Height="72" HorizontalAlignment="Left" Margin="190,354,0,0" Name="button2" VerticalAlignment="Top" Width="203" />
+                    <toolkit:DatePicker Height="68" Margin="145,175,35,255" Name="timeOfHilling" Width="240" />
+                    <toolkit:DatePicker Height="68" Margin="146,238,34,192" Name="timeOfFertilizing" Width="240" />
+                    <Button Content="Save" Height="72" HorizontalAlignment="Left" Margin="41,420,0,0" Name="saveBtn" VerticalAlignment="Top" Width="160" Click="saveBtn_Click" />
+                    <Button Content="Cancel" Height="72" HorizontalAlignment="Left" Margin="211,421,0,0" Name="cancelBtn" VerticalAlignment="Top" Width="160">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <ec:NavigateToPageAction TargetPage="/Views/CropManager.xaml"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+                    <TextBlock Name="illnessField" Height="30" HorizontalAlignment="Left" Margin="213,316,0,0" Text="" VerticalAlignment="Top" />
+                </Grid>
+            </controls:PanoramaItem>
+        </controls:Panorama>
+    </Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+
+</phone:PhoneApplicationPage>

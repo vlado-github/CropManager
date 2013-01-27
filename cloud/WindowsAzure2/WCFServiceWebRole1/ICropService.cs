@@ -75,5 +75,7 @@ namespace WCFServiceWebRole1
         public int FieldFK { get; set; }
         [DataMember(Name = "journalfk")]
         public int JournalFK { get; set; }
+        [DataMember(Name = "fieldcoverage")]
+        public double FieldCoverage { get; set; }
     }
 }

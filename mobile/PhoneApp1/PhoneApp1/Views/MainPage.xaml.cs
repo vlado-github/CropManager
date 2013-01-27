@@ -23,18 +23,9 @@ namespace PhoneApp1
             InitializeComponent();
         }
 
-        private void getCropData_Click(object sender, RoutedEventArgs e)
+        private void CropMngBtn_Click(object sender, RoutedEventArgs e)
         {
-            CropServiceClient cropSvc = new CropServiceClient();
-            cropSvc.SelectCropByIdAsync(1);
-            cropSvc.SelectCropByIdCompleted += new EventHandler
-            <SelectCropByIdCompletedEventArgs>(cropSvc_SelectCropByIdCompleted);
-        }
 
-        private void cropSvc_SelectCropByIdCompleted(object sender, SelectCropByIdCompletedEventArgs e)
-        {
-            Crop crop = e.Result;
-            textBox1.Text = crop.name + " " + crop.croptype + " " + crop.timeofplanting;
         }
     }
 }

@@ -35,6 +35,7 @@ namespace WCFServiceWebRole1
                 cmd.Parameters.Add(new SqlParameter("@illness_foreign_key", crop.IllnessFK));
                 cmd.Parameters.Add(new SqlParameter("@field_foreign_key", crop.FieldFK));
                 cmd.Parameters.Add(new SqlParameter("@journal_foreign_key", crop.JournalFK));
+                cmd.Parameters.Add(new SqlParameter("@field_coverage", crop.FieldCoverage));
                 con.Open();
                 //cmd.ExecuteNonQuery();
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
@@ -102,6 +103,7 @@ namespace WCFServiceWebRole1
                                 crop.FieldFK = Int16.Parse(row[11].ToString());
                             if (row[12] != DBNull.Value)
                                 crop.JournalFK = Int16.Parse(row[12].ToString());
+                            crop.FieldCoverage = Double.Parse(row[13].ToString());
                         }
                     }
                     con.Close();

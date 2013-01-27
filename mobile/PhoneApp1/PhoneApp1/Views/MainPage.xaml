@@ -1,11 +1,12 @@
-﻿<phone:PhoneApplicationPage 
-    x:Class="PhoneApp1.MainPage"
+﻿<phone:PhoneApplicationPage
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+    x:Class="PhoneApp1.MainPage"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -22,14 +23,38 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="CROP MANAGER" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="CROP MANAGER APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock x:Name="PageTitle" Text="start" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox Height="388" HorizontalAlignment="Left" Margin="11,69,0,0" Name="textBox1" Text="TextBox" VerticalAlignment="Top" Width="425" />
-            <Button Content="Load Crop Data" Height="72" HorizontalAlignment="Left" Margin="12,6,0,0" Name="getCropData" VerticalAlignment="Top" Width="237" Click="getCropData_Click" />
+        <Grid x:Name="ContentPanel" Grid.Row="2" Margin="12,0,12,0" Grid.Column="2">
+            <Button x:Name="CropMngBtn" Grid.Row="0" Grid.Column="0" Height="187" VerticalAlignment="Top" Margin="8,75,0,0" Content="Crop Manager" HorizontalAlignment="Left" Width="219" Click="CropMngBtn_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/corn.png"/>
+                </Button.Background>
+            	<i:Interaction.Triggers>
+            		<i:EventTrigger EventName="Click">
+            			<ec:NavigateToPageAction TargetPage="/Views/CropManager.xaml"/>
+            		</i:EventTrigger>
+            	</i:Interaction.Triggers>
+            </Button>
+            <Button x:Name="JournalBtn" Grid.Row="0" Grid.Column="0" Height="187" VerticalAlignment="Top" Margin="227,75,10,0" Content="Journal">
+            	<Button.Background>
+                    <ImageBrush ImageSource="/Resources/journal.png"/>
+            	</Button.Background>
+            </Button>
+            <Button x:Name="NotificationBtn" Grid.Row="0" Grid.Column="0" Margin="8,287,0,133" Content="Notifications" HorizontalAlignment="Left" Width="219">
+            	<Button.Background>
+                    <ImageBrush ImageSource="/Resources/notification.png"/>
+            	</Button.Background>
+            </Button>
+            <Button x:Name="WeatherBtn" Grid.Row="0" Grid.Column="0" Margin="227,287,10,133" Content="Weather">
+            	<Button.Background>
+                    <ImageBrush ImageSource="/Resources/weather.png"/>
+            	</Button.Background>
+            </Button>
+
         </Grid>
     </Grid>
  
