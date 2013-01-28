@@ -20,6 +20,8 @@ namespace PhoneApp1.CropServiceReference {
     [System.Runtime.Serialization.DataContractAttribute(Name="Crop", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1")]
     public partial class Crop : object, System.ComponentModel.INotifyPropertyChanged {
         
+        private byte[] avatarimageField;
+        
         private int cropidField;
         
         private string croptypeField;
@@ -28,15 +30,9 @@ namespace PhoneApp1.CropServiceReference {
         
         private double fieldcoverageField;
         
-        private int fieldfkField;
-        
         private System.DateTime harvesttimeField;
         
         private System.DateTime hillingtimeField;
-        
-        private int illnessfkField;
-        
-        private int journalfkField;
         
         private string nameField;
         
@@ -45,6 +41,19 @@ namespace PhoneApp1.CropServiceReference {
         private int wateringfrequencyField;
         
         private string wateringperiodField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] avatarimage {
+            get {
+                return this.avatarimageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.avatarimageField, value) != true)) {
+                    this.avatarimageField = value;
+                    this.RaisePropertyChanged("avatarimage");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int cropid {
@@ -99,19 +108,6 @@ namespace PhoneApp1.CropServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int fieldfk {
-            get {
-                return this.fieldfkField;
-            }
-            set {
-                if ((this.fieldfkField.Equals(value) != true)) {
-                    this.fieldfkField = value;
-                    this.RaisePropertyChanged("fieldfk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime harvesttime {
             get {
                 return this.harvesttimeField;
@@ -133,32 +129,6 @@ namespace PhoneApp1.CropServiceReference {
                 if ((this.hillingtimeField.Equals(value) != true)) {
                     this.hillingtimeField = value;
                     this.RaisePropertyChanged("hillingtime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int illnessfk {
-            get {
-                return this.illnessfkField;
-            }
-            set {
-                if ((this.illnessfkField.Equals(value) != true)) {
-                    this.illnessfkField = value;
-                    this.RaisePropertyChanged("illnessfk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int journalfk {
-            get {
-                return this.journalfkField;
-            }
-            set {
-                if ((this.journalfkField.Equals(value) != true)) {
-                    this.journalfkField = value;
-                    this.RaisePropertyChanged("journalfk");
                 }
             }
         }

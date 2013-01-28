@@ -19,9 +19,11 @@ namespace PhoneApp1.Views
     public partial class AddCrop : PhoneApplicationPage
     {
         byte[] avatarImage = null;
+
         public AddCrop()
         {
             InitializeComponent();
+
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)

@@ -26,15 +26,12 @@ namespace WCFServiceWebRole1
                 cmd.Parameters.Add(new SqlParameter("@name", crop.Name));
                 cmd.Parameters.Add(new SqlParameter("@crop_type", crop.CropType));
                 cmd.Parameters.Add(new SqlParameter("@time_of_planting", crop.timeOfPlanting));
-                cmd.Parameters.Add(new SqlParameter("@avatar_image", @"C:\asdfasd.jpg"));
+                cmd.Parameters.Add(new SqlParameter("@avatar_image", crop.AvatarImage));
                 cmd.Parameters.Add(new SqlParameter("@watering_frequency", crop.WateringFrequency));
                 cmd.Parameters.Add(new SqlParameter("@watering_period", crop.WateringPeriod));
                 cmd.Parameters.Add(new SqlParameter("@harvest_time", crop.HarvestTime));
                 cmd.Parameters.Add(new SqlParameter("@hilling_time", crop.HillingTime));
                 cmd.Parameters.Add(new SqlParameter("@fertillizing_time", crop.FertilizingTime));
-                cmd.Parameters.Add(new SqlParameter("@illness_foreign_key", crop.IllnessFK));
-                cmd.Parameters.Add(new SqlParameter("@field_foreign_key", crop.FieldFK));
-                cmd.Parameters.Add(new SqlParameter("@journal_foreign_key", crop.JournalFK));
                 cmd.Parameters.Add(new SqlParameter("@field_coverage", crop.FieldCoverage));
                 con.Open();
                 //cmd.ExecuteNonQuery();
@@ -92,18 +89,13 @@ namespace WCFServiceWebRole1
                             crop.Name = row[1].ToString();
                             crop.CropType = row[2].ToString();
                             crop.timeOfPlanting = DateTime.Parse(row[3].ToString());
+                            crop.AvatarImage = row[4] as byte[];
                             crop.WateringFrequency = Int16.Parse(row[5].ToString());
                             crop.WateringPeriod = row[6].ToString();
                             crop.HarvestTime = DateTime.Parse(row[7].ToString());
                             crop.HillingTime = DateTime.Parse(row[8].ToString());
                             crop.FertilizingTime = DateTime.Parse(row[9].ToString());
-                            if (row[10] != DBNull.Value)
-                                crop.IllnessFK = Int16.Parse(row[10].ToString());
-                            if (row[11] != DBNull.Value)
-                                crop.FieldFK = Int16.Parse(row[11].ToString());
-                            if (row[12] != DBNull.Value)
-                                crop.JournalFK = Int16.Parse(row[12].ToString());
-                            crop.FieldCoverage = Double.Parse(row[13].ToString());
+                            crop.FieldCoverage = Double.Parse(row[10].ToString());
                         }
                     }
                     con.Close();

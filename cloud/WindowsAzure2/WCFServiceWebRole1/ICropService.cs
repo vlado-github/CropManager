@@ -59,6 +59,8 @@ namespace WCFServiceWebRole1
         public string CropType { get; set; }
         [DataMember(Name="timeofplanting")]
         public DateTime timeOfPlanting { get; set; }
+        [DataMember(Name = "avatarimage")]
+        public byte[] AvatarImage { get; set; }
         [DataMember(Name = "wateringfrequency")]
         public int WateringFrequency { get; set; }
         [DataMember(Name = "wateringperiod")]
@@ -69,12 +71,6 @@ namespace WCFServiceWebRole1
         public DateTime HillingTime { get; set; }
         [DataMember(Name = "fertilizingtime")]
         public DateTime FertilizingTime { get; set; }
-        [DataMember(Name = "illnessfk")]
-        public int IllnessFK { get; set; }
-        [DataMember(Name = "fieldfk")]
-        public int FieldFK { get; set; }
-        [DataMember(Name = "journalfk")]
-        public int JournalFK { get; set; }
         [DataMember(Name = "fieldcoverage")]
         public double FieldCoverage { get; set; }
     }

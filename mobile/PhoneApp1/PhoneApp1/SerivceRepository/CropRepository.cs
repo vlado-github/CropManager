@@ -56,15 +56,13 @@ namespace PhoneApp1.ServiceRepository
             crop.name = cm.Name;
             crop.croptype = cm.Type;
             crop.timeofplanting = cm.TimeOfPlanting;
-            //crop.image = cm.AvatarImage;
-            crop.fieldfk = cm.FieldId;
+            crop.avatarimage = cm.AvatarImage;
             crop.fieldcoverage = cm.CoverageValue;
             crop.wateringfrequency = cm.WateringFrequency;
             crop.wateringperiod = cm.WateringPeriod;
             crop.harvesttime = cm.HarvestTime;
             crop.hillingtime = cm.HillingTime;
             crop.fertilizingtime = cm.FertilizingTime;
-            crop.illnessfk = cm.IllnessId;
 
             return crop;
         }
