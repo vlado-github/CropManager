@@ -17,11 +17,13 @@ namespace PhoneApp1.ServiceRepository
     {
         Crop crop = null;
         CropModel cropModel = null;
+        Func<int, int> insertCropCallback = null;
 
         // Save crop data
-        public void saveCropData(CropModel cropModel)
+        public void saveCropData(Func<int,int> callback, CropModel cropModel)
         {
             this.cropModel = cropModel;
+            insertCropCallback = callback;
             Crop c = mapCropModelToCrop(cropModel);
             CropServiceClient cropSvc = new CropServiceClient();
             cropSvc.InsertCropDataAsync(c);
@@ -46,7 +48,8 @@ namespace PhoneApp1.ServiceRepository
         private void cropSvc_InsertCropDataCompleted(object sender, InsertCropDataCompletedEventArgs e)
         {
             int id = e.Result;
-            cropModel.SaveCompleted(id);
+            //cropModel.SaveCompleted(id);
+            insertCropCallback(id);
         }
 
         // Maps ViewModel with service DataContract

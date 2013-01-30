@@ -14,6 +14,8 @@ namespace PhoneApp1.Models
 {
     public class CropModel
     {
+        public delegate int CropSaveCallback(int id);
+
         public String Name { get; set; }
         public String Type { get; set; }
         public DateTime TimeOfPlanting { get; set; }
@@ -31,8 +33,10 @@ namespace PhoneApp1.Models
         {
             try
             {
+                CropSaveCallback handler = new CropSaveCallback(SaveCompleted);
                 CropRepository cropRep = new CropRepository();
-                cropRep.saveCropData(this);
+                
+                cropRep.saveCropData(new Func<int,int>(handler), this);
             }
             catch (Exception e)
             {

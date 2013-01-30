@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="53941851-879d-439f-85f8-61fdd702e9e5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ec167ff7-87ea-4de1-86cc-822f381169b7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -20,14 +20,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://127.0.0.1:81/IllnessService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://127.0.0.1/IllnessService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="IllnessService.xsd" MetadataType="Schema" ID="b3899a2b-a823-4e62-90b5-514f91454322" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd2" />
-    <MetadataFile FileName="IllnessService1.xsd" MetadataType="Schema" ID="bbe6f5bc-f5ec-493e-b8eb-e3ed1742ddea" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd1" />
-    <MetadataFile FileName="IllnessService.wsdl" MetadataType="Wsdl" ID="f9e9eec4-a691-4abf-a0b2-66ff9fffc5da" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?wsdl" />
-    <MetadataFile FileName="IllnessService2.xsd" MetadataType="Schema" ID="31523418-74e6-4567-bd46-5b0125244cde" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd0" />
-    <MetadataFile FileName="IllnessService.disco" MetadataType="Disco" ID="29657c25-590c-4ce7-82f8-3d5aef11a9af" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?disco" />
+    <MetadataFile FileName="IllnessService.wsdl" MetadataType="Wsdl" ID="ddf0beac-2d21-44ef-b02a-6e3b764fdd1a" SourceId="1" SourceUrl="http://127.0.0.1/IllnessService.svc?wsdl" />
+    <MetadataFile FileName="IllnessService.disco" MetadataType="Disco" ID="817aaede-e8cc-44d6-9983-3478b0f780b2" SourceId="1" SourceUrl="http://127.0.0.1/IllnessService.svc?disco" />
+    <MetadataFile FileName="IllnessService.xsd" MetadataType="Schema" ID="6c6fc42b-b298-46c3-bff6-88b00c9e2f9a" SourceId="1" SourceUrl="http://127.0.0.1/IllnessService.svc?xsd=xsd1" />
+    <MetadataFile FileName="IllnessService1.xsd" MetadataType="Schema" ID="669e873c-42f2-4f8b-99a6-aadf496c6d2d" SourceId="1" SourceUrl="http://127.0.0.1/IllnessService.svc?xsd=xsd0" />
+    <MetadataFile FileName="IllnessService2.xsd" MetadataType="Schema" ID="8c829382-c113-4a96-8d02-3fea16146d10" SourceId="1" SourceUrl="http://127.0.0.1/IllnessService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c3b116e8-89c9-4b1f-a136-ace6e8f06c38" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b6147fc0-dbde-403a-81fe-d44c4c51ac90" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -20,14 +20,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://127.0.0.1:81/FieldService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://127.0.0.1/FieldService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FieldService.xsd" MetadataType="Schema" ID="dff6617f-c5c4-45df-844b-37ae2453c1ab" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd1" />
-    <MetadataFile FileName="FieldService1.xsd" MetadataType="Schema" ID="8fdaba5b-5aa6-42ec-97f8-322091bb863a" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd0" />
-    <MetadataFile FileName="FieldService.wsdl" MetadataType="Wsdl" ID="3e6aeff4-76bc-4fd3-8684-f26ecb93de91" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?wsdl" />
-    <MetadataFile FileName="FieldService.disco" MetadataType="Disco" ID="98a71687-796b-497e-a7a7-26b5ef1de8b4" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?disco" />
-    <MetadataFile FileName="FieldService2.xsd" MetadataType="Schema" ID="1c666f06-3da4-4f11-af0b-e4b7c8b0ad58" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FieldService.wsdl" MetadataType="Wsdl" ID="d3704cf9-4318-4f9b-922a-f80254495b0c" SourceId="1" SourceUrl="http://127.0.0.1/FieldService.svc?wsdl" />
+    <MetadataFile FileName="FieldService.xsd" MetadataType="Schema" ID="69717b5c-9636-428f-959c-a90f5075c214" SourceId="1" SourceUrl="http://127.0.0.1/FieldService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FieldService1.xsd" MetadataType="Schema" ID="b5ff2a15-cca4-479e-b10c-10414f9e90a7" SourceId="1" SourceUrl="http://127.0.0.1/FieldService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FieldService.disco" MetadataType="Disco" ID="d9f29133-b793-4cbc-8d5f-489fda7c7cd3" SourceId="1" SourceUrl="http://127.0.0.1/FieldService.svc?disco" />
+    <MetadataFile FileName="FieldService2.xsd" MetadataType="Schema" ID="5a040b7b-d2ce-4a48-b904-2cc7075e8ad9" SourceId="1" SourceUrl="http://127.0.0.1/FieldService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

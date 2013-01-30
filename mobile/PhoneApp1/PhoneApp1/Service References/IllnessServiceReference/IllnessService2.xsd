@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://127.0.0.1:81/IllnessService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" />
-  <xs:element name="InsertIllness">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" minOccurs="0" name="illness" nillable="true" type="q1:Illness" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="InsertIllnessResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="InsertIllnessResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SelectIllnessesByCropId">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="crop_id" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SelectIllnessesByCropIdResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" minOccurs="0" name="SelectIllnessesByCropIdResult" nillable="true" type="q2:ArrayOfIllness" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Illness">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cropid" type="xs:int" />
+      <xs:element minOccurs="0" name="datefrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dateto" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="diagnose" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="illnessid" type="xs:int" />
+      <xs:element minOccurs="0" name="illnessimage" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="journalid" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="percentageinfected" type="xs:double" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Illness" nillable="true" type="tns:Illness" />
+  <xs:complexType name="ArrayOfIllness">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Illness" nillable="true" type="tns:Illness" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIllness" nillable="true" type="tns:ArrayOfIllness" />
 </xs:schema>
