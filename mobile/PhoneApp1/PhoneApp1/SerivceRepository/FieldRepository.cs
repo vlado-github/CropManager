@@ -16,9 +16,9 @@ namespace PhoneApp1.SerivceRepository
 {
     public class FieldRepository
     {
-        Func<List<FieldModel>, List<FieldModel>> getAllFieldsCallback = null;
+        Action<List<FieldModel>> getAllFieldsCallback = null;
 
-        public void getAllFields(Func<List<FieldModel>,List<FieldModel>> callback)
+        public void getAllFields(Action<List<FieldModel>> callback)
         {
             getAllFieldsCallback = callback;
             FieldServiceClient fieldSvc = new FieldServiceClient();
@@ -29,15 +29,24 @@ namespace PhoneApp1.SerivceRepository
 
         private void fieldSvc_SelectFieldsCompleted(object sender, SelectFieldsCompletedEventArgs e)
         {
-            IEnumerable<Field> allFields = e.Result;
-            List<Field> fields = (List<Field>) allFields;
-            List<FieldModel> fieldModels = new List<FieldModel>();
-            foreach (Field f in fields)
+            IEnumerable<Field> allFields = (IEnumerable<Field>) e.Result;
+            if (allFields != null)
             {
-                FieldModel fm = mapFieldToFieldModel(f);
-                fieldModels.Add(fm);
+                List<Field> fields = new List<Field>(allFields);
+                List<FieldModel> fieldModels = new List<FieldModel>();
+                foreach (Field f in fields)
+                {
+                    FieldModel fm = mapFieldToFieldModel(f);
+                    fieldModels.Add(fm);
+                }
+                getAllFieldsCallback(fieldModels);
             }
-            getAllFieldsCallback(fieldModels);
+            else
+            {
+                getAllFieldsCallback(null);
+            }
+               
+            
         }
 
         private FieldModel mapFieldToFieldModel(Field field)

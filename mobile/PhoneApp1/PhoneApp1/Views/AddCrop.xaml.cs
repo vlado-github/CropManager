@@ -19,11 +19,22 @@ namespace PhoneApp1.Views
     public partial class AddCrop : PhoneApplicationPage
     {
         byte[] avatarImage = null;
+        public delegate void GetAllFieldsCallback(List<FieldModel> fields);
 
         public AddCrop()
         {
             InitializeComponent();
+            GetAllFieldsCallback handler = new GetAllFieldsCallback(LoadFieldList);
+            FieldModel fm = new FieldModel();
+            fm.GetAllFields(new Action<List<FieldModel>>(handler));
+        }
 
+        public void LoadFieldList(List<FieldModel> fields)
+        {
+            foreach (FieldModel fm in fields)
+            {
+                fieldPicker.Items.Add(fm.Name);
+            }
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)

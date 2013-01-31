@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="Models\CropModel.cs" />
     <Compile Include="Models\FieldModel.cs" />
+    <Compile Include="Models\TimePeriodModel.cs" />
     <Compile Include="SerivceRepository\FieldRepository.cs" />
     <Compile Include="SerivceRepository\TimePeriodsRepository.cs" />
     <Compile Include="Service References\CropServiceReference\Reference.cs">

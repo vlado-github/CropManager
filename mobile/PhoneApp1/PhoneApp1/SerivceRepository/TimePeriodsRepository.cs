@@ -10,6 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 using PhoneApp1.TimePeriodsServiceReference;
+using PhoneApp1.Models;
 
 namespace PhoneApp1.SerivceRepository
 {
@@ -29,7 +30,23 @@ namespace PhoneApp1.SerivceRepository
         private void timePeriod_SelectAllTimePeriodsCompleted(object sender, SelectAllTimePeriodsCompletedEventArgs e)
         {
             IEnumerable<TimePeriod> timePeriods = e.Result;
+            List<TimePeriod> tps = (List<TimePeriod>) timePeriods;
+            List<TimePeriodModel> tpms = new List<TimePeriodModel>();
+            foreach (TimePeriod tp in tps)
+            {
+                TimePeriodModel tpm = mapTimePeriodToTimePeriodModel(tp);
+                tpms.Add(tpm);
+            }
+            //timePeriodsCallback.
+        }
 
+        private TimePeriodModel mapTimePeriodToTimePeriodModel(TimePeriod timePeriod)
+        {
+            TimePeriodModel tpm = new TimePeriodModel();
+            tpm.TimePeriodId = timePeriod.timeperiodid;
+            tpm.Type = timePeriod.type;
+
+            return tpm;
         }
     }
 }

@@ -15,7 +15,10 @@ namespace PhoneApp1.Models
 {
     public class FieldModel
     {
-        public delegate List<FieldModel> GetAllFieldsCallback(List<FieldModel> fields);
+        public delegate void GetAllFieldsCallback(List<FieldModel> fields);
+        Action<List<FieldModel>> ViewCallback = null;
+        List<FieldModel> allFields = new List<FieldModel>();
+        bool isGetAllFieldsCompleted = false;
 
         public int Id { get; set; }
         public String Name { get; set; }
@@ -25,16 +28,18 @@ namespace PhoneApp1.Models
         public int Map_fk { get; set; }
         public int Crop_fk { get; set; }
 
-        public void GetAllFields()
+        public void GetAllFields(Action<List<FieldModel>> callback)
         {
             FieldRepository fieldRepository = new FieldRepository();
+            ViewCallback = callback;
             GetAllFieldsCallback handler = new GetAllFieldsCallback(GetAllFieldsCompleted);
-            fieldRepository.getAllFields(new Func<List<FieldModel>, List<FieldModel>>(handler));
+            fieldRepository.getAllFields(new Action<List<FieldModel>>(handler));
         }
 
-        public List<FieldModel> GetAllFieldsCompleted(List<FieldModel> fields)
+        public void GetAllFieldsCompleted(List<FieldModel> fields)
         {
-            return fields;
+            allFields = fields;
+            ViewCallback(fields);
         }
     }
 }
