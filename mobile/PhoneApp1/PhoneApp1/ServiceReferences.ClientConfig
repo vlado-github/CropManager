@@ -26,27 +26,35 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_ITimePeriodsService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://127.0.0.1/CropService.svc" binding="basicHttpBinding"
+            <endpoint address="http://127.0.0.1:81/CropService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_ICropService" contract="CropServiceReference.ICropService"
                 name="BasicHttpBinding_ICropService" />
-            <endpoint address="http://127.0.0.1/FieldService.svc" binding="basicHttpBinding"
+            <endpoint address="http://127.0.0.1:81/FieldService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_IFieldService" contract="FieldServiceReference.IFieldService"
                 name="BasicHttpBinding_IFieldService" />
-            <endpoint address="http://127.0.0.1/IllnessService.svc" binding="basicHttpBinding"
+            <endpoint address="http://127.0.0.1:81/IllnessService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_IIllnessService" contract="IllnessServiceReference.IIllnessService"
                 name="BasicHttpBinding_IIllnessService" />
-            <endpoint address="http://127.0.0.1/JournalService.svc" binding="basicHttpBinding"
+            <endpoint address="http://127.0.0.1:81/JournalService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_IJournalService" contract="JournalServiceReference.IJournalService"
                 name="BasicHttpBinding_IJournalService" />
-            <endpoint address="http://127.0.0.1/MapFieldService.svc" binding="basicHttpBinding"
+            <endpoint address="http://127.0.0.1:81/MapFieldService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_IMapFieldService" contract="MapFieldServiceReference.IMapFieldService"
                 name="BasicHttpBinding_IMapFieldService" />
-            <endpoint address="http://127.0.0.1/MapService.svc" binding="basicHttpBinding"
+            <endpoint address="http://127.0.0.1:81/MapService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_IMapService" contract="MapServiceReference.IMapService"
                 name="BasicHttpBinding_IMapService" />
+            <endpoint address="http://127.0.0.1:81/TimePeriodsService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITimePeriodsService"
+                contract="TimePeriodsServiceReference.ITimePeriodsService"
+                name="BasicHttpBinding_ITimePeriodsService" />
         </client>
     </system.serviceModel>
 </configuration>

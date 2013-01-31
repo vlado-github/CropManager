@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="g15fhJhZXja6X+Okf4zsL94cU2k=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="6FzfcJ6+VKxRqVCmiyT11vI+IwM=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IMapFieldService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IMapFieldService" contract="MapFieldServiceReference.IMapFieldService" bindingType="basicHttpBinding" address="http://127.0.0.1/MapFieldService.svc" bindingConfiguration="BasicHttpBinding_IMapFieldService">
+    <endpoint name="BasicHttpBinding_IMapFieldService" contract="MapFieldServiceReference.IMapFieldService" bindingType="basicHttpBinding" address="http://127.0.0.1:81/MapFieldService.svc" bindingConfiguration="BasicHttpBinding_IMapFieldService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://127.0.0.1/MapFieldService.svc</serializedValue>
+          <serializedValue>http://127.0.0.1:81/MapFieldService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

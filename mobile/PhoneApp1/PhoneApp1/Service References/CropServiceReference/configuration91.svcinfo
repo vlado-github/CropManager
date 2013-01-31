@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="dQJwoJRqNL9ws1TNsvzpTslLv2w=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="7D9+2rtVXctCg+gQhqpQjz7lH70=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICropService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ICropService" contract="CropServiceReference.ICropService" bindingType="basicHttpBinding" address="http://127.0.0.1/CropService.svc" bindingConfiguration="BasicHttpBinding_ICropService">
+    <endpoint name="BasicHttpBinding_ICropService" contract="CropServiceReference.ICropService" bindingType="basicHttpBinding" address="http://127.0.0.1:81/CropService.svc" bindingConfiguration="BasicHttpBinding_ICropService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://127.0.0.1/CropService.svc</serializedValue>
+          <serializedValue>http://127.0.0.1:81/CropService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

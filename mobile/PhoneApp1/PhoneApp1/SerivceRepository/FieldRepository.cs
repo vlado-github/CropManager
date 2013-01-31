@@ -10,15 +10,17 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using PhoneApp1.FieldServiceReference;
 using System.Collections.Generic;
+using PhoneApp1.Models;
 
 namespace PhoneApp1.SerivceRepository
 {
     public class FieldRepository
     {
-        List<Field> fields = null;
+        Func<List<FieldModel>, List<FieldModel>> getAllFieldsCallback = null;
 
-        public void getAllFields()
+        public void getAllFields(Func<List<FieldModel>,List<FieldModel>> callback)
         {
+            getAllFieldsCallback = callback;
             FieldServiceClient fieldSvc = new FieldServiceClient();
             fieldSvc.SelectFieldsAsync();
             fieldSvc.SelectFieldsCompleted += new EventHandler
@@ -28,7 +30,28 @@ namespace PhoneApp1.SerivceRepository
         private void fieldSvc_SelectFieldsCompleted(object sender, SelectFieldsCompletedEventArgs e)
         {
             IEnumerable<Field> allFields = e.Result;
-            fields = (List<Field>) allFields;
+            List<Field> fields = (List<Field>) allFields;
+            List<FieldModel> fieldModels = new List<FieldModel>();
+            foreach (Field f in fields)
+            {
+                FieldModel fm = mapFieldToFieldModel(f);
+                fieldModels.Add(fm);
+            }
+            getAllFieldsCallback(fieldModels);
+        }
+
+        private FieldModel mapFieldToFieldModel(Field field)
+        {
+            FieldModel fieldModel = new FieldModel();
+            fieldModel.Name = field.name;
+            fieldModel.Id = field.field_id;
+            fieldModel.Altitude = field.altitude;
+            fieldModel.AreaSize = field.areasize;
+            fieldModel.AreaSizeMeasure = field.areasizemeasure;
+            fieldModel.Crop_fk = field.cropid;
+            fieldModel.Map_fk = field.mapid;
+
+            return fieldModel;
         }
     }
 }

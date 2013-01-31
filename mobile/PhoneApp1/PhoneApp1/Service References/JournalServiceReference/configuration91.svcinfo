@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="BEY/wvqRyh0Q3u+vAXpt3x8Z0gY=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Xny0YUT6mG3Z70bgaSu1JXl5ZpM=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IJournalService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IJournalService" contract="JournalServiceReference.IJournalService" bindingType="basicHttpBinding" address="http://127.0.0.1/JournalService.svc" bindingConfiguration="BasicHttpBinding_IJournalService">
+    <endpoint name="BasicHttpBinding_IJournalService" contract="JournalServiceReference.IJournalService" bindingType="basicHttpBinding" address="http://127.0.0.1:81/JournalService.svc" bindingConfiguration="BasicHttpBinding_IJournalService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://127.0.0.1/JournalService.svc</serializedValue>
+          <serializedValue>http://127.0.0.1:81/JournalService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

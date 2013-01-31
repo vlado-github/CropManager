@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a64d1d72-f52d-40bf-9f69-1a5782d3288a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/TimePeriodsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TimePeriodsService.xsd" MetadataType="Schema" ID="3004ffe3-b32c-4b95-8acb-a620a58482d8" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TimePeriodsService1.xsd" MetadataType="Schema" ID="d30e587e-e5f3-4644-b2c4-faa934af2ea2" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TimePeriodsService.wsdl" MetadataType="Wsdl" ID="ff770496-c522-485a-a852-9a05dff853b6" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?wsdl" />
+    <MetadataFile FileName="TimePeriodsService.disco" MetadataType="Disco" ID="27db8fec-18dc-4889-8888-975cb22a790c" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?disco" />
+    <MetadataFile FileName="TimePeriodsService2.xsd" MetadataType="Schema" ID="436c669f-c748-4aab-8545-939eafbebd11" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

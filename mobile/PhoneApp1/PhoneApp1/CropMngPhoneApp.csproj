@@ -71,7 +71,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\CropModel.cs" />
+    <Compile Include="Models\FieldModel.cs" />
     <Compile Include="SerivceRepository\FieldRepository.cs" />
+    <Compile Include="SerivceRepository\TimePeriodsRepository.cs" />
     <Compile Include="Service References\CropServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +100,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\MapServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TimePeriodsServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -196,6 +203,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\TimePeriodsServiceReference\PhoneApp1.TimePeriodsServiceReference.TimePeriod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TimePeriodsServiceReference\TimePeriodsService.disco" />
+    <None Include="Service References\TimePeriodsServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\TimePeriodsServiceReference\configuration.svcinfo" />
+    <None Include="Service References\TimePeriodsServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\CropServiceReference\CropService.wsdl" />
     <None Include="Service References\CropServiceReference\CropService.xsd" />
@@ -222,6 +239,10 @@
     <None Include="Service References\MapServiceReference\MapService.xsd" />
     <None Include="Service References\MapServiceReference\MapService1.xsd" />
     <None Include="Service References\MapServiceReference\MapService2.xsd" />
+    <None Include="Service References\TimePeriodsServiceReference\TimePeriodsService.wsdl" />
+    <None Include="Service References\TimePeriodsServiceReference\TimePeriodsService.xsd" />
+    <None Include="Service References\TimePeriodsServiceReference\TimePeriodsService1.xsd" />
+    <None Include="Service References\TimePeriodsServiceReference\TimePeriodsService2.xsd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.png">
@@ -242,6 +263,7 @@
     <WCFMetadataStorage Include="Service References\JournalServiceReference\" />
     <WCFMetadataStorage Include="Service References\MapFieldServiceReference\" />
     <WCFMetadataStorage Include="Service References\MapServiceReference\" />
+    <WCFMetadataStorage Include="Service References\TimePeriodsServiceReference\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

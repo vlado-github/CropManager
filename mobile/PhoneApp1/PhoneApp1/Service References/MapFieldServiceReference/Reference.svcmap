@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dd167421-0303-4edc-8960-a56eb5fc8224" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8b27c8c6-d289-4568-bcf6-73805a8de4f4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://127.0.0.1/MapFieldService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://127.0.0.1:81/MapFieldService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MapFieldService.disco" MetadataType="Disco" ID="aac846c2-ae80-4fe2-80c3-6928c80010ed" SourceId="1" SourceUrl="http://127.0.0.1/MapFieldService.svc?disco" />
-    <MetadataFile FileName="MapFieldService.xsd" MetadataType="Schema" ID="af5650f0-8c17-497e-87cd-5f7525ecb4f5" SourceId="1" SourceUrl="http://127.0.0.1/MapFieldService.svc?xsd=xsd0" />
-    <MetadataFile FileName="MapFieldService1.xsd" MetadataType="Schema" ID="7afe2d59-76a4-446b-b0d9-e44064f6872d" SourceId="1" SourceUrl="http://127.0.0.1/MapFieldService.svc?xsd=xsd1" />
-    <MetadataFile FileName="MapFieldService2.xsd" MetadataType="Schema" ID="73881947-bd41-4792-b389-39b26da38608" SourceId="1" SourceUrl="http://127.0.0.1/MapFieldService.svc?xsd=xsd2" />
-    <MetadataFile FileName="MapFieldService3.xsd" MetadataType="Schema" ID="efe338a3-488e-40ae-aeda-522a78b9b4ad" SourceId="1" SourceUrl="http://127.0.0.1/MapFieldService.svc?xsd=xsd3" />
-    <MetadataFile FileName="MapFieldService.wsdl" MetadataType="Wsdl" ID="1aefa757-9820-4b86-9941-b51950e4caf8" SourceId="1" SourceUrl="http://127.0.0.1/MapFieldService.svc?wsdl" />
+    <MetadataFile FileName="MapFieldService.disco" MetadataType="Disco" ID="da72e504-fe49-4a56-805e-5abcfaed964f" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?disco" />
+    <MetadataFile FileName="MapFieldService.xsd" MetadataType="Schema" ID="9d05a783-0d10-4ba7-ad03-0ba56535d9cd" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MapFieldService1.xsd" MetadataType="Schema" ID="ba528c6b-8dec-4031-b14e-45f0425116cf" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MapFieldService2.xsd" MetadataType="Schema" ID="595ee163-3fcd-4dc9-923b-53884a8fea0b" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MapFieldService3.xsd" MetadataType="Schema" ID="95f7219c-13b5-42a4-807a-eaf52ac8e963" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MapFieldService.wsdl" MetadataType="Wsdl" ID="121271d8-d10e-417d-a384-238112504237" SourceId="1" SourceUrl="http://127.0.0.1:81/MapFieldService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

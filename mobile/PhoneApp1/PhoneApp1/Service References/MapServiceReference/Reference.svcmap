@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="44150550-9a37-4cf6-b4a7-ce62a3590453" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2ea045c8-5630-43ab-8108-8f527a60c359" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -20,14 +20,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://127.0.0.1/MapService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://127.0.0.1:81/MapService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MapService.xsd" MetadataType="Schema" ID="9501a2ad-6436-4a47-91e1-bc30c6d492f3" SourceId="1" SourceUrl="http://127.0.0.1/MapService.svc?xsd=xsd0" />
-    <MetadataFile FileName="MapService1.xsd" MetadataType="Schema" ID="75ef70b7-89f4-48e0-9049-ea64455af124" SourceId="1" SourceUrl="http://127.0.0.1/MapService.svc?xsd=xsd1" />
-    <MetadataFile FileName="MapService2.xsd" MetadataType="Schema" ID="78e511a0-a1c5-46f7-8bee-6a79f83f3161" SourceId="1" SourceUrl="http://127.0.0.1/MapService.svc?xsd=xsd2" />
-    <MetadataFile FileName="MapService.disco" MetadataType="Disco" ID="aa9dd776-3007-435c-8f50-1b605447a062" SourceId="1" SourceUrl="http://127.0.0.1/MapService.svc?disco" />
-    <MetadataFile FileName="MapService.wsdl" MetadataType="Wsdl" ID="20e95066-b188-434b-82ac-f3bc86e3602f" SourceId="1" SourceUrl="http://127.0.0.1/MapService.svc?wsdl" />
+    <MetadataFile FileName="MapService.disco" MetadataType="Disco" ID="048fcb6b-f63a-4956-8bc3-9c3246402ad1" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?disco" />
+    <MetadataFile FileName="MapService.wsdl" MetadataType="Wsdl" ID="24f12154-5367-4d64-a684-16de43ac3474" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?wsdl" />
+    <MetadataFile FileName="MapService.xsd" MetadataType="Schema" ID="b7934fbe-0c29-46b0-85b1-f34e648f2219" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MapService1.xsd" MetadataType="Schema" ID="d0ef8be3-6be7-48ff-8fdb-8e7cbb493973" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MapService2.xsd" MetadataType="Schema" ID="6a24f04e-642d-4eef-888d-65060aaec90d" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

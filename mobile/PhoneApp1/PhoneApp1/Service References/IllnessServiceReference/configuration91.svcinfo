@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="0+2utozmHpu4alyZXgJmZMFlDuE=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="optGieqDXhjUBhBG3ZUwh6Bz/Yo=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IIllnessService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IIllnessService" contract="IllnessServiceReference.IIllnessService" bindingType="basicHttpBinding" address="http://127.0.0.1/IllnessService.svc" bindingConfiguration="BasicHttpBinding_IIllnessService">
+    <endpoint name="BasicHttpBinding_IIllnessService" contract="IllnessServiceReference.IIllnessService" bindingType="basicHttpBinding" address="http://127.0.0.1:81/IllnessService.svc" bindingConfiguration="BasicHttpBinding_IIllnessService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://127.0.0.1/IllnessService.svc</serializedValue>
+          <serializedValue>http://127.0.0.1:81/IllnessService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
