@@ -21,6 +21,7 @@ namespace PhoneApp1.Views
         byte[] avatarImage = null;
         public delegate void GetAllFieldsCallback(List<FieldModel> fields);
         public delegate void GetAllTimePeriodsCallback(List<TimePeriodModel> tpms);
+        public delegate void SaveCropCallback(int cropId);
 
         public AddCrop()
         {
@@ -32,7 +33,6 @@ namespace PhoneApp1.Views
             GetAllTimePeriodsCallback handlerTpms = new GetAllTimePeriodsCallback(LoadTimePeriodList);
             TimePeriodModel tpm = new TimePeriodModel();
             tpm.GetAllTimePeriods(new Action<List<TimePeriodModel>>(handlerTpms));
-
         }
 
         public void LoadFieldList(List<FieldModel> fields)
@@ -43,6 +43,11 @@ namespace PhoneApp1.Views
         public void LoadTimePeriodList(List<TimePeriodModel> tpms)
         {
             timeSortPicker.ItemsSource = tpms;
+        }
+
+        public void DisplaySaveCropToastMsg(int id)
+        {
+            MessageBox.Show("Saved successfully.");
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
@@ -60,8 +65,10 @@ namespace PhoneApp1.Views
             cropModel.HillingTime = timeOfHilling.Value == null ? new DateTime() : (DateTime)timeOfHilling.Value;
             cropModel.FertilizingTime = timeOfFertilizing.Value == null ? new DateTime() : (DateTime)timeOfFertilizing.Value;
             cropModel.IllnessId = 0;//Int16.Parse(illnessField.Text);
+           
+            SaveCropCallback handlerCrop = new SaveCropCallback(DisplaySaveCropToastMsg);
 
-            cropModel.Save();
+            cropModel.Save(new Action<int>(handlerCrop));
         }
 
         private void photoBtn_Click(object sender, RoutedEventArgs e)

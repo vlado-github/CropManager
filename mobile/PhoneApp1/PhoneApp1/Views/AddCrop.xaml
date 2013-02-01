@@ -91,7 +91,13 @@
                     <Button Content="Add illness" Height="72" HorizontalAlignment="Left" Margin="190,354,0,0" Name="button2" VerticalAlignment="Top" Width="203" />
                     <toolkit:DatePicker Height="68" Margin="145,175,35,255" Name="timeOfHilling" Width="240" />
                     <toolkit:DatePicker Height="68" Margin="146,238,34,192" Name="timeOfFertilizing" Width="240" />
-                    <Button Content="Save" Height="72" HorizontalAlignment="Left" Margin="41,420,0,0" Name="saveBtn" VerticalAlignment="Top" Width="160" Click="saveBtn_Click" />
+                    <Button Content="Save" Height="72" HorizontalAlignment="Left" Margin="41,420,0,0" Name="saveBtn" VerticalAlignment="Top" Width="160" Click="saveBtn_Click" >
+                    	<i:Interaction.Triggers>
+                    		<i:EventTrigger EventName="Click">
+                    			<ec:NavigateToPageAction TargetPage="/Views/CropManager.xaml"/>
+                    		</i:EventTrigger>
+                    	</i:Interaction.Triggers>
+                    </Button>
                     <Button Content="Cancel" Height="72" HorizontalAlignment="Left" Margin="211,421,0,0" Name="cancelBtn" VerticalAlignment="Top" Width="160">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">

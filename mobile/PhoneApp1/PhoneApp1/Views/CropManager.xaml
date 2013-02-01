@@ -36,7 +36,13 @@
             		</i:EventTrigger>
             	</i:Interaction.Triggers>
             </Button>
-            <Button Content="Crop Details" Height="72" HorizontalAlignment="Right" Margin="0,144,224,0" x:Name="CropDetailsBtn" VerticalAlignment="Top" Width="220" />
+            <Button Content="Crop Details" Height="72" HorizontalAlignment="Right" Margin="0,144,224,0" x:Name="CropDetailsBtn" VerticalAlignment="Top" Width="220" >
+            	<i:Interaction.Triggers>
+            		<i:EventTrigger EventName="Click">
+            			<ec:NavigateToPageAction TargetPage="/Views/CropDetails.xaml"/>
+            		</i:EventTrigger>
+            	</i:Interaction.Triggers>
+            </Button>
             <Button Content="Remove Crop" Height="72" HorizontalAlignment="Left" Margin="12,222,0,0" x:Name="RemoveCropBtn" VerticalAlignment="Top" Width="220" MinWidth="0" />
             <TextBlock Height="50" HorizontalAlignment="Left" Margin="12,22,0,0" x:Name="textBlock1" Text="Manage crops" VerticalAlignment="Top" FontSize="36" />
             <TextBlock FontSize="36" Height="50" HorizontalAlignment="Left" Margin="6,300,0,0" x:Name="textBlock2" Text="Manage fields" VerticalAlignment="Top" />

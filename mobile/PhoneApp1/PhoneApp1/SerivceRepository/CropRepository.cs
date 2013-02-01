@@ -10,6 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using PhoneApp1.CropServiceReference;
 using PhoneApp1.Models;
+using System.Collections.Generic;
 
 namespace PhoneApp1.ServiceRepository
 {
@@ -18,6 +19,7 @@ namespace PhoneApp1.ServiceRepository
         Crop crop = null;
         CropModel cropModel = null;
         Func<int, int> insertCropCallback = null;
+        Action<List<CropModel>> getAllCropsCallback = null;
 
         // Save crop data
         public void saveCropData(Func<int,int> callback, CropModel cropModel)
@@ -40,6 +42,15 @@ namespace PhoneApp1.ServiceRepository
             <SelectCropByIdCompletedEventArgs>(cropSvc_SelectCropByIdCompleted);
         }
 
+        public void getAllCrops(Action<List<CropModel>> callback)
+        {
+            CropServiceClient cropSvc = new CropServiceClient();
+            getAllCropsCallback = callback;
+            cropSvc.SelectCropsAsync();
+            cropSvc.SelectCropsCompleted += new EventHandler
+            <SelectCropsCompletedEventArgs>(cropSvc_GetAllCrops);
+        }
+
         private void cropSvc_SelectCropByIdCompleted(object sender, SelectCropByIdCompletedEventArgs e)
         {
             crop = e.Result;
@@ -50,6 +61,19 @@ namespace PhoneApp1.ServiceRepository
             int id = e.Result;
             //cropModel.SaveCompleted(id);
             insertCropCallback(id);
+        }
+
+        private void cropSvc_GetAllCrops(object sender, SelectCropsCompletedEventArgs e)
+        {
+            IEnumerable<Crop> crops = (IEnumerable<Crop>) e.Result;
+            List<Crop> cropList = new List<Crop>(crops);
+            List<CropModel> cropModelList = new List<CropModel>();
+            foreach (Crop c in cropList)
+            {
+                CropModel cm = mapCropToCropModel(c);
+                cropModelList.Add(cm);
+            }
+            getAllCropsCallback(cropModelList);
         }
 
         // Maps ViewModel with service DataContract
@@ -67,6 +91,25 @@ namespace PhoneApp1.ServiceRepository
             crop.hillingtime = cm.HillingTime;
             crop.fertilizingtime = cm.FertilizingTime;
             crop.fieldid = cm.FieldId;
+
+            return crop;
+        }
+
+        // Maps DataContract from service to ViewModel
+        private CropModel mapCropToCropModel(Crop cm)
+        {
+            CropModel crop = new CropModel();
+            crop.Name = cm.name;
+            crop.Type = cm.croptype;
+            crop.TimeOfPlanting = cm.timeofplanting;
+            crop.AvatarImage = cm.avatarimage;
+            crop.CoverageValue = cm.fieldcoverage;
+            crop.WateringFrequency = cm.wateringfrequency;
+            crop.WateringPeriod = cm.wateringperiod;
+            crop.HarvestTime = cm.harvesttime;
+            crop.HillingTime = cm.hillingtime;
+            crop.FertilizingTime = cm.fertilizingtime;
+            crop.FieldId = cm.fieldid;
 
             return crop;
         }
