@@ -16,9 +16,9 @@ namespace PhoneApp1.SerivceRepository
 {
     public class TimePeriodsRepository
     {
-        Func<List<TimePeriod>, List<TimePeriod>> timePeriodsCallback; 
+        Action<List<TimePeriodModel>> timePeriodsCallback; 
 
-        public void getAllTimePeriodTypes(Func<List<TimePeriod>,List<TimePeriod>> callback)
+        public void getAllTimePeriodTypes(Action<List<TimePeriodModel>> callback)
         {
             timePeriodsCallback = callback;
             TimePeriodsServiceClient timePeriodSvc = new TimePeriodsServiceClient();
@@ -29,15 +29,15 @@ namespace PhoneApp1.SerivceRepository
 
         private void timePeriod_SelectAllTimePeriodsCompleted(object sender, SelectAllTimePeriodsCompletedEventArgs e)
         {
-            IEnumerable<TimePeriod> timePeriods = e.Result;
-            List<TimePeriod> tps = (List<TimePeriod>) timePeriods;
+            IEnumerable<TimePeriod> timePeriods = (IEnumerable<TimePeriod>) e.Result;
+            List<TimePeriod> tps = new List<TimePeriod>(timePeriods);
             List<TimePeriodModel> tpms = new List<TimePeriodModel>();
             foreach (TimePeriod tp in tps)
             {
                 TimePeriodModel tpm = mapTimePeriodToTimePeriodModel(tp);
                 tpms.Add(tpm);
             }
-            //timePeriodsCallback.
+            timePeriodsCallback(tpms);
         }
 
         private TimePeriodModel mapTimePeriodToTimePeriodModel(TimePeriod timePeriod)

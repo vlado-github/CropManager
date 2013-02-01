@@ -73,5 +73,7 @@ namespace WCFServiceWebRole1
         public DateTime FertilizingTime { get; set; }
         [DataMember(Name = "fieldcoverage")]
         public double FieldCoverage { get; set; }
+        [DataMember(Name = "fieldid")]
+        public int FieldId { get; set; }
     }
 }

@@ -20,21 +20,29 @@ namespace PhoneApp1.Views
     {
         byte[] avatarImage = null;
         public delegate void GetAllFieldsCallback(List<FieldModel> fields);
+        public delegate void GetAllTimePeriodsCallback(List<TimePeriodModel> tpms);
 
         public AddCrop()
         {
             InitializeComponent();
-            GetAllFieldsCallback handler = new GetAllFieldsCallback(LoadFieldList);
+            GetAllFieldsCallback handlerFields = new GetAllFieldsCallback(LoadFieldList);
             FieldModel fm = new FieldModel();
-            fm.GetAllFields(new Action<List<FieldModel>>(handler));
+            fm.GetAllFields(new Action<List<FieldModel>>(handlerFields));
+
+            GetAllTimePeriodsCallback handlerTpms = new GetAllTimePeriodsCallback(LoadTimePeriodList);
+            TimePeriodModel tpm = new TimePeriodModel();
+            tpm.GetAllTimePeriods(new Action<List<TimePeriodModel>>(handlerTpms));
+
         }
 
         public void LoadFieldList(List<FieldModel> fields)
         {
-            foreach (FieldModel fm in fields)
-            {
-                fieldPicker.Items.Add(fm.Name);
-            }
+            fieldPicker.ItemsSource = fields;
+        }
+
+        public void LoadTimePeriodList(List<TimePeriodModel> tpms)
+        {
+            timeSortPicker.ItemsSource = tpms;
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
@@ -44,7 +52,7 @@ namespace PhoneApp1.Views
             cropModel.Type = typeField.Text;
             cropModel.TimeOfPlanting = timeOfPlatning.Value == null ? new DateTime() : (DateTime)timeOfPlatning.Value;
             cropModel.AvatarImage = avatarImage;
-            cropModel.FieldId = fieldPicker.SelectedItem == null ? 0 : Int16.Parse(fieldPicker.SelectedItem.ToString());
+            cropModel.FieldId = fieldPicker.SelectedItem == null ? 0 : ((FieldModel)fieldPicker.SelectedItem).Id;
             cropModel.CoverageValue = Double.Parse(coverageValue.Text);
             cropModel.WateringFrequency = Int16.Parse(waterFreqPicker.SelectedItem.ToString());
             cropModel.WateringPeriod = timeSortPicker.SelectedIndex.ToString();

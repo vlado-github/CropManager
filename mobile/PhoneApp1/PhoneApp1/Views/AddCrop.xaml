@@ -16,7 +16,19 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
-
+    
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="TimePeriodItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Type}" Margin="12 0 0 0"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="FieldsItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Name}" Margin="12 0 0 0"/>
+            </StackPanel>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
         <controls:Panorama Title="Add Crop">
@@ -40,7 +52,7 @@
             <controls:PanoramaItem Header="Select Field">
                 <Grid>
                     <TextBlock Height="30" HorizontalAlignment="Left" Margin="29,106,0,0" Name="textBlock5" Text="Pick field:" VerticalAlignment="Top" />
-                    <toolkit:ListPicker Name="fieldPicker" Margin="119,91,23,273" Height="134" Width="278">
+                    <toolkit:ListPicker Name="fieldPicker" ItemsSource="{Binding FieldModel}" ItemTemplate="{StaticResource FieldsItemTemplate}" Margin="119,91,23,273" Height="134" Width="278">
                         
                     </toolkit:ListPicker>
                     <Slider Height="84" HorizontalAlignment="Left" Margin="24,218,0,0" Name="coverageSlider" VerticalAlignment="Top" Width="364" Value="50" Maximum="100" />
@@ -51,6 +63,7 @@
 
             <!--Panorama item three-->
             <controls:PanoramaItem Header="Maintainance">
+                
                 <Grid>
                     <TextBlock Height="30" HorizontalAlignment="Left" Margin="27,47,0,0" Name="textBlock8" Text="Watering:" VerticalAlignment="Top" />
                     <toolkit:ListPicker Name="waterFreqPicker" Margin="124,26,238,369" Height="103" Width="58">
@@ -65,7 +78,8 @@
                         <sys:String>9</sys:String>
                         <sys:String>10</sys:String>
                     </toolkit:ListPicker>
-                    <toolkit:ListPicker Name="timeSortPicker" Margin="220,25,19,391" Height="82" Width="181">
+
+                    <toolkit:ListPicker Name="timeSortPicker" ItemsSource="{Binding TimePeriodModel}" ItemTemplate="{StaticResource TimePeriodItemTemplate}" Margin="220,25,19,391" Height="82" Width="181">
                         
                     </toolkit:ListPicker>
                     <TextBlock Height="30" HorizontalAlignment="Left" Margin="191,43,0,0" Name="textBlock9" Text="X" VerticalAlignment="Top" />

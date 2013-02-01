@@ -18,7 +18,6 @@ namespace PhoneApp1.Models
         public delegate void GetAllFieldsCallback(List<FieldModel> fields);
         Action<List<FieldModel>> ViewCallback = null;
         List<FieldModel> allFields = new List<FieldModel>();
-        bool isGetAllFieldsCompleted = false;
 
         public int Id { get; set; }
         public String Name { get; set; }
@@ -40,6 +39,11 @@ namespace PhoneApp1.Models
         {
             allFields = fields;
             ViewCallback(fields);
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

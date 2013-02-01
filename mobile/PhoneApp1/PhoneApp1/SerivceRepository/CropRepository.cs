@@ -66,6 +66,7 @@ namespace PhoneApp1.ServiceRepository
             crop.harvesttime = cm.HarvestTime;
             crop.hillingtime = cm.HillingTime;
             crop.fertilizingtime = cm.FertilizingTime;
+            crop.fieldid = cm.FieldId;
 
             return crop;
         }

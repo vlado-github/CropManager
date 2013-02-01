@@ -33,6 +33,7 @@ namespace WCFServiceWebRole1
                 cmd.Parameters.Add(new SqlParameter("@hilling_time", crop.HillingTime));
                 cmd.Parameters.Add(new SqlParameter("@fertillizing_time", crop.FertilizingTime));
                 cmd.Parameters.Add(new SqlParameter("@field_coverage", crop.FieldCoverage));
+                cmd.Parameters.Add(new SqlParameter("@field_fk_id", crop.FieldId));
                 con.Open();
                 //cmd.ExecuteNonQuery();
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
@@ -96,6 +97,7 @@ namespace WCFServiceWebRole1
                             crop.HillingTime = DateTime.Parse(row[8].ToString());
                             crop.FertilizingTime = DateTime.Parse(row[9].ToString());
                             crop.FieldCoverage = Double.Parse(row[10].ToString());
+                            crop.FieldId = Int16.Parse(row[11].ToString());
                         }
                     }
                     con.Close();

@@ -128,7 +128,7 @@ namespace WCFServiceWebRole1
                     foreach (DataRow row in fieldsTable.Rows)
                     {
                         Field field = new Field();
-                        field.CropId = Int16.Parse(row[0].ToString());
+                        field.FieldId = Int16.Parse(row[0].ToString());
                         field.Name = row[1].ToString();
                         fields.Add(field);
                     }

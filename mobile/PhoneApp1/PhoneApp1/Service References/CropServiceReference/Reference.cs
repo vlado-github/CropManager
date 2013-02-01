@@ -30,6 +30,8 @@ namespace PhoneApp1.CropServiceReference {
         
         private double fieldcoverageField;
         
+        private int fieldidField;
+        
         private System.DateTime harvesttimeField;
         
         private System.DateTime hillingtimeField;
@@ -103,6 +105,19 @@ namespace PhoneApp1.CropServiceReference {
                 if ((this.fieldcoverageField.Equals(value) != true)) {
                     this.fieldcoverageField = value;
                     this.RaisePropertyChanged("fieldcoverage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int fieldid {
+            get {
+                return this.fieldidField;
+            }
+            set {
+                if ((this.fieldidField.Equals(value) != true)) {
+                    this.fieldidField = value;
+                    this.RaisePropertyChanged("fieldid");
                 }
             }
         }
