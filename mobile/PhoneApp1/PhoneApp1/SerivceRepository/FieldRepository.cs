@@ -55,8 +55,6 @@ namespace PhoneApp1.SerivceRepository
             {
                 getAllFieldsCallback(null);
             }
-               
-            
         }
 
         private void fieldSvc_SelectFieldByIdCompleted(object sender, SelectFieldByIdCompletedEventArgs e)

@@ -53,6 +53,12 @@ namespace PhoneApp1.ServiceRepository
             <SelectCropsCompletedEventArgs>(cropSvc_GetAllCrops);
         }
 
+        public void deleteCropById(int id)
+        {
+            CropServiceClient cropSvc = new CropServiceClient();
+            cropSvc.DeleteCropDataAsync(id);
+        }
+
         private void cropSvc_SelectCropByIdCompleted(object sender, SelectCropByIdCompletedEventArgs e)
         {
             crop = e.Result;
@@ -90,7 +96,7 @@ namespace PhoneApp1.ServiceRepository
             crop.avatarimage = cm.AvatarImage;
             crop.fieldcoverage = cm.CoverageValue;
             crop.wateringfrequency = cm.WateringFrequency;
-            crop.wateringperiod = cm.WateringPeriod;
+            crop.wateringperiod = (Int16.Parse(cm.WateringPeriod)+1).ToString();
             crop.harvesttime = cm.HarvestTime;
             crop.hillingtime = cm.HillingTime;
             crop.fertilizingtime = cm.FertilizingTime;

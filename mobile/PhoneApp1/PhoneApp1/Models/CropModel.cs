@@ -83,6 +83,19 @@ namespace PhoneApp1.Models
             }
         }
 
+        public void DeleteCropById(int id)
+        {
+            try
+            {
+                CropRepository cropRep = new CropRepository();
+                cropRep.deleteCropById(id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Crop delete by id: " + e.StackTrace);
+            }
+        }
+
         public int SaveCompleted(int id)
         {
             ViewCallback(id);
