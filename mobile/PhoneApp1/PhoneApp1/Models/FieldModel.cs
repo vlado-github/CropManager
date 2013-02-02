@@ -16,7 +16,9 @@ namespace PhoneApp1.Models
     public class FieldModel
     {
         public delegate void GetAllFieldsCallback(List<FieldModel> fields);
+        public delegate void GetFieldByIdCallback(FieldModel field);
         Action<List<FieldModel>> ViewCallback = null;
+        Action<FieldModel> ViewFieldByIdCallback = null;
         List<FieldModel> allFields = new List<FieldModel>();
 
         public int Id { get; set; }
@@ -35,10 +37,23 @@ namespace PhoneApp1.Models
             fieldRepository.getAllFields(new Action<List<FieldModel>>(handler));
         }
 
+        public void GetFieldById(Action<FieldModel> callback, int id)
+        {
+            FieldRepository fieldRepository = new FieldRepository();
+            ViewFieldByIdCallback = callback;
+            GetFieldByIdCallback handler = new GetFieldByIdCallback(GetFieldByIdCompleted);
+            fieldRepository.getFieldById(new Action<FieldModel>(handler),id);
+        }
+
         public void GetAllFieldsCompleted(List<FieldModel> fields)
         {
             allFields = fields;
             ViewCallback(fields);
+        }
+
+        public void GetFieldByIdCompleted(FieldModel fm)
+        {
+            ViewFieldByIdCallback(fm);
         }
 
         public override string ToString()

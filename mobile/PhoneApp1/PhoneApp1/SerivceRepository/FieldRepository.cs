@@ -17,6 +17,7 @@ namespace PhoneApp1.SerivceRepository
     public class FieldRepository
     {
         Action<List<FieldModel>> getAllFieldsCallback = null;
+        Action<FieldModel> getFieldByIdCallback = null;
 
         public void getAllFields(Action<List<FieldModel>> callback)
         {
@@ -25,6 +26,15 @@ namespace PhoneApp1.SerivceRepository
             fieldSvc.SelectFieldsAsync();
             fieldSvc.SelectFieldsCompleted += new EventHandler
                 <SelectFieldsCompletedEventArgs>(fieldSvc_SelectFieldsCompleted);
+        }
+
+        public void getFieldById(Action<FieldModel> callback, int id)
+        {
+            getFieldByIdCallback = callback;
+            FieldServiceClient fieldSvc = new FieldServiceClient();
+            fieldSvc.SelectFieldByIdAsync(id);
+            fieldSvc.SelectFieldByIdCompleted += new EventHandler
+                <SelectFieldByIdCompletedEventArgs>(fieldSvc_SelectFieldByIdCompleted);
         }
 
         private void fieldSvc_SelectFieldsCompleted(object sender, SelectFieldsCompletedEventArgs e)
@@ -47,6 +57,13 @@ namespace PhoneApp1.SerivceRepository
             }
                
             
+        }
+
+        private void fieldSvc_SelectFieldByIdCompleted(object sender, SelectFieldByIdCompletedEventArgs e)
+        {
+            Field field = e.Result;
+            FieldModel fm = mapFieldToFieldModel(field);
+            getFieldByIdCallback(fm);
         }
 
         private FieldModel mapFieldToFieldModel(Field field)

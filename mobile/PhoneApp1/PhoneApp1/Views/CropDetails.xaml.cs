@@ -34,7 +34,7 @@ namespace PhoneApp1.Views
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             int selectedCropId = ((CropModel)cropPicker.SelectedItem).Id;
-            NavigationService.Navigate(new Uri("/CropDetailsPage.xaml?parameter="+selectedCropId, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/CropDetailsPage.xaml?parameter="+selectedCropId, UriKind.Relative));
         }
     }
 }
