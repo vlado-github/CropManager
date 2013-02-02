@@ -17,9 +17,12 @@ namespace PhoneApp1.Models
     {
         Action<int> ViewCallback = null;
         Action<List<CropModel>> ViewGetAllCropsCallback = null;
+        Action<CropModel> ViewGetCropByIdCallback = null;
         public delegate int CropSaveCallback(int id);
         public delegate void CropGetAllCallback(List<CropModel> crops);
+        public delegate void CropGetByIdCallback(CropModel crop);
 
+        public int Id { get; set; }
         public String Name { get; set; }
         public String Type { get; set; }
         public DateTime TimeOfPlanting { get; set; }
@@ -65,6 +68,21 @@ namespace PhoneApp1.Models
             }
         }
 
+        public void GetCropById(Action<CropModel> callback, int id)
+        {
+            try
+            {
+                ViewGetCropByIdCallback = callback;
+                CropRepository cropRep = new CropRepository();
+                CropGetByIdCallback handler = new CropGetByIdCallback(GetCropByIdCompleted);
+                cropRep.getCropDataById(new Action<CropModel>(handler), id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Crop get by id: " + e.StackTrace);
+            }
+        }
+
         public int SaveCompleted(int id)
         {
             ViewCallback(id);
@@ -74,6 +92,11 @@ namespace PhoneApp1.Models
         public void GetAllCropsCompleted(List<CropModel> cropList)
         {
             ViewGetAllCropsCallback(cropList);
+        }
+
+        public void GetCropByIdCompleted(CropModel crop)
+        {
+            ViewGetCropByIdCallback(crop);
         }
 
         public override string ToString()

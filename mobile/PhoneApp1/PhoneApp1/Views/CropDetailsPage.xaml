@@ -1,0 +1,68 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="PhoneApp1.Views.CropDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="CROP MANAGER" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="crop details" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<TextBlock x:Name="NameLbl" HorizontalAlignment="Left" Margin="10,28,0,0" TextWrapping="Wrap" Text="Crop Name:" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="NameTxt" Margin="166,28,76,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="TypeLbl" HorizontalAlignment="Left" Margin="10,72,0,0" TextWrapping="Wrap" Text="Type:" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="TypeTxt" Margin="166,72,76,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="TimeOfPlantingLbl" HorizontalAlignment="Left" Margin="10,117,0,0" TextWrapping="Wrap" Text="Time Of Planting:" VerticalAlignment="Top" RenderTransformOrigin="0.717,2.796"/>
+        	<TextBlock x:Name="TimeOfPlantingTxt" Margin="166,117,76,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="FieldNameLbl" HorizontalAlignment="Left" Margin="10,167,0,0" TextWrapping="Wrap" Text="Field Name:" VerticalAlignment="Top" RenderTransformOrigin="0.717,2.796"/>
+        	<TextBlock x:Name="FieldNameTxt" Margin="166,167,76,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="AreaCoverageLbl" HorizontalAlignment="Left" Margin="10,218,0,0" TextWrapping="Wrap" Text="Area Coverage:" VerticalAlignment="Top" RenderTransformOrigin="0.717,2.796"/>
+        	<TextBlock x:Name="AreaCoverageTxt" Margin="166,218,76,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="WateringLbl" HorizontalAlignment="Left" Margin="10,0,0,238" TextWrapping="Wrap" Text="Watering:" RenderTransformOrigin="0.717,2.796" VerticalAlignment="Bottom"/>
+        	<TextBlock x:Name="WateringTxt" Margin="166,0,76,238" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+        	<TextBlock x:Name="HillingLbl" HorizontalAlignment="Left" Margin="10,0,0,190" TextWrapping="Wrap" Text="Hilling Time:" RenderTransformOrigin="0.717,2.796" VerticalAlignment="Bottom"/>
+        	<TextBlock x:Name="HillingTxt" Margin="166,0,76,190" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+        	<TextBlock x:Name="HarvestingLbl" HorizontalAlignment="Left" Margin="10,0,0,137" TextWrapping="Wrap" Text="Harvesting Time:" RenderTransformOrigin="0.717,2.796" VerticalAlignment="Bottom"/>
+        	<TextBlock x:Name="HarvestingTxt" Margin="166,0,76,137" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+        	<TextBlock x:Name="FertilizingTimeTxt" Margin="166,0,76,87" TextWrapping="Wrap" Text="CropName" VerticalAlignment="Bottom"/>
+        	<TextBlock x:Name="FertilizingTimeLbl" HorizontalAlignment="Left" Margin="10,0,0,87" TextWrapping="Wrap" Text="Fertilizing Time:" RenderTransformOrigin="0.717,2.796" VerticalAlignment="Bottom"/>
+        	<Image x:Name="AvatarImg" HorizontalAlignment="Right" Height="166" Margin="0,28,8,0" VerticalAlignment="Top" Width="140"/>
+        	<TextBlock x:Name="AltitudeLbl" HorizontalAlignment="Left" Margin="10,262,0,0" TextWrapping="Wrap" Text="Altitude:" RenderTransformOrigin="0.717,2.796" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="AltitudeTxt" Margin="166,262,76,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        	<TextBlock x:Name="AreaSizeLbl" HorizontalAlignment="Left" Margin="10,293,0,287" TextWrapping="Wrap" Text="Area Size:" RenderTransformOrigin="0.717,2.796" d:LayoutOverrides="Height"/>
+        	<TextBlock x:Name="AreaSizeTxt" Margin="166,293,76,287" TextWrapping="Wrap" d:LayoutOverrides="Height"/></Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

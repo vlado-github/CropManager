@@ -20,6 +20,7 @@ namespace PhoneApp1.ServiceRepository
         CropModel cropModel = null;
         Func<int, int> insertCropCallback = null;
         Action<List<CropModel>> getAllCropsCallback = null;
+        Action<CropModel> getCropByIdCallback = null;
 
         // Save crop data
         public void saveCropData(Func<int,int> callback, CropModel cropModel)
@@ -34,9 +35,10 @@ namespace PhoneApp1.ServiceRepository
         }
 
         // Return crop data by id
-        public void getCropDataById(int id)
+        public void getCropDataById(Action<CropModel> callback, int id)
         {
             CropServiceClient cropSvc = new CropServiceClient();
+            getCropByIdCallback = callback;
             cropSvc.SelectCropByIdAsync(id);
             cropSvc.SelectCropByIdCompleted += new EventHandler
             <SelectCropByIdCompletedEventArgs>(cropSvc_SelectCropByIdCompleted);
@@ -54,6 +56,8 @@ namespace PhoneApp1.ServiceRepository
         private void cropSvc_SelectCropByIdCompleted(object sender, SelectCropByIdCompletedEventArgs e)
         {
             crop = e.Result;
+            CropModel cm = mapCropToCropModel(crop);
+            getCropByIdCallback(cm);
         }
 
         private void cropSvc_InsertCropDataCompleted(object sender, InsertCropDataCompletedEventArgs e)
@@ -99,6 +103,7 @@ namespace PhoneApp1.ServiceRepository
         private CropModel mapCropToCropModel(Crop cm)
         {
             CropModel crop = new CropModel();
+            crop.Id = cm.cropid;
             crop.Name = cm.name;
             crop.Type = cm.croptype;
             crop.TimeOfPlanting = cm.timeofplanting;

@@ -116,6 +116,9 @@
     <Compile Include="Views\CropDetails.xaml.cs">
       <DependentUpon>CropDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CropDetailsPage.xaml.cs">
+      <DependentUpon>CropDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CropManager.xaml.cs">
       <DependentUpon>CropManager.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CropDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CropDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

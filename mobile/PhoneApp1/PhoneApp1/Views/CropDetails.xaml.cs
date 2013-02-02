@@ -29,5 +29,12 @@ namespace PhoneApp1.Views
         {
             cropPicker.ItemsSource = allCrops;
         }
+
+        // Show details button
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            int selectedCropId = ((CropModel)cropPicker.SelectedItem).Id;
+            NavigationService.Navigate(new Uri("/CropDetailsPage.xaml?parameter="+selectedCropId, UriKind.Relative));
+        }
     }
 }
