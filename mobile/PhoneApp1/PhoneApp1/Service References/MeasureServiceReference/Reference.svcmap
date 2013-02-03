@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="29d13727-81b3-4fda-9f26-ed48a497e32e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/FieldMeasureService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FieldMeasureService.xsd" MetadataType="Schema" ID="fd812742-def4-417b-9073-a1548ab1cacb" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FieldMeasureService.wsdl" MetadataType="Wsdl" ID="da86ae6c-9e63-47f8-9170-d29d4723131d" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?wsdl" />
+    <MetadataFile FileName="FieldMeasureService1.xsd" MetadataType="Schema" ID="cfed275f-5700-42d9-b2de-4f41847004ce" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FieldMeasureService2.xsd" MetadataType="Schema" ID="9878b9bc-5340-4674-8d92-ec72967654d6" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FieldMeasureService.disco" MetadataType="Disco" ID="dc6e9dfc-241b-4d6c-aa10-e2f8ebb52cb2" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

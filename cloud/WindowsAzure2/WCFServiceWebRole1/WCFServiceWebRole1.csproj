@@ -100,10 +100,14 @@
       <DependentUpon>CropService.svc</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
+    <Compile Include="FieldMeasureService.svc.cs">
+      <DependentUpon>FieldMeasureService.svc</DependentUpon>
+    </Compile>
     <Compile Include="FieldService.svc.cs">
       <DependentUpon>FieldService.svc</DependentUpon>
     </Compile>
     <Compile Include="ICropService.cs" />
+    <Compile Include="IFieldMeasureService.cs" />
     <Compile Include="IFieldService.cs" />
     <Compile Include="IIllnessService.cs" />
     <Compile Include="IJournalService.cs" />
@@ -132,6 +136,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FieldMeasureService.svc" />
     <Content Include="FieldService.svc" />
     <Content Include="IllnessService.svc" />
     <Content Include="JournalService.svc" />

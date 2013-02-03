@@ -30,6 +30,10 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_IFieldMeasureService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
         </bindings>
         <client>
@@ -55,6 +59,9 @@
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITimePeriodsService"
                 contract="TimePeriodsServiceReference.ITimePeriodsService"
                 name="BasicHttpBinding_ITimePeriodsService" />
+            <endpoint address="http://127.0.0.1:81/FieldMeasureService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IFieldMeasureService"
+                contract="MeasureServiceReference.IFieldMeasureService" name="BasicHttpBinding_IFieldMeasureService" />
         </client>
     </system.serviceModel>
 </configuration>

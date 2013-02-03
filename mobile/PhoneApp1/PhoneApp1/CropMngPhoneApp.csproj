@@ -56,6 +56,7 @@
     <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows" />
@@ -72,8 +73,14 @@
     </Compile>
     <Compile Include="Models\CropModel.cs" />
     <Compile Include="Models\FieldModel.cs" />
+    <Compile Include="Models\MapFieldModel.cs" />
+    <Compile Include="Models\MapModel.cs" />
+    <Compile Include="Models\MeasureModel.cs" />
     <Compile Include="Models\TimePeriodModel.cs" />
     <Compile Include="SerivceRepository\FieldRepository.cs" />
+    <Compile Include="SerivceRepository\MapFieldRepository.cs" />
+    <Compile Include="SerivceRepository\MapRepository.cs" />
+    <Compile Include="SerivceRepository\MeasureRepository.cs" />
     <Compile Include="SerivceRepository\TimePeriodsRepository.cs" />
     <Compile Include="Service References\CropServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -105,6 +112,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\MeasureServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\TimePeriodsServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +124,9 @@
     </Compile>
     <Compile Include="Views\AddCrop.xaml.cs">
       <DependentUpon>AddCrop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddField.xaml.cs">
+      <DependentUpon>AddField.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CropDetails.xaml.cs">
       <DependentUpon>CropDetails.xaml</DependentUpon>
@@ -137,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="Views\AddCrop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,6 +244,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\MeasureServiceReference\FieldMeasureService.wsdl" />
+    <None Include="Service References\MeasureServiceReference\FieldMeasureService.xsd" />
+    <None Include="Service References\MeasureServiceReference\FieldMeasureService1.xsd" />
+    <None Include="Service References\MeasureServiceReference\FieldMeasureService2.xsd" />
+    <None Include="Service References\MeasureServiceReference\PhoneApp1.MeasureServiceReference.Measure.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TimePeriodsServiceReference\PhoneApp1.TimePeriodsServiceReference.TimePeriod.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -232,6 +258,13 @@
     <None Include="Service References\TimePeriodsServiceReference\configuration91.svcinfo" />
     <None Include="Service References\TimePeriodsServiceReference\configuration.svcinfo" />
     <None Include="Service References\TimePeriodsServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MeasureServiceReference\FieldMeasureService.disco" />
+    <None Include="Service References\MeasureServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\MeasureServiceReference\configuration.svcinfo" />
+    <None Include="Service References\MeasureServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -285,6 +318,7 @@
     <WCFMetadataStorage Include="Service References\JournalServiceReference\" />
     <WCFMetadataStorage Include="Service References\MapFieldServiceReference\" />
     <WCFMetadataStorage Include="Service References\MapServiceReference\" />
+    <WCFMetadataStorage Include="Service References\MeasureServiceReference\" />
     <WCFMetadataStorage Include="Service References\TimePeriodsServiceReference\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

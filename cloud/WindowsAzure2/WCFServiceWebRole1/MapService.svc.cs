@@ -22,9 +22,9 @@ namespace WCFServiceWebRole1
             {
                 SqlCommand cmd = new SqlCommand("InsertMap", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@name", map.Longitude));
-                cmd.Parameters.Add(new SqlParameter("@altitude", map.Latitude));
-                cmd.Parameters.Add(new SqlParameter("@area_size", map.FieldId));
+                cmd.Parameters.Add(new SqlParameter("@longitude", map.Longitude));
+                cmd.Parameters.Add(new SqlParameter("@latitude", map.Latitude));
+                cmd.Parameters.Add(new SqlParameter("@field_id_fk", map.FieldId));
 
                 con.Open();
                 //cmd.ExecuteNonQuery();

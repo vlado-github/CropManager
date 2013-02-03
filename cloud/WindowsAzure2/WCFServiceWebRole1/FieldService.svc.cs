@@ -26,8 +26,8 @@ namespace WCFServiceWebRole1
                 cmd.Parameters.Add(new SqlParameter("@altitude", field.Altitude));
                 cmd.Parameters.Add(new SqlParameter("@area_size", field.AreaSize));
                 cmd.Parameters.Add(new SqlParameter("@area_size_measure", field.AreaSizeMeasure));
-                cmd.Parameters.Add(new SqlParameter("@map_id_fk", field.MapId));
-                cmd.Parameters.Add(new SqlParameter("@crop_id_fk", field.CropId));
+                //cmd.Parameters.Add(new SqlParameter("@map_id_fk", field.MapId));
+                //cmd.Parameters.Add(new SqlParameter("@crop_id_fk", field.CropId));
                 
                 con.Open();
                 //cmd.ExecuteNonQuery();

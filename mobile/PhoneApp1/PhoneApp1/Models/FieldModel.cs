@@ -10,6 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 using PhoneApp1.SerivceRepository;
+using System.Device.Location;
 
 namespace PhoneApp1.Models
 {
@@ -17,8 +18,10 @@ namespace PhoneApp1.Models
     {
         public delegate void GetAllFieldsCallback(List<FieldModel> fields);
         public delegate void GetFieldByIdCallback(FieldModel field);
+        public delegate void SaveFieldCallback(int id);
         Action<List<FieldModel>> ViewCallback = null;
         Action<FieldModel> ViewFieldByIdCallback = null;
+        Action<int> ViewSaveFieldCallback = null;
         List<FieldModel> allFields = new List<FieldModel>();
 
         public int Id { get; set; }
@@ -45,6 +48,14 @@ namespace PhoneApp1.Models
             fieldRepository.getFieldById(new Action<FieldModel>(handler),id);
         }
 
+        public void SaveField(Action<int> callback, FieldModel fieldModel)
+        {
+            FieldRepository fieldRepository = new FieldRepository();
+            ViewSaveFieldCallback = callback;
+            SaveFieldCallback handler = new SaveFieldCallback(SaveFieldCompleted);
+            fieldRepository.saveField(new Action<int>(handler), fieldModel);
+        }
+
         public void GetAllFieldsCompleted(List<FieldModel> fields)
         {
             allFields = fields;
@@ -54,6 +65,11 @@ namespace PhoneApp1.Models
         public void GetFieldByIdCompleted(FieldModel fm)
         {
             ViewFieldByIdCallback(fm);
+        }
+
+        public void SaveFieldCompleted(int id)
+        {
+            ViewSaveFieldCallback(id);
         }
 
         public override string ToString()
