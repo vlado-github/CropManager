@@ -21,6 +21,7 @@ namespace PhoneApp1.SerivceRepository
         private List<int> ids = new List<int>();
 
         public Action<List<int>> SaveCallback;
+        public Action<MapModel> GetMapCallback;
 
         public void SaveMap(Action<List<int>> callback, List<MapModel> mapModels)
         {
@@ -34,6 +35,22 @@ namespace PhoneApp1.SerivceRepository
                 Map map =MappingMapModelToMap(mm);
                 mapSvc.InsertMapAsync(map);
             }
+        }
+
+        public void GetMap(Action<MapModel> callback, int mapId)
+        {
+            MapServiceClient mapSvc = new MapServiceClient();
+            GetMapCallback = callback;
+            mapSvc.SelectMapByIdAsync(mapId);
+            mapSvc.SelectMapByIdCompleted += new EventHandler
+                <SelectMapByIdCompletedEventArgs>(mapSvc_SelectMapByIdCompleted);
+        }
+
+        public void mapSvc_SelectMapByIdCompleted(object sender, SelectMapByIdCompletedEventArgs e)
+        {
+            Map map = e.Result;
+            MapModel mapModel = MappingMapToMapModel(map);
+            GetMapCallback(mapModel);
         }
 
         public void mapSvc_InsertMapCompleted(object sender, InsertMapCompletedEventArgs e)
@@ -54,6 +71,16 @@ namespace PhoneApp1.SerivceRepository
             map.latitude = mapModel.Latitude;
 
             return map;
+        }
+
+        private MapModel MappingMapToMapModel(Map map)
+        {
+            MapModel mapModel = new MapModel();
+            mapModel.MapId = map.mapid;
+            mapModel.Latitude = map.latitude;
+            mapModel.Longitude = map.longitude;
+
+            return mapModel;
         }
     }
 }

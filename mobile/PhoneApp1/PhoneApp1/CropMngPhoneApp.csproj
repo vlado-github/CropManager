@@ -140,6 +140,12 @@
     <Compile Include="Views\DeleteCrop.xaml.cs">
       <DependentUpon>DeleteCrop.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FieldDetails.xaml.cs">
+      <DependentUpon>FieldDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FieldDetailsPage.xaml.cs">
+      <DependentUpon>FieldDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -172,6 +178,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DeleteCrop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FieldDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FieldDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

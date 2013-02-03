@@ -17,6 +17,7 @@ namespace PhoneApp1.SerivceRepository
     public class MapFieldRepository
     {
         Action<List<int>> SaveCallback = null;
+        Action<List<int>> LoadMapIdsCallback = null;
         List<int> ids = new List<int>();
         int listSize = 0;
 
@@ -34,6 +35,15 @@ namespace PhoneApp1.SerivceRepository
             }
         }
 
+        public void GetMapIds(Action<List<int>> callback, int fieldId)
+        {
+            MapFieldServiceClient mapFieldSvc = new MapFieldServiceClient();
+            LoadMapIdsCallback = callback;
+            mapFieldSvc.SelectMapRecordsByFieldIdAsync(fieldId);
+            mapFieldSvc.SelectMapRecordsByFieldIdCompleted += new EventHandler
+                <SelectMapRecordsByFieldIdCompletedEventArgs>(mapFieldSvc_SelectMapRecordsByFieldIdCompleted);
+        }
+
         public void  mapFieldSvc_InsertMapFieldCompleted(object sender, InsertMapFieldCompletedEventArgs e)
         {
  	        ids.Add(e.Result);
@@ -41,6 +51,13 @@ namespace PhoneApp1.SerivceRepository
             {
                 SaveCallback(ids);
             }
+        }
+
+        public void mapFieldSvc_SelectMapRecordsByFieldIdCompleted(object sender, SelectMapRecordsByFieldIdCompletedEventArgs e)
+        {
+            IEnumerable<int> ids = (IEnumerable<int>)e.Result;
+            List<int> idsList = new List<int>(ids);
+            LoadMapIdsCallback(idsList);
         }
 
         private MapField MappingMapFieldModelToMapField(MapFieldModel mfm)

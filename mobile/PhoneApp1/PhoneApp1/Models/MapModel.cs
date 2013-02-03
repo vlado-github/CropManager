@@ -16,7 +16,9 @@ namespace PhoneApp1.Models
     public class MapModel
     {
         public delegate void SaveMapCallback(List<int> id);
+        public delegate void GetMapCallback(MapModel mapModel);
         Action<List<int>> ViewSaveCallback = null;
+        Action<MapModel> ViewLoadMapCallback = null;
 
         public int MapId { get; set; }
         public double Longitude { get; set; }
@@ -30,9 +32,22 @@ namespace PhoneApp1.Models
             mapRepository.SaveMap(new Action<List<int>>(handler), mapModels);
         }
 
+        public void GetMapById(Action<MapModel> callback, int mapId)
+        {
+            MapRepository mapRepository = new MapRepository();
+            ViewLoadMapCallback = callback;
+            GetMapCallback handler = new GetMapCallback(GetMapCompleted);
+            mapRepository.GetMap(new Action<MapModel>(handler), mapId);
+        }
+
         public void SaveMapCompleted(List<int> id)
         {
             ViewSaveCallback(id);
+        }
+
+        public void GetMapCompleted(MapModel mapModel)
+        {
+            ViewLoadMapCallback(mapModel);
         }
     }
 }

@@ -52,7 +52,7 @@
             <controls:PanoramaItem Header="Select Field">
                 <Grid>
                     <TextBlock Height="30" HorizontalAlignment="Left" Margin="29,106,0,0" Name="textBlock5" Text="Pick field:" VerticalAlignment="Top" />
-                    <toolkit:ListPicker Name="fieldPicker" ItemsSource="{Binding FieldModel}" ItemTemplate="{StaticResource FieldsItemTemplate}" Margin="119,91,23,273" Height="134" Width="278">
+                    <toolkit:ListPicker Name="fieldPicker" ItemsSource="{Binding FieldModel}" ItemTemplate="{StaticResource FieldsItemTemplate}" Margin="119,91,23,11" Height="396" Width="278">
                         
                     </toolkit:ListPicker>
                     <Slider Height="84" HorizontalAlignment="Left" Margin="24,218,0,0" Name="coverageSlider" VerticalAlignment="Top" Width="364" Value="50" Maximum="100" />

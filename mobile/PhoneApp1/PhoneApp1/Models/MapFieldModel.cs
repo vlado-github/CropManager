@@ -16,7 +16,9 @@ namespace PhoneApp1.Models
     public class MapFieldModel
     {
         public delegate void SaveMapFieldCallback(List<int> id);
+        public delegate void LoadMapIdsCallback(List<int> ids);
         Action<List<int>> ViewSaveCallback = null;
+        Action<List<int>> ViewLoadMapIdsCallback = null;
 
         public int MapFieldId { get; set; }
         public int FieldId { get; set; }
@@ -30,9 +32,22 @@ namespace PhoneApp1.Models
             mapFieldRep.SaveMapField(new Action<List<int>>(handler), mapFields);
         }
 
+        public void GetMapIds(Action<List<int>> callback, int fieldId)
+        {
+            MapFieldRepository mapFieldRep = new MapFieldRepository();
+            ViewLoadMapIdsCallback = callback;
+            LoadMapIdsCallback handler = new LoadMapIdsCallback(LoadMapIdsCompleted);
+            mapFieldRep.GetMapIds(new Action<List<int>>(handler), fieldId);
+        }
+
         public void SaveMapFieldCompleted(List<int> ids)
         {
             ViewSaveCallback(ids);
+        }
+
+        public void LoadMapIdsCompleted(List<int> ids)
+        {
+            ViewLoadMapIdsCallback(ids);
         }
     }
 }
