@@ -201,9 +201,12 @@
     <Content Include="Resources\journal.png" />
     <Content Include="Resources\notification.png" />
     <Content Include="Resources\weather.png" />
-    <None Include="Service References\CropServiceReference\CropService.disco" />
     <None Include="Service References\CropServiceReference\configuration91.svcinfo" />
     <None Include="Service References\CropServiceReference\configuration.svcinfo" />
+    <None Include="Service References\CropServiceReference\CropService.wsdl" />
+    <None Include="Service References\CropServiceReference\CropService.xsd" />
+    <None Include="Service References\CropServiceReference\CropService1.xsd" />
+    <None Include="Service References\CropServiceReference\CropService2.xsd" />
     <None Include="Service References\CropServiceReference\PhoneApp1.CropServiceReference.Crop.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -211,9 +214,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\FieldServiceReference\FieldService.disco" />
     <None Include="Service References\FieldServiceReference\configuration91.svcinfo" />
     <None Include="Service References\FieldServiceReference\configuration.svcinfo" />
+    <None Include="Service References\FieldServiceReference\FieldService.wsdl" />
+    <None Include="Service References\FieldServiceReference\FieldService.xsd" />
+    <None Include="Service References\FieldServiceReference\FieldService1.xsd" />
+    <None Include="Service References\FieldServiceReference\FieldService2.xsd" />
     <None Include="Service References\FieldServiceReference\PhoneApp1.FieldServiceReference.Field.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -221,9 +227,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\IllnessServiceReference\IllnessService.disco" />
     <None Include="Service References\IllnessServiceReference\configuration91.svcinfo" />
     <None Include="Service References\IllnessServiceReference\configuration.svcinfo" />
+    <None Include="Service References\IllnessServiceReference\IllnessService.wsdl" />
+    <None Include="Service References\IllnessServiceReference\IllnessService.xsd" />
+    <None Include="Service References\IllnessServiceReference\IllnessService1.xsd" />
+    <None Include="Service References\IllnessServiceReference\IllnessService2.xsd" />
     <None Include="Service References\IllnessServiceReference\PhoneApp1.IllnessServiceReference.Illness.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -231,9 +240,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\JournalServiceReference\JournalService.disco" />
     <None Include="Service References\JournalServiceReference\configuration91.svcinfo" />
     <None Include="Service References\JournalServiceReference\configuration.svcinfo" />
+    <None Include="Service References\JournalServiceReference\JournalService.wsdl" />
+    <None Include="Service References\JournalServiceReference\JournalService.xsd" />
+    <None Include="Service References\JournalServiceReference\JournalService1.xsd" />
+    <None Include="Service References\JournalServiceReference\JournalService2.xsd" />
     <None Include="Service References\JournalServiceReference\PhoneApp1.JournalServiceReference.Journal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -241,16 +253,23 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\MapFieldServiceReference\MapFieldService.disco" />
     <None Include="Service References\MapFieldServiceReference\configuration91.svcinfo" />
     <None Include="Service References\MapFieldServiceReference\configuration.svcinfo" />
+    <None Include="Service References\MapFieldServiceReference\MapFieldService.wsdl" />
+    <None Include="Service References\MapFieldServiceReference\MapFieldService.xsd" />
+    <None Include="Service References\MapFieldServiceReference\MapFieldService1.xsd" />
+    <None Include="Service References\MapFieldServiceReference\MapFieldService2.xsd" />
+    <None Include="Service References\MapFieldServiceReference\MapFieldService3.xsd" />
     <None Include="Service References\MapFieldServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\MapServiceReference\MapService.disco" />
     <None Include="Service References\MapServiceReference\configuration91.svcinfo" />
     <None Include="Service References\MapServiceReference\configuration.svcinfo" />
+    <None Include="Service References\MapServiceReference\MapService.wsdl" />
+    <None Include="Service References\MapServiceReference\MapService.xsd" />
+    <None Include="Service References\MapServiceReference\MapService1.xsd" />
+    <None Include="Service References\MapServiceReference\MapService2.xsd" />
     <None Include="Service References\MapServiceReference\PhoneApp1.MapServiceReference.Map.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -268,46 +287,27 @@
     <None Include="Service References\TimePeriodsServiceReference\PhoneApp1.TimePeriodsServiceReference.TimePeriod.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TimePeriodsServiceReference\TimePeriodsService.disco" />
     <None Include="Service References\TimePeriodsServiceReference\configuration91.svcinfo" />
     <None Include="Service References\TimePeriodsServiceReference\configuration.svcinfo" />
     <None Include="Service References\TimePeriodsServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\MeasureServiceReference\FieldMeasureService.disco" />
     <None Include="Service References\MeasureServiceReference\configuration91.svcinfo" />
     <None Include="Service References\MeasureServiceReference\configuration.svcinfo" />
     <None Include="Service References\MeasureServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\CropServiceReference\CropService.disco" />
+    <None Include="Service References\FieldServiceReference\FieldService.disco" />
+    <None Include="Service References\IllnessServiceReference\IllnessService.disco" />
+    <None Include="Service References\JournalServiceReference\JournalService.disco" />
+    <None Include="Service References\MapFieldServiceReference\MapFieldService.disco" />
+    <None Include="Service References\MapServiceReference\MapService.disco" />
+    <None Include="Service References\MeasureServiceReference\FieldMeasureService.disco" />
+    <None Include="Service References\TimePeriodsServiceReference\TimePeriodsService.disco" />
     <Content Include="ServiceReferences.ClientConfig" />
-    <None Include="Service References\CropServiceReference\CropService.wsdl" />
-    <None Include="Service References\CropServiceReference\CropService.xsd" />
-    <None Include="Service References\CropServiceReference\CropService1.xsd" />
-    <None Include="Service References\CropServiceReference\CropService2.xsd" />
-    <None Include="Service References\FieldServiceReference\FieldService.wsdl" />
-    <None Include="Service References\FieldServiceReference\FieldService.xsd" />
-    <None Include="Service References\FieldServiceReference\FieldService1.xsd" />
-    <None Include="Service References\FieldServiceReference\FieldService2.xsd" />
-    <None Include="Service References\IllnessServiceReference\IllnessService.wsdl" />
-    <None Include="Service References\IllnessServiceReference\IllnessService.xsd" />
-    <None Include="Service References\IllnessServiceReference\IllnessService1.xsd" />
-    <None Include="Service References\IllnessServiceReference\IllnessService2.xsd" />
-    <None Include="Service References\JournalServiceReference\JournalService.wsdl" />
-    <None Include="Service References\JournalServiceReference\JournalService.xsd" />
-    <None Include="Service References\JournalServiceReference\JournalService1.xsd" />
-    <None Include="Service References\JournalServiceReference\JournalService2.xsd" />
-    <None Include="Service References\MapFieldServiceReference\MapFieldService.wsdl" />
-    <None Include="Service References\MapFieldServiceReference\MapFieldService.xsd" />
-    <None Include="Service References\MapFieldServiceReference\MapFieldService1.xsd" />
-    <None Include="Service References\MapFieldServiceReference\MapFieldService2.xsd" />
-    <None Include="Service References\MapFieldServiceReference\MapFieldService3.xsd" />
-    <None Include="Service References\MapServiceReference\MapService.wsdl" />
-    <None Include="Service References\MapServiceReference\MapService.xsd" />
-    <None Include="Service References\MapServiceReference\MapService1.xsd" />
-    <None Include="Service References\MapServiceReference\MapService2.xsd" />
     <None Include="Service References\TimePeriodsServiceReference\TimePeriodsService.wsdl" />
     <None Include="Service References\TimePeriodsServiceReference\TimePeriodsService.xsd" />
     <None Include="Service References\TimePeriodsServiceReference\TimePeriodsService1.xsd" />

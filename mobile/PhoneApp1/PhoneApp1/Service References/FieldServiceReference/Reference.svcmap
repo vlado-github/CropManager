@@ -23,11 +23,11 @@
     <MetadataSource Address="http://127.0.0.1:81/FieldService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FieldService.xsd" MetadataType="Schema" ID="d0a2ea55-9547-410c-8e71-6e747c924bed" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd1" />
-    <MetadataFile FileName="FieldService1.xsd" MetadataType="Schema" ID="485c7736-56f6-4b35-b989-70284e915e9d" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd0" />
-    <MetadataFile FileName="FieldService.wsdl" MetadataType="Wsdl" ID="9931f416-a007-444c-bc37-ce2304c377cf" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?wsdl" />
-    <MetadataFile FileName="FieldService.disco" MetadataType="Disco" ID="d12facd0-afd7-454f-a83a-530ed20faefb" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?disco" />
-    <MetadataFile FileName="FieldService2.xsd" MetadataType="Schema" ID="3a1125b4-044d-4a69-8ab2-89ebb7d1c6b7" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FieldService.xsd" MetadataType="Schema" ID="8685f0c6-c8e2-48fa-b835-f22ce41732e2" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FieldService1.xsd" MetadataType="Schema" ID="fe89973b-4157-44ae-b3fa-8928f54c47b9" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FieldService.wsdl" MetadataType="Wsdl" ID="efbb92f9-2216-483c-81ff-ff4fc71837e5" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?wsdl" />
+    <MetadataFile FileName="FieldService.disco" MetadataType="Disco" ID="1fd028de-ffc0-46e4-9ac3-a0dbe6205977" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?disco" />
+    <MetadataFile FileName="FieldService2.xsd" MetadataType="Schema" ID="3c33a4ed-301c-41b7-ad54-077eff342c9b" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -55,13 +55,13 @@
             <endpoint address="http://127.0.0.1:81/MapService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_IMapService" contract="MapServiceReference.IMapService"
                 name="BasicHttpBinding_IMapService" />
+            <endpoint address="http://127.0.0.1:81/FieldMeasureService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IFieldMeasureService"
+                contract="MeasureServiceReference.IFieldMeasureService" name="BasicHttpBinding_IFieldMeasureService" />
             <endpoint address="http://127.0.0.1:81/TimePeriodsService.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITimePeriodsService"
                 contract="TimePeriodsServiceReference.ITimePeriodsService"
                 name="BasicHttpBinding_ITimePeriodsService" />
-            <endpoint address="http://127.0.0.1:81/FieldMeasureService.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IFieldMeasureService"
-                contract="MeasureServiceReference.IFieldMeasureService" name="BasicHttpBinding_IFieldMeasureService" />
         </client>
     </system.serviceModel>
 </configuration>

@@ -23,11 +23,11 @@
     <MetadataSource Address="http://127.0.0.1:81/MapService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MapService.disco" MetadataType="Disco" ID="048fcb6b-f63a-4956-8bc3-9c3246402ad1" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?disco" />
-    <MetadataFile FileName="MapService.wsdl" MetadataType="Wsdl" ID="24f12154-5367-4d64-a684-16de43ac3474" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?wsdl" />
-    <MetadataFile FileName="MapService.xsd" MetadataType="Schema" ID="b7934fbe-0c29-46b0-85b1-f34e648f2219" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd0" />
-    <MetadataFile FileName="MapService1.xsd" MetadataType="Schema" ID="d0ef8be3-6be7-48ff-8fdb-8e7cbb493973" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd2" />
-    <MetadataFile FileName="MapService2.xsd" MetadataType="Schema" ID="6a24f04e-642d-4eef-888d-65060aaec90d" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MapService.disco" MetadataType="Disco" ID="6dd5cc8c-c97a-4fce-a407-ee387f59b9b7" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?disco" />
+    <MetadataFile FileName="MapService.wsdl" MetadataType="Wsdl" ID="bdfeefdb-38a8-4b15-8b98-f0566b8eaf7e" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?wsdl" />
+    <MetadataFile FileName="MapService.xsd" MetadataType="Schema" ID="db04f5d0-4e90-4e01-9a81-27fa717cdc8c" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MapService1.xsd" MetadataType="Schema" ID="2c7333a2-d41a-4dc8-9a11-5b9dad84070a" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MapService2.xsd" MetadataType="Schema" ID="1fed27d7-874b-4ad1-b40a-20675336da23" SourceId="1" SourceUrl="http://127.0.0.1:81/MapService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

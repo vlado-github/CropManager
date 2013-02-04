@@ -23,11 +23,11 @@
     <MetadataSource Address="http://127.0.0.1:81/TimePeriodsService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TimePeriodsService.xsd" MetadataType="Schema" ID="3004ffe3-b32c-4b95-8acb-a620a58482d8" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?xsd=xsd2" />
-    <MetadataFile FileName="TimePeriodsService1.xsd" MetadataType="Schema" ID="d30e587e-e5f3-4644-b2c4-faa934af2ea2" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?xsd=xsd1" />
-    <MetadataFile FileName="TimePeriodsService.wsdl" MetadataType="Wsdl" ID="ff770496-c522-485a-a852-9a05dff853b6" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?wsdl" />
-    <MetadataFile FileName="TimePeriodsService.disco" MetadataType="Disco" ID="27db8fec-18dc-4889-8888-975cb22a790c" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?disco" />
-    <MetadataFile FileName="TimePeriodsService2.xsd" MetadataType="Schema" ID="436c669f-c748-4aab-8545-939eafbebd11" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TimePeriodsService.xsd" MetadataType="Schema" ID="423ae8c8-cefa-4500-97ae-9a32c9fd32dc" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TimePeriodsService1.xsd" MetadataType="Schema" ID="a7d00d9a-3d13-461b-a292-28daae1cc610" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TimePeriodsService.wsdl" MetadataType="Wsdl" ID="63b35bd2-cab0-40e0-ab7f-d8768d86e9f8" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?wsdl" />
+    <MetadataFile FileName="TimePeriodsService.disco" MetadataType="Disco" ID="b6a698fe-a614-48da-85c7-248ee0429aa3" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?disco" />
+    <MetadataFile FileName="TimePeriodsService2.xsd" MetadataType="Schema" ID="c585557c-4c21-486c-aba2-970791b86eb9" SourceId="1" SourceUrl="http://127.0.0.1:81/TimePeriodsService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -23,11 +23,11 @@
     <MetadataSource Address="http://127.0.0.1:81/CropService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CropService.xsd" MetadataType="Schema" ID="fcf86cfd-a451-4e39-a413-8507bc0a5f38" SourceId="1" SourceUrl="http://127.0.0.1:81/CropService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CropService.wsdl" MetadataType="Wsdl" ID="d8ad4f39-7e3b-4222-a726-db99e3e15604" SourceId="1" SourceUrl="http://127.0.0.1:81/CropService.svc?wsdl" />
-    <MetadataFile FileName="CropService1.xsd" MetadataType="Schema" ID="413fab30-9ae4-40f9-b1ce-ee2af76d3803" SourceId="1" SourceUrl="http://127.0.0.1:81/CropService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CropService.disco" MetadataType="Disco" ID="a59f947f-836e-468e-b185-853dc1ca7186" SourceId="1" SourceUrl="http://127.0.0.1:81/CropService.svc?disco" />
-    <MetadataFile FileName="CropService2.xsd" MetadataType="Schema" ID="82ea16cb-b538-4dd7-ad39-4a1ff4994aaa" SourceId="1" SourceUrl="http://127.0.0.1:81/CropService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CropService.xsd" MetadataType="Schema" ID="f272c214-e335-442e-a8e1-47dddec62047" SourceId="1" SourceUrl="http://127.0.0.1:81/CropService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CropService.wsdl" MetadataType="Wsdl" ID="218dca1d-6a3c-47c8-80d1-c55ec708abe1" SourceId="1" SourceUrl="http://127.0.0.1:81/CropService.svc?wsdl" />
+    <MetadataFile FileName="CropService1.xsd" MetadataType="Schema" ID="2686f4bd-face-4c7d-a564-fed7a9733a72" SourceId="1" SourceUrl="http://127.0.0.1:81/CropService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CropService.disco" MetadataType="Disco" ID="15ea3157-7e30-48a3-a7ec-973ac7ac936d" SourceId="1" SourceUrl="http://127.0.0.1:81/CropService.svc?disco" />
+    <MetadataFile FileName="CropService2.xsd" MetadataType="Schema" ID="5751b9b7-6387-45ab-b52b-0c31854ea4a0" SourceId="1" SourceUrl="http://127.0.0.1:81/CropService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

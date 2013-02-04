@@ -23,11 +23,11 @@
     <MetadataSource Address="http://127.0.0.1:81/JournalService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="JournalService.disco" MetadataType="Disco" ID="2e6bfb0f-0719-4f4a-b4f5-58e8b218819d" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?disco" />
-    <MetadataFile FileName="JournalService.xsd" MetadataType="Schema" ID="aab01eb1-22be-4fac-ba4e-89fc4ec40f5a" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?xsd=xsd2" />
-    <MetadataFile FileName="JournalService.wsdl" MetadataType="Wsdl" ID="b30c0a48-e681-46e7-9ed4-a5c508a8ff25" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?wsdl" />
-    <MetadataFile FileName="JournalService1.xsd" MetadataType="Schema" ID="09bbe396-7924-4975-a5ad-19a5d756dd60" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?xsd=xsd0" />
-    <MetadataFile FileName="JournalService2.xsd" MetadataType="Schema" ID="6505cb6b-73ba-449d-b5e7-26fd6d9a75a6" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?xsd=xsd1" />
+    <MetadataFile FileName="JournalService.disco" MetadataType="Disco" ID="ef02392b-4e01-49d6-90f4-8405456b745a" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?disco" />
+    <MetadataFile FileName="JournalService.xsd" MetadataType="Schema" ID="0119f0eb-57af-44a1-8db9-f61a8571577a" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?xsd=xsd2" />
+    <MetadataFile FileName="JournalService.wsdl" MetadataType="Wsdl" ID="3fecaf43-dc9f-45bd-a842-e64423f57c39" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?wsdl" />
+    <MetadataFile FileName="JournalService1.xsd" MetadataType="Schema" ID="4da8993a-c712-4273-8a56-3363c287ca58" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?xsd=xsd0" />
+    <MetadataFile FileName="JournalService2.xsd" MetadataType="Schema" ID="aa9272d5-c7c3-43e4-8600-15bab5ca64ba" SourceId="1" SourceUrl="http://127.0.0.1:81/JournalService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -23,11 +23,11 @@
     <MetadataSource Address="http://127.0.0.1:81/FieldMeasureService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FieldMeasureService.xsd" MetadataType="Schema" ID="fd812742-def4-417b-9073-a1548ab1cacb" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?xsd=xsd1" />
-    <MetadataFile FileName="FieldMeasureService.wsdl" MetadataType="Wsdl" ID="da86ae6c-9e63-47f8-9170-d29d4723131d" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?wsdl" />
-    <MetadataFile FileName="FieldMeasureService1.xsd" MetadataType="Schema" ID="cfed275f-5700-42d9-b2de-4f41847004ce" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?xsd=xsd2" />
-    <MetadataFile FileName="FieldMeasureService2.xsd" MetadataType="Schema" ID="9878b9bc-5340-4674-8d92-ec72967654d6" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?xsd=xsd0" />
-    <MetadataFile FileName="FieldMeasureService.disco" MetadataType="Disco" ID="dc6e9dfc-241b-4d6c-aa10-e2f8ebb52cb2" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?disco" />
+    <MetadataFile FileName="FieldMeasureService.xsd" MetadataType="Schema" ID="bbf629fb-54d8-4eae-bb4e-238e97999136" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FieldMeasureService.wsdl" MetadataType="Wsdl" ID="f86d6e99-9421-4cd9-b3f4-9726b963bbad" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?wsdl" />
+    <MetadataFile FileName="FieldMeasureService1.xsd" MetadataType="Schema" ID="ac60157b-b894-4e2e-a750-02776a139607" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FieldMeasureService2.xsd" MetadataType="Schema" ID="3a8ea623-d0d7-41e2-b829-1d572f6f77e4" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FieldMeasureService.disco" MetadataType="Disco" ID="0784ae4c-4c8a-40b1-9aa7-85b0cd0c68dc" SourceId="1" SourceUrl="http://127.0.0.1:81/FieldMeasureService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

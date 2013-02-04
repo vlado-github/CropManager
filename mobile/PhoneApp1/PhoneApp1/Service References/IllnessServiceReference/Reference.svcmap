@@ -23,11 +23,11 @@
     <MetadataSource Address="http://127.0.0.1:81/IllnessService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="IllnessService.xsd" MetadataType="Schema" ID="d7068bb2-5adf-4c8a-993b-8136e637bc41" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd2" />
-    <MetadataFile FileName="IllnessService1.xsd" MetadataType="Schema" ID="cef877f0-f9a3-4b14-a46a-144d3708aac8" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd1" />
-    <MetadataFile FileName="IllnessService.wsdl" MetadataType="Wsdl" ID="7250a82f-a5ab-4035-8425-759e8d2d0901" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?wsdl" />
-    <MetadataFile FileName="IllnessService2.xsd" MetadataType="Schema" ID="c020ebe2-ba7f-4b22-870a-5bf801657ab5" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd0" />
-    <MetadataFile FileName="IllnessService.disco" MetadataType="Disco" ID="8c8d3587-f5c6-48c4-94f1-8f6a43ef0138" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?disco" />
+    <MetadataFile FileName="IllnessService.xsd" MetadataType="Schema" ID="d99005f7-149b-4de7-bffc-0c88fecd7fa4" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd2" />
+    <MetadataFile FileName="IllnessService1.xsd" MetadataType="Schema" ID="4f943dfe-e0f3-4836-bcc5-74e8286bf6f7" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd1" />
+    <MetadataFile FileName="IllnessService.wsdl" MetadataType="Wsdl" ID="dc954775-5159-42ab-ab36-4208d23b701e" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?wsdl" />
+    <MetadataFile FileName="IllnessService2.xsd" MetadataType="Schema" ID="8266f316-2618-46c3-b5b4-418c312a3493" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?xsd=xsd0" />
+    <MetadataFile FileName="IllnessService.disco" MetadataType="Disco" ID="fd08af2a-d197-4fc9-97d6-3dabaf5ec2a6" SourceId="1" SourceUrl="http://127.0.0.1:81/IllnessService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
