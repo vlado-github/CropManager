@@ -41,12 +41,10 @@
                                     <ColumnDefinition Width="100"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="100"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Image Source="{Binding Photo}" Grid.Row="0"  Grid.Column="0" x:Name="journalImage" Height="100" />
-                                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding DateEntered}" Margin="10,40,300,30" Foreground="Orange" />
-                                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Description}" Margin="10,75,10,0" TextWrapping="Wrap"/>
+                                
+                                <Image Source="{Binding BitmapPhoto}" Grid.Column="0" x:Name="journalImage" Height="100" />
+                                <TextBlock Grid.Column="1" Text="{Binding DateEntered}" Margin="10,40,300,30" Foreground="Orange" />
+                                <TextBlock Grid.Column="1" Text="{Binding Description}" Margin="10,75,10,0" TextWrapping="Wrap"/>
                                 
                             </Grid>
                         </StackPanel>

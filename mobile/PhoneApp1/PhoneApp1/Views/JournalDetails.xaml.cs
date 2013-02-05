@@ -12,6 +12,8 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using PhoneApp1.Models;
 using PhoneApp1.SerivceRepository;
+using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace PhoneApp1.Views
 {
@@ -38,7 +40,20 @@ namespace PhoneApp1.Views
 
         private void GetJournalsByCropIdCompleted(List<JournalModel> journals)
         {
-            journalListBox.ItemsSource = journals;
+            List<JournalModel> journalsWithImage = new List<JournalModel>();
+            foreach (JournalModel jm in journals)
+            {
+                byte[] photoByte = jm.Photo;
+                using (MemoryStream ms = new MemoryStream(photoByte))
+                {
+                    BitmapImage bmpImage = new BitmapImage();
+                    bmpImage.SetSource(ms);
+                    jm.BitmapPhoto = bmpImage;
+                }
+                journalsWithImage.Add(jm);
+            }
+
+            journalListBox.ItemsSource = journalsWithImage.OrderBy(x => x.DateEntered).ToList();
         }
     }
 }
