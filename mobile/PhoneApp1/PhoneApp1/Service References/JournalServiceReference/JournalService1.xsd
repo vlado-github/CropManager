@@ -25,7 +25,7 @@
   <xs:element name="SelectJournalByCropIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" minOccurs="0" name="SelectJournalByCropIdResult" nillable="true" type="q2:Journal" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" minOccurs="0" name="SelectJournalByCropIdResult" nillable="true" type="q2:ArrayOfJournal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -24,7 +24,7 @@ namespace WCFServiceWebRole1
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@date_entered", journal.DateEntered));
                 cmd.Parameters.Add(new SqlParameter("@description", journal.Description));
-                cmd.Parameters.Add(new SqlParameter("@image", @"C:\asdfasd.jpg"));
+                cmd.Parameters.Add(new SqlParameter("@image", journal.JournalImage));
                 cmd.Parameters.Add(new SqlParameter("@crop_id_fk", journal.CropId));
                 
                 con.Open();
@@ -42,9 +42,9 @@ namespace WCFServiceWebRole1
             return id;
         }
 
-        public Journal SelectJournalByCropId(int crop_id)
+        public List<Journal> SelectJournalByCropId(int crop_id)
         {
-            Journal journal = new Journal();
+            List<Journal> journals = new List<Journal>();
             try
             {
                 using (SqlConnection con = DBConnection.GetConnection())
@@ -66,11 +66,13 @@ namespace WCFServiceWebRole1
                     {
                         foreach (DataRow row in cropsTable.Rows)
                         {
+                            Journal journal = new Journal();
                             journal.JournalId = Int16.Parse(row[0].ToString());
                             journal.DateEntered = DateTime.Parse(row[1].ToString());
                             journal.Description = row[2].ToString();
-                            //TODO journal.JournalImage = row[3];
+                            journal.JournalImage = row[3] as byte[];
                             journal.CropId = Int16.Parse(row[4].ToString());
+                            journals.Add(journal);
                         }
                     }
                     con.Close();
@@ -82,7 +84,7 @@ namespace WCFServiceWebRole1
                 Console.WriteLine(e.StackTrace);
             }
 
-            return journal;
+            return journals;
         }
     }
 }

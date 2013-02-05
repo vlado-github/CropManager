@@ -117,7 +117,7 @@ namespace PhoneApp1.JournalServiceReference {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IJournalService/SelectJournalByCropId", ReplyAction="http://tempuri.org/IJournalService/SelectJournalByCropIdResponse")]
         System.IAsyncResult BeginSelectJournalByCropId(int crop_id, System.AsyncCallback callback, object asyncState);
         
-        PhoneApp1.JournalServiceReference.Journal EndSelectJournalByCropId(System.IAsyncResult result);
+        System.Collections.ObjectModel.ObservableCollection<PhoneApp1.JournalServiceReference.Journal> EndSelectJournalByCropId(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -154,10 +154,10 @@ namespace PhoneApp1.JournalServiceReference {
             this.results = results;
         }
         
-        public PhoneApp1.JournalServiceReference.Journal Result {
+        public System.Collections.ObjectModel.ObservableCollection<PhoneApp1.JournalServiceReference.Journal> Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((PhoneApp1.JournalServiceReference.Journal)(this.results[0]));
+                return ((System.Collections.ObjectModel.ObservableCollection<PhoneApp1.JournalServiceReference.Journal>)(this.results[0]));
             }
         }
     }
@@ -291,7 +291,7 @@ namespace PhoneApp1.JournalServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PhoneApp1.JournalServiceReference.Journal PhoneApp1.JournalServiceReference.IJournalService.EndSelectJournalByCropId(System.IAsyncResult result) {
+        System.Collections.ObjectModel.ObservableCollection<PhoneApp1.JournalServiceReference.Journal> PhoneApp1.JournalServiceReference.IJournalService.EndSelectJournalByCropId(System.IAsyncResult result) {
             return base.Channel.EndSelectJournalByCropId(result);
         }
         
@@ -301,7 +301,7 @@ namespace PhoneApp1.JournalServiceReference {
         }
         
         private object[] OnEndSelectJournalByCropId(System.IAsyncResult result) {
-            PhoneApp1.JournalServiceReference.Journal retVal = ((PhoneApp1.JournalServiceReference.IJournalService)(this)).EndSelectJournalByCropId(result);
+            System.Collections.ObjectModel.ObservableCollection<PhoneApp1.JournalServiceReference.Journal> retVal = ((PhoneApp1.JournalServiceReference.IJournalService)(this)).EndSelectJournalByCropId(result);
             return new object[] {
                     retVal};
         }
@@ -427,9 +427,9 @@ namespace PhoneApp1.JournalServiceReference {
                 return _result;
             }
             
-            public PhoneApp1.JournalServiceReference.Journal EndSelectJournalByCropId(System.IAsyncResult result) {
+            public System.Collections.ObjectModel.ObservableCollection<PhoneApp1.JournalServiceReference.Journal> EndSelectJournalByCropId(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                PhoneApp1.JournalServiceReference.Journal _result = ((PhoneApp1.JournalServiceReference.Journal)(base.EndInvoke("SelectJournalByCropId", _args, result)));
+                System.Collections.ObjectModel.ObservableCollection<PhoneApp1.JournalServiceReference.Journal> _result = ((System.Collections.ObjectModel.ObservableCollection<PhoneApp1.JournalServiceReference.Journal>)(base.EndInvoke("SelectJournalByCropId", _args, result)));
                 return _result;
             }
         }

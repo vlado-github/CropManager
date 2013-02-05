@@ -12,12 +12,17 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
 using System.IO;
+using PhoneApp1.Models;
+using System.Windows.Media.Imaging;
 
 namespace PhoneApp1.Views
 {
     public partial class AddJournal : PhoneApplicationPage
     {
         byte[] image = null;
+        int cropId;
+
+        public delegate void SaveJournalCallback(int id);
 
         public AddJournal()
         {
@@ -40,14 +45,31 @@ namespace PhoneApp1.Views
             image = memoryStream.ToArray();
         }
 
-        private void saveBtn_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            
+            base.OnNavigatedTo(e);
+            string cropIdValue = NavigationContext.QueryString["parameter"];
+            cropId = Int16.Parse(cropIdValue);
         }
 
-        private void cancelBtn_Click(object sender, RoutedEventArgs e)
+        private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
-        
+            JournalModel journalModel = new JournalModel();
+            journalModel.CropId = cropId;
+            journalModel.DateEntered = (DateTime) dateOfJournal.Value;
+            journalModel.Description = descTxt.Text;
+            journalModel.Photo = image;
+
+            SaveJournalCallback handler = new SaveJournalCallback(SaveJournalCompleted);
+            journalModel.SaveJournal(new Action<int>(handler), journalModel);
+        }
+
+        private void SaveJournalCompleted(int id)
+        {
+            if (id != 0)
+            {
+                MessageBox.Show("Saved successfully.");
+            }
         }
     }
 }

@@ -31,5 +31,17 @@ namespace PhoneApp1.Views
         {
             cropPicker.ItemsSource = crops;
         }
+
+        private void addBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int selectedCropId = ((CropModel)cropPicker.SelectedItem).Id;
+            NavigationService.Navigate(new Uri("/Views/AddJournal.xaml?parameter=" + selectedCropId, UriKind.Relative));
+        }
+
+        private void readBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int selectedCropId = ((CropModel)cropPicker.SelectedItem).Id;
+            NavigationService.Navigate(new Uri("/Views/JournalDetails.xaml?parameter=" + selectedCropId, UriKind.Relative));
+        }
     }
 }

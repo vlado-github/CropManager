@@ -28,7 +28,7 @@ namespace WCFServiceWebRole1
            BodyStyle = WebMessageBodyStyle.WrappedRequest,
            ResponseFormat = WebMessageFormat.Json,
            RequestFormat = WebMessageFormat.Json)]
-        Journal SelectJournalByCropId(int crop_id);
+        List<Journal> SelectJournalByCropId(int crop_id);
     }
 
     [DataContract]

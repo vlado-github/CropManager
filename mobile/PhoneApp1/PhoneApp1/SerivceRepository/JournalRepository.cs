@@ -11,6 +11,8 @@ using System.Windows.Shapes;
 using PhoneApp1.Models;
 using PhoneApp1.JournalServiceReference;
 using System.Collections.Generic;
+using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace PhoneApp1.SerivceRepository
 {

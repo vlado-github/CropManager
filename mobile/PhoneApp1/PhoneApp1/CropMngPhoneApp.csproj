@@ -50,6 +50,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Coding4Fun.Toolkit.Audio, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Coding4Fun.Toolkit.Controls, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Coding4Fun.Toolkit.Net, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Coding4Fun.Toolkit.Storage, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
@@ -73,6 +77,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BytesToImageConverter.cs" />
     <Compile Include="Models\CropModel.cs" />
     <Compile Include="Models\FieldModel.cs" />
     <Compile Include="Models\JournalModel.cs" />
@@ -158,6 +163,9 @@
     <Compile Include="Views\Journal.xaml.cs">
       <DependentUpon>Journal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\JournalDetails.xaml.cs">
+      <DependentUpon>JournalDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -212,6 +220,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\JournalDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -224,6 +236,10 @@
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
+    <Content Include="Libs\Coding4Fun.Toolkit.Audio.dll" />
+    <Content Include="Libs\Coding4Fun.Toolkit.Controls.dll" />
+    <Content Include="Libs\Coding4Fun.Toolkit.Net.dll" />
+    <Content Include="Libs\Coding4Fun.Toolkit.Storage.dll" />
     <Content Include="Resources\corn.png" />
     <Content Include="Resources\journal.png" />
     <Content Include="Resources\notification.png" />
@@ -362,6 +378,7 @@
     <WCFMetadataStorage Include="Service References\MeasureServiceReference\" />
     <WCFMetadataStorage Include="Service References\TimePeriodsServiceReference\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

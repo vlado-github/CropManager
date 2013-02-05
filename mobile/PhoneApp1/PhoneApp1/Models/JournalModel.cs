@@ -10,13 +10,14 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 using PhoneApp1.SerivceRepository;
+using System.Windows.Media.Imaging;
 
 namespace PhoneApp1.Models
 {
     public class JournalModel
     {
         public delegate void SaveJournalCallback(int journalId);
-        public delegate void GetJournalsByCropId(List<JournalModel> journalModels);
+        public delegate void GetJournalsByCropIdCallback(List<JournalModel> journalModels);
         Action<int> ViewSaveCallback;
         Action<List<JournalModel>> ViewGetJournalsByCropId;
 
@@ -25,6 +26,7 @@ namespace PhoneApp1.Models
         public String Description { get; set; }
         public byte[] Photo { get; set; }
         public int CropId { get; set; }
+        public BitmapImage BitmapPhoto { get; set; }
 
         public void SaveJournal(Action<int> callback, JournalModel journalModel)
         {
@@ -38,7 +40,7 @@ namespace PhoneApp1.Models
         {
             ViewGetJournalsByCropId = callback;
             JournalRepository journalRepository = new JournalRepository();
-            GetJournalsByCropId handler = new GetJournalsByCropId(GetJournalByCropIdCompleted);
+            GetJournalsByCropIdCallback handler = new GetJournalsByCropIdCallback(GetJournalByCropIdCompleted);
             journalRepository.GetJournalsByCropId(new Action<List<JournalModel>>(handler), cropId);
         }
 

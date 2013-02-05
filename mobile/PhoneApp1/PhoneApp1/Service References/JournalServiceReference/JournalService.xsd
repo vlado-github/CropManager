@@ -10,4 +10,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Journal" nillable="true" type="tns:Journal" />
+  <xs:complexType name="ArrayOfJournal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Journal" nillable="true" type="tns:Journal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJournal" nillable="true" type="tns:ArrayOfJournal" />
 </xs:schema>
