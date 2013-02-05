@@ -75,12 +75,14 @@
     </Compile>
     <Compile Include="Models\CropModel.cs" />
     <Compile Include="Models\FieldModel.cs" />
+    <Compile Include="Models\JournalModel.cs" />
     <Compile Include="Models\MapFieldModel.cs" />
     <Compile Include="Models\MapModel.cs" />
     <Compile Include="Models\MeasureModel.cs" />
     <Compile Include="Models\TimePeriodModel.cs" />
     <Compile Include="Models\WeatherModel.cs" />
     <Compile Include="SerivceRepository\FieldRepository.cs" />
+    <Compile Include="SerivceRepository\JournalRepository.cs" />
     <Compile Include="SerivceRepository\MapFieldRepository.cs" />
     <Compile Include="SerivceRepository\MapRepository.cs" />
     <Compile Include="SerivceRepository\MeasureRepository.cs" />
@@ -132,6 +134,9 @@
     <Compile Include="Views\AddField.xaml.cs">
       <DependentUpon>AddField.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddJournal.xaml.cs">
+      <DependentUpon>AddJournal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CropDetails.xaml.cs">
       <DependentUpon>CropDetails.xaml</DependentUpon>
     </Compile>
@@ -149,6 +154,9 @@
     </Compile>
     <Compile Include="Views\FieldDetailsPage.xaml.cs">
       <DependentUpon>FieldDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Journal.xaml.cs">
+      <DependentUpon>Journal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -169,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddJournal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FieldDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Journal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

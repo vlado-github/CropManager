@@ -40,6 +40,11 @@
             	</i:Interaction.Triggers>
             </Button>
             <Button x:Name="JournalBtn" Grid.Row="0" Grid.Column="0" Height="187" VerticalAlignment="Top" Margin="227,75,10,0" Content="Journal">
+            	<i:Interaction.Triggers>
+            		<i:EventTrigger EventName="Click">
+            			<ec:NavigateToPageAction TargetPage="/Views/Journal.xaml"/>
+            		</i:EventTrigger>
+            	</i:Interaction.Triggers>
             	<Button.Background>
                     <ImageBrush ImageSource="/Resources/journal.png"/>
             	</Button.Background>
