@@ -50,6 +50,11 @@
             	</Button.Background>
             </Button>
             <Button x:Name="WeatherBtn" Grid.Row="0" Grid.Column="0" Margin="227,287,10,133" Content="Weather">
+            	<i:Interaction.Triggers>
+            		<i:EventTrigger EventName="Click">
+            			<ec:NavigateToPageAction TargetPage="/Views/Weather.xaml"/>
+            		</i:EventTrigger>
+            	</i:Interaction.Triggers>
             	<Button.Background>
                     <ImageBrush ImageSource="/Resources/weather.png"/>
             	</Button.Background>

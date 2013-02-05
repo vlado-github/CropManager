@@ -66,6 +66,8 @@
     <Reference Include="System.Windows.Interactivity" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -77,11 +79,13 @@
     <Compile Include="Models\MapModel.cs" />
     <Compile Include="Models\MeasureModel.cs" />
     <Compile Include="Models\TimePeriodModel.cs" />
+    <Compile Include="Models\WeatherModel.cs" />
     <Compile Include="SerivceRepository\FieldRepository.cs" />
     <Compile Include="SerivceRepository\MapFieldRepository.cs" />
     <Compile Include="SerivceRepository\MapRepository.cs" />
     <Compile Include="SerivceRepository\MeasureRepository.cs" />
     <Compile Include="SerivceRepository\TimePeriodsRepository.cs" />
+    <Compile Include="SerivceRepository\WeatherRepository.cs" />
     <Compile Include="Service References\CropServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,6 +155,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerivceRepository\CropRepository.cs" />
+    <Compile Include="Views\Weather.xaml.cs">
+      <DependentUpon>Weather.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -190,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Weather.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
