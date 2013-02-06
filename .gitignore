@@ -49,6 +49,18 @@ ipch/
 *.vsp
 *.vspx
 
+# IDEA Ignores
+*.iml
+*.ipr
+*.iws
+.idea/
+local.properties
+
+# Generic Android ignores
+bin/
+target
+gen/
+
 # Guidance Automation Toolkit
 *.gpState
 
