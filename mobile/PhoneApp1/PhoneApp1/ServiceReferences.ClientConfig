@@ -6,10 +6,6 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
-                <binding name="BasicHttpBinding_IFieldService" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
                 <binding name="BasicHttpBinding_IIllnessService" maxBufferSize="2147483647"
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
@@ -34,15 +30,16 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_IFieldService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
         </bindings>
         <client>
             <endpoint address="http://127.0.0.1:81/CropService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_ICropService" contract="CropServiceReference.ICropService"
                 name="BasicHttpBinding_ICropService" />
-            <endpoint address="http://127.0.0.1:81/FieldService.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_IFieldService" contract="FieldServiceReference.IFieldService"
-                name="BasicHttpBinding_IFieldService" />
             <endpoint address="http://127.0.0.1:81/IllnessService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_IIllnessService" contract="IllnessServiceReference.IIllnessService"
                 name="BasicHttpBinding_IIllnessService" />
@@ -62,6 +59,9 @@
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITimePeriodsService"
                 contract="TimePeriodsServiceReference.ITimePeriodsService"
                 name="BasicHttpBinding_ITimePeriodsService" />
+            <endpoint address="http://127.0.0.1:81/FieldService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IFieldService" contract="FieldServiceReference.IFieldService"
+                name="BasicHttpBinding_IFieldService" />
         </client>
     </system.serviceModel>
 </configuration>

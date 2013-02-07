@@ -1,13 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-        >
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World, MainActivity"
-            />
-</LinearLayout>
 
+<FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+       android:longClickable="false">
+   <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_gravity="center" android:rowCount="2"
+            android:columnCount="2"
+            >
+        <Button
+                android:drawableTop="@drawable/crop"
+                android:textColor="#FFFFFF"
+                android:id="@+id/cropMngBtn"
+                android:drawablePadding="-15sp"
+                android:text="CropMng"
+                android:width="@dimen/MainBtnDim"
+                android:height="@dimen/MainBtnDim"
+                android:onClick="btnHandler"/>
+        <Button
+                android:drawableTop="@drawable/journal"
+                android:textColor="#FFFFFF"
+                android:id="@+id/journalBtn"
+                android:drawablePadding="-15sp"
+                android:text="Journal"
+                android:width="@dimen/MainBtnDim"
+                android:height="@dimen/MainBtnDim"
+                android:onClick="btnHandler"/>
+        <Button
+                android:drawableTop="@drawable/notification"
+                android:textColor="#FFFFFF"
+                android:id="@+id/notificationBtn"
+                android:drawablePadding="-15sp"
+                android:text="Tasks"
+                android:width="@dimen/MainBtnDim"
+                android:height="@dimen/MainBtnDim"
+                android:onClick="btnHandler"/>
+        <Button
+                android:drawableTop="@drawable/weather"
+                android:textColor="#FFFFFF"
+                android:id="@+id/weatherBtn"
+                android:drawablePadding="-15sp"
+                android:text="Weather"
+                android:width="@dimen/MainBtnDim"
+                android:height="@dimen/MainBtnDim"
+                android:onClick="btnHandler"/>
+   </GridLayout>
+</FrameLayout>

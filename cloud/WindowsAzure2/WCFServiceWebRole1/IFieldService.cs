@@ -52,19 +52,19 @@ namespace WCFServiceWebRole1
     [DataContract]
     public class Field
     {
-        [DataMember(Name = "field_id")]
+        [DataMember(Name = "Id")]
         public int FieldId { get; set; }
-        [DataMember(Name = "name")]
+        [DataMember(Name = "Name")]
         public String Name { get; set; }
-        [DataMember(Name = "altitude")]
+        [DataMember(Name = "Altitude")]
         public double Altitude { get; set; }
-        [DataMember(Name = "areasize")]
+        [DataMember(Name = "AreaSize")]
         public double AreaSize { get; set; }
-        [DataMember(Name = "areasizemeasure")]
+        [DataMember(Name = "AreaSizeMeasure")]
         public String AreaSizeMeasure { get; set; }
-        [DataMember(Name = "mapid")]
+        [DataMember(Name = "Map_fk")]
         public int MapId { get; set; }
-        [DataMember(Name = "cropid")]
+        [DataMember(Name = "Crop_fk")]
         public int CropId { get; set; }
     }
 }

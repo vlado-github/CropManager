@@ -8,10 +8,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using PhoneApp1.FieldServiceReference;
+//using PhoneApp1.FieldServiceReference;
 using System.Collections.Generic;
 using PhoneApp1.Models;
 using PhoneApp1.MapServiceReference;
+using System.IO;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.Text;
+using PhoneApp1.FieldServiceReference;
 
 namespace PhoneApp1.SerivceRepository
 {
@@ -25,33 +30,46 @@ namespace PhoneApp1.SerivceRepository
         {
             getAllFieldsCallback = callback;
             FieldServiceClient fieldSvc = new FieldServiceClient();
-            fieldSvc.SelectFieldsAsync();
             fieldSvc.SelectFieldsCompleted += new EventHandler
                 <SelectFieldsCompletedEventArgs>(fieldSvc_SelectFieldsCompleted);
+            fieldSvc.SelectFieldsAsync();
         }
 
         public void getFieldById(Action<FieldModel> callback, int id)
         {
             getFieldByIdCallback = callback;
             FieldServiceClient fieldSvc = new FieldServiceClient();
+            fieldSvc.SelectFieldByIdCompleted += new EventHandler<SelectFieldByIdCompletedEventArgs>
+                (fieldSvc_SelectFieldByIdCompleted);
             fieldSvc.SelectFieldByIdAsync(id);
-            fieldSvc.SelectFieldByIdCompleted += new EventHandler
-                <SelectFieldByIdCompletedEventArgs>(fieldSvc_SelectFieldByIdCompleted);
+        }
+
+        private void fieldSvc_SelectFieldByIdCompleted(object sender, SelectFieldByIdCompletedEventArgs e)
+        {
+            Field field = e.Result;
+            FieldModel fm = mapFieldToFieldModel(field);
+            getFieldByIdCallback(fm);
         }
 
         public void saveField(Action<int> callback, FieldModel fieldModel)
         {
             saveFieldCallback = callback;
-            FieldServiceClient fieldSvc = new FieldServiceClient();
             Field field = mapFieldModelToField(fieldModel);
-            fieldSvc.InsertFieldAsync(field);
+            FieldServiceClient fieldSvc = new FieldServiceClient();
             fieldSvc.InsertFieldCompleted += new EventHandler
-                <InsertFieldCompletedEventArgs>(fieldSvc_SaveFieldCompleted);
+                <InsertFieldCompletedEventArgs>(fieldSvc_InsertFieldCompleted);
+            fieldSvc.InsertFieldAsync(field);
+        }
+
+        void fieldSvc_InsertFieldCompleted(object sender, InsertFieldCompletedEventArgs e)
+        {
+            int id = e.Result;
+            saveFieldCallback(id);
         }
 
         private void fieldSvc_SelectFieldsCompleted(object sender, SelectFieldsCompletedEventArgs e)
         {
-            IEnumerable<Field> allFields = (IEnumerable<Field>) e.Result;
+            IEnumerable<Field> allFields = (IEnumerable<Field>)e.Result;
             if (allFields != null)
             {
                 List<Field> fields = new List<Field>(allFields);
@@ -69,29 +87,16 @@ namespace PhoneApp1.SerivceRepository
             }
         }
 
-        private void fieldSvc_SelectFieldByIdCompleted(object sender, SelectFieldByIdCompletedEventArgs e)
-        {
-            Field field = e.Result;
-            FieldModel fm = mapFieldToFieldModel(field);
-            getFieldByIdCallback(fm);
-        }
-
-        private void fieldSvc_SaveFieldCompleted(object sender, InsertFieldCompletedEventArgs e)
-        {
-            int id = e.Result;
-            saveFieldCallback(id);
-        }
-
         private FieldModel mapFieldToFieldModel(Field field)
         {
             FieldModel fieldModel = new FieldModel();
-            fieldModel.Name = field.name;
-            fieldModel.Id = field.field_id;
-            fieldModel.Altitude = field.altitude;
-            fieldModel.AreaSize = field.areasize;
-            fieldModel.AreaSizeMeasure = field.areasizemeasure;
-            fieldModel.Crop_fk = field.cropid;
-            fieldModel.Map_fk = field.mapid;
+            fieldModel.Name = field.Name;
+            fieldModel.Id = field.Id;
+            fieldModel.Altitude = field.Altitude;
+            fieldModel.AreaSize = field.AreaSize;
+            fieldModel.AreaSizeMeasure = field.AreaSizeMeasure;
+            fieldModel.Crop_fk = field.Crop_fk;
+            fieldModel.Map_fk = field.Map_fk;
 
             return fieldModel;
         }
@@ -99,12 +104,12 @@ namespace PhoneApp1.SerivceRepository
         private Field mapFieldModelToField(FieldModel fieldModel)
         {
             Field field = new Field();
-            field.name = fieldModel.Name;
-            field.altitude = fieldModel.Altitude;
-            field.areasize = fieldModel.AreaSize;
-            field.areasizemeasure = fieldModel.AreaSizeMeasure;
-            field.cropid = fieldModel.Crop_fk;
-            field.mapid = fieldModel.Map_fk;
+            field.Name = fieldModel.Name;
+            field.Altitude = fieldModel.Altitude;
+            field.AreaSize = fieldModel.AreaSize;
+            field.AreaSizeMeasure = fieldModel.AreaSizeMeasure;
+            field.Crop_fk = fieldModel.Crop_fk;
+            field.Map_fk = fieldModel.Map_fk;
 
             return field;
         }

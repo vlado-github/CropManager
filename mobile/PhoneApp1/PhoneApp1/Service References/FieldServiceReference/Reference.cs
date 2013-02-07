@@ -20,107 +20,107 @@ namespace PhoneApp1.FieldServiceReference {
     [System.Runtime.Serialization.DataContractAttribute(Name="Field", Namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1")]
     public partial class Field : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private double altitudeField;
+        private double AltitudeField;
         
-        private double areasizeField;
+        private double AreaSizeField;
         
-        private string areasizemeasureField;
+        private string AreaSizeMeasureField;
         
-        private int cropidField;
+        private int Crop_fkField;
         
-        private int field_idField;
+        private int IdField;
         
-        private int mapidField;
+        private int Map_fkField;
         
-        private string nameField;
+        private string NameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double altitude {
+        public double Altitude {
             get {
-                return this.altitudeField;
+                return this.AltitudeField;
             }
             set {
-                if ((this.altitudeField.Equals(value) != true)) {
-                    this.altitudeField = value;
-                    this.RaisePropertyChanged("altitude");
+                if ((this.AltitudeField.Equals(value) != true)) {
+                    this.AltitudeField = value;
+                    this.RaisePropertyChanged("Altitude");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double areasize {
+        public double AreaSize {
             get {
-                return this.areasizeField;
+                return this.AreaSizeField;
             }
             set {
-                if ((this.areasizeField.Equals(value) != true)) {
-                    this.areasizeField = value;
-                    this.RaisePropertyChanged("areasize");
+                if ((this.AreaSizeField.Equals(value) != true)) {
+                    this.AreaSizeField = value;
+                    this.RaisePropertyChanged("AreaSize");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string areasizemeasure {
+        public string AreaSizeMeasure {
             get {
-                return this.areasizemeasureField;
+                return this.AreaSizeMeasureField;
             }
             set {
-                if ((object.ReferenceEquals(this.areasizemeasureField, value) != true)) {
-                    this.areasizemeasureField = value;
-                    this.RaisePropertyChanged("areasizemeasure");
+                if ((object.ReferenceEquals(this.AreaSizeMeasureField, value) != true)) {
+                    this.AreaSizeMeasureField = value;
+                    this.RaisePropertyChanged("AreaSizeMeasure");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int cropid {
+        public int Crop_fk {
             get {
-                return this.cropidField;
+                return this.Crop_fkField;
             }
             set {
-                if ((this.cropidField.Equals(value) != true)) {
-                    this.cropidField = value;
-                    this.RaisePropertyChanged("cropid");
+                if ((this.Crop_fkField.Equals(value) != true)) {
+                    this.Crop_fkField = value;
+                    this.RaisePropertyChanged("Crop_fk");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int field_id {
+        public int Id {
             get {
-                return this.field_idField;
+                return this.IdField;
             }
             set {
-                if ((this.field_idField.Equals(value) != true)) {
-                    this.field_idField = value;
-                    this.RaisePropertyChanged("field_id");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int mapid {
+        public int Map_fk {
             get {
-                return this.mapidField;
+                return this.Map_fkField;
             }
             set {
-                if ((this.mapidField.Equals(value) != true)) {
-                    this.mapidField = value;
-                    this.RaisePropertyChanged("mapid");
+                if ((this.Map_fkField.Equals(value) != true)) {
+                    this.Map_fkField = value;
+                    this.RaisePropertyChanged("Map_fk");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name {
+        public string Name {
             get {
-                return this.nameField;
+                return this.NameField;
             }
             set {
-                if ((object.ReferenceEquals(this.nameField, value) != true)) {
-                    this.nameField = value;
-                    this.RaisePropertyChanged("name");
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
                 }
             }
         }

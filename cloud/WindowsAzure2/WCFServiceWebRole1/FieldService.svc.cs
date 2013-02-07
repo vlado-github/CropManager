@@ -12,7 +12,7 @@ namespace WCFServiceWebRole1
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "FieldService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select FieldService.svc or FieldService.svc.cs at the Solution Explorer and start debugging.
-   [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class FieldService : IFieldService
     {
         public int InsertField(Field field)
