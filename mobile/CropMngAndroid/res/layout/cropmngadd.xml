@@ -90,7 +90,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Photo"
-                        android:id="@+id/photoBtn"/>
+                        android:id="@+id/photoBtn"
+                        android:onClick="btnHandler"/>
             </TableRow>
             <TableRow
                     android:layout_width="wrap_content"
