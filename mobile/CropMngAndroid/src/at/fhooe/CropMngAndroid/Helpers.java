@@ -2,6 +2,7 @@ package at.fhooe.CropMngAndroid;
 
 import android.widget.DatePicker;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -14,11 +15,18 @@ import java.util.Date;
  */
 public class Helpers {
     public static Date convertToDate(DatePicker datePicker){
-        int day = datePicker.getDayOfMonth();
-        int month = datePicker.getMonth();
-        int year =  datePicker.getYear();
-        Calendar cal = Calendar.getInstance();
-        cal.set(year, month, day);
-        return cal.getTime();
+        Date date = null;
+        try{
+            int day = datePicker.getDayOfMonth();
+            int month = datePicker.getMonth();
+            int year =  datePicker.getYear();
+            Calendar cal = Calendar.getInstance();
+            cal.set(year, month, day);
+            long calLong = cal.getTime().getTime();
+            date = new Date(calLong);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return date;
     }
 }

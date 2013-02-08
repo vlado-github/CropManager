@@ -69,11 +69,12 @@ public class AddCropActivity extends Activity {
                 cropModel.setTimeOfPlanting(Helpers.convertToDate(timeOfPlantingDate));
                 //cropModel.setAvatearImage();
                 cropModel.setWateringFreq(Integer.parseInt((String)wateringFreqSpinner.getSelectedItem()));
-                cropModel.setWateringPeriod(((TimePeriodViewModel)timePeriodsSpinner.getSelectedItem()).getType());
+                cropModel.setWateringPeriod(String.valueOf(((TimePeriodViewModel)timePeriodsSpinner.getSelectedItem()).getId()));
                 cropModel.setHarvestTime(Helpers.convertToDate(harvestingTime));
                 cropModel.setHillingTime(Helpers.convertToDate(hillingTime));
                 cropModel.setFertilizingTime(Helpers.convertToDate(fertilizingTime));
                 cropModel.setFieldCoverage(coverageSlider.getProgress());
+                cropModel.setFieldId(((FieldViewModel) fieldSpinner.getSelectedItem()).getId());
 
                 String status = cropModel.saveCrop(cropModel);
                 if(status != "200"){

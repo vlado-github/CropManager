@@ -30,12 +30,46 @@ public class CropViewModel {
         String status = null;
         try{
             CropServiceRepository cropRep = new CropServiceRepository();
-            status = cropRep.execute("/InsertCrop", cropModel).get();
+            status = cropRep.execute("/InsertCropData", cropModel).get();
         }catch(Exception e){
             e.printStackTrace();
         }
         return status;
     }
+
+    public String getAllCrops(){
+        String jsonResult = null;
+        try{
+            CropServiceRepository cropRep = new CropServiceRepository();
+            jsonResult = cropRep.execute("/SelectCrops").get();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return jsonResult;
+    }
+
+    public String getCropById(int id){
+        String jsonResult = null;
+        try{
+            CropServiceRepository cropRep = new CropServiceRepository();
+            jsonResult = cropRep.execute("/SelectCropById?crop_id="+id).get();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return jsonResult;
+    }
+
+    public String deleteCrop(int id){
+        String status = null;
+        try{
+            CropServiceRepository cropRep = new CropServiceRepository();
+            status = cropRep.execute("/DeleteCropData", id).get();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return status;
+    }
+
 
     public int getId() {
         return id;
