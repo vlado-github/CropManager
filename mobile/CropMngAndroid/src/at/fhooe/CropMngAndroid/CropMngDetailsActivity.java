@@ -52,6 +52,10 @@ public class CropMngDetailsActivity extends Activity {
                 toCropDetailsPage.putExtra(TO_CROPMNGDETAILSPAGE,cropId);
                 startActivity(toCropDetailsPage);
                 break;
+            case R.id.cancelBtn:
+                Intent toCropMng = new Intent(this, CropMngActivity.class);
+                startActivity(toCropMng);
+                break;
         }
     }
 }

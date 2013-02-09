@@ -4,11 +4,10 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select crop for detail preview:"
+            android:text="Select crop for deletion:"
             android:id="@+id/textView" android:layout_gravity="left|center_vertical"/>
     <Spinner
             android:layout_width="fill_parent"
@@ -17,8 +16,8 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Load"
-            android:id="@+id/loadDetailsBtn"
+            android:text="Delete"
+            android:id="@+id/deleteBtn"
             android:layout_gravity="center"
             android:onClick="btnHandler"/>
     <Button
@@ -27,4 +26,5 @@
             android:text="Cancel"
             android:id="@+id/cancelBtn"
             android:onClick="btnHandler" android:layout_gravity="center"/>
+
 </LinearLayout>

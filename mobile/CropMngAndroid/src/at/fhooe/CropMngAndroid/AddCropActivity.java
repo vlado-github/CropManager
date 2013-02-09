@@ -112,7 +112,7 @@ public class AddCropActivity extends Activity {
                 cropModel.setFieldId(((FieldViewModel) fieldSpinner.getSelectedItem()).getId());
 
                 String status = cropModel.saveCrop(cropModel);
-                if(status != "200"){
+                if(!status.equals("200")){
                     Toast.makeText(this,"Error - Save unsuccessful", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(this,"Save successful", Toast.LENGTH_SHORT).show();

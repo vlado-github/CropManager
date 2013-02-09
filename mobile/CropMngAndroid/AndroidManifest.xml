@@ -21,5 +21,7 @@
         <activity android:name=".AddCropActivity" android:label="Add Crop"/>
         <activity android:name=".CropMngDetailsActivity" android:label="Crop Details"/>
         <activity android:name=".CropMngDetailsPageActivity" android:label="Crop Details"/>
+        <activity android:name=".CropMngDeleteActivity" android:label="Delete Crop"/>
+        <activity android:name=".AddFieldActivity" android:label="Add Field"/>
     </application>
 </manifest>

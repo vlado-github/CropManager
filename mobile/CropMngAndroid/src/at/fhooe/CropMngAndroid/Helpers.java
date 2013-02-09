@@ -1,9 +1,12 @@
 package at.fhooe.CropMngAndroid;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -33,5 +36,17 @@ public class Helpers {
             e.printStackTrace();
         }
         return date;
+    }
+
+    public static Bitmap convertBytesToBitmap(byte[] bytes){
+        byte[] blob = bytes;
+        Bitmap bmp= BitmapFactory.decodeByteArray(blob, 0, blob.length);
+        return bmp;
+    }
+
+    public static long parseJsonDate(String jsonDate){
+        String[] result = jsonDate.split("[(]");
+        String[] resultTwo = result[1].split("[+]");
+        return Long.parseLong(resultTwo[0]);
     }
 }

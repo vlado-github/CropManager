@@ -28,6 +28,10 @@ public class CropMngActivity extends Activity {
                 Intent toCropDetails = new Intent(this, CropMngDetailsActivity.class);
                 startActivity(toCropDetails);
                 break;
+            case R.id.removeCropBtn:
+                Intent toCropDelete = new Intent(this, CropMngDeleteActivity.class);
+                startActivity(toCropDelete);
+                break;
         }
     }
 }

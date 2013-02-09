@@ -2,12 +2,10 @@ package at.fhooe.CropMngAndroid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.DatePicker;
-import android.widget.SeekBar;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.*;
 import at.fhooe.ViewModel.CropViewModel;
 import at.fhooe.ViewModel.FieldViewModel;
 
@@ -31,6 +29,9 @@ public class CropMngDetailsPageActivity extends Activity {
     public TextView harvestingTime = null;
     public TextView hillingTime = null;
     public TextView fertilizingTime = null;
+    public TextView altitude = null;
+    public TextView areaSize = null;
+    public TextView sizeMeasure = null;
 
     public CropViewModel crop = null;
     public FieldViewModel field = null;
@@ -46,8 +47,10 @@ public class CropMngDetailsPageActivity extends Activity {
         crop = cropModel.getCropById(cropId);
         FieldViewModel fieldModel = new FieldViewModel();
         field = fieldModel.getFieldById(crop.getFieldId());
-
         fieldTxt = (TextView) findViewById(R.id.fieldsBox);
+        altitude = (TextView) findViewById(R.id.altitudeTxt);
+        areaSize = (TextView) findViewById(R.id.areaSizeTxt);
+        sizeMeasure = (TextView) findViewById(R.id.sizeMeasureTxt);
         timePeriodsTxt = (TextView) findViewById(R.id.wateringPeriod);
         wateringFreqTxt = (TextView) findViewById(R.id.wateringFrequency);
         nameTxt = (TextView) findViewById(R.id.nameTxt);
@@ -65,8 +68,11 @@ public class CropMngDetailsPageActivity extends Activity {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         if(crop != null){
             fieldTxt.setText(field.getName());
+            altitude.setText(String.valueOf(field.getAltitude()));
+            areaSize.setText(String.valueOf(field.getAreaSize()));
+            sizeMeasure.setText(field.getAreaSizeMeasure());
             timePeriodsTxt.setText(crop.getWateringPeriod());
-            wateringFreqTxt.setText(crop.getWateringFreq());
+            wateringFreqTxt.setText(String.valueOf(crop.getWateringFreq()));
             nameTxt.setText(crop.getName());
             typeTxt.setText(crop.getCropType());
             timeOfPlantingDate.setText(sdf.format(crop.getTimeOfPlanting()));
@@ -74,6 +80,11 @@ public class CropMngDetailsPageActivity extends Activity {
             harvestingTime.setText(sdf.format(crop.getHarvestTime()));
             hillingTime.setText(sdf.format(crop.getHillingTime()));
             fertilizingTime.setText(sdf.format(crop.getFertilizingTime()));
+            if(crop.getAvatearImage() != null){
+                Bitmap bmp = Helpers.convertBytesToBitmap(crop.getAvatearImage());
+                ImageView image = (ImageView) findViewById(R.id.imageView);
+                image.setImageBitmap(bmp);
+            }
         }
     }
 
