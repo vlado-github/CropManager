@@ -32,6 +32,12 @@ public class CropMngActivity extends Activity {
                 Intent toCropDelete = new Intent(this, CropMngDeleteActivity.class);
                 startActivity(toCropDelete);
                 break;
+            case R.id.addFieldBtn:
+                Intent toAddField = new Intent(this, AddFieldActivity.class);
+                startActivity(toAddField);
+                break;
+            case R.id.fieldDetailsBtn:
+                break;
         }
     }
 }

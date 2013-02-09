@@ -80,7 +80,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cancel"
-                    android:id="@+id/cancelBtn" android:layout_column="1"/>
+                    android:id="@+id/cancelBtn"
+                    android:layout_column="1"
+                    android:onClick="btnHandler"/>
         </TableRow>
     </TableLayout>
 </LinearLayout>
