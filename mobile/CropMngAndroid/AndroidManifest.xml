@@ -19,5 +19,7 @@
         <activity android:name=".JournalActivity" android:label="Journal"/>
         <activity android:name=".WeatherActivity" android:label="Weather"/>
         <activity android:name=".AddCropActivity" android:label="Add Crop"/>
+        <activity android:name=".CropMngDetailsActivity" android:label="Crop Details"/>
+        <activity android:name=".CropMngDetailsPageActivity" android:label="Crop Details"/>
     </application>
 </manifest>

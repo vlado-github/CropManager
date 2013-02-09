@@ -54,6 +54,7 @@ ipch/
 *.ipr
 *.iws
 .idea/
+.class
 local.properties
 
 # Generic Android ignores

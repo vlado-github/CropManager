@@ -24,6 +24,10 @@ public class CropMngActivity extends Activity {
                 Intent toAddCrop = new Intent(this, AddCropActivity.class);
                 startActivity(toAddCrop);
                 break;
+            case R.id.cropDetailsBtn:
+                Intent toCropDetails = new Intent(this, CropMngDetailsActivity.class);
+                startActivity(toCropDetails);
+                break;
         }
     }
 }

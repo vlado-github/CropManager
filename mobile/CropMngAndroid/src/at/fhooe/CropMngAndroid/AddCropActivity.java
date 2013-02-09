@@ -113,9 +113,9 @@ public class AddCropActivity extends Activity {
 
                 String status = cropModel.saveCrop(cropModel);
                 if(status != "200"){
-                    Toast.makeText(this,"Error - Save unsuccessful", 2).show();
+                    Toast.makeText(this,"Error - Save unsuccessful", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(this,"Save successful", 2).show();
+                    Toast.makeText(this,"Save successful", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.cancelBtn:

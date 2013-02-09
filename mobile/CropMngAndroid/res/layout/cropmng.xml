@@ -34,7 +34,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Remove Crop"
-                    android:id="@+id/removeCropBtn"/>
+                    android:id="@+id/removeCropBtn"
+                    android:onClick="btnHandler"/>
         </TableRow>
         <TableRow
                 android:layout_width="fill_parent"
@@ -43,7 +44,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Crop Details"
-                    android:id="@+id/cropDetailsBtn"/>
+                    android:id="@+id/cropDetailsBtn"
+                    android:onClick="btnHandler" />
         </TableRow>
         <TableRow
                 android:layout_width="fill_parent"
@@ -61,7 +63,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Add Field"
-                    android:id="@+id/addFieldBtn" android:layout_column="0"/>
+                    android:id="@+id/addFieldBtn"
+                    android:layout_column="0"
+                    android:onClick="btnHandler"/>
         </TableRow>
         <TableRow
                 android:layout_width="fill_parent"
@@ -70,7 +74,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Field Details"
-                    android:id="@+id/fieldDetailsBtn" android:layout_column="0"/>
+                    android:id="@+id/fieldDetailsBtn"
+                    android:layout_column="0"
+                    android:onClick="btnHandler"/>
         </TableRow>
     </TableLayout>
 </LinearLayout>

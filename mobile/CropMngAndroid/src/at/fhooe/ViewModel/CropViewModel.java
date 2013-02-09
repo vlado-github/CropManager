@@ -1,7 +1,14 @@
 package at.fhooe.ViewModel;
 
 import at.fhooe.ServiceRepository.CropServiceRepository;
+import at.fhooe.ServiceRepository.FieldServiceRepository;
+import at.fhooe.ServiceRepository.TimePeriodsServiceRepository;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -37,26 +44,70 @@ public class CropViewModel {
         return status;
     }
 
-    public String getAllCrops(){
+    public ArrayList<CropViewModel> getAllCrops(){
         String jsonResult = null;
+        ArrayList<CropViewModel> crops = null;
         try{
             CropServiceRepository cropRep = new CropServiceRepository();
             jsonResult = cropRep.execute("/SelectCrops").get();
+            JSONArray jsonArray = new JSONArray(jsonResult);
+            crops = new ArrayList<CropViewModel>();
+            for(int i=0; i<jsonArray.length(); i++){
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
+                CropViewModel cropModel = new CropViewModel();
+                Gson gson = new Gson();
+                byte[] avatarImage = gson.fromJson(jsonObj.getString("avatarimage"), byte[].class);
+                cropModel.setAvatearImage(avatarImage);
+                cropModel.setCropType(jsonObj.getString("croptype"));
+                cropModel.setFertilizingTime(new Date(jsonObj.getLong("fertilizingtime")));
+                cropModel.setFieldCoverage(jsonObj.getDouble("fieldcoverage"));
+                cropModel.setFieldId(jsonObj.getInt("fieldid"));
+                cropModel.setHarvestTime(new Date(jsonObj.getLong("harvesttime")));
+                cropModel.setHillingTime(new Date(jsonObj.getLong("hillingtime")));
+                cropModel.setId(jsonObj.getInt("cropid"));
+                cropModel.setName(jsonObj.getString("name"));
+                cropModel.setTimeOfPlanting(new Date(jsonObj.getLong("timeofplanting")));
+                cropModel.setWateringFreq(jsonObj.getInt("wateringfrequency"));
+                cropModel.setWateringPeriod(jsonObj.getString("wateringperiod"));
+                crops.add(cropModel);
+            }
         }catch(Exception e){
             e.printStackTrace();
         }
-        return jsonResult;
+        return crops;
     }
 
-    public String getCropById(int id){
+    public CropViewModel getCropById(int id){
         String jsonResult = null;
+        CropViewModel cropModel = null;
         try{
             CropServiceRepository cropRep = new CropServiceRepository();
             jsonResult = cropRep.execute("/SelectCropById?crop_id="+id).get();
+            JSONObject jsonCropObj = new JSONObject(jsonResult);
+            cropModel = new CropViewModel();
+
+            Gson gson = new Gson();
+            byte[] avatarImage = gson.fromJson(jsonCropObj.getString("avatarimage"), byte[].class);
+
+            cropModel.setAvatearImage(avatarImage);
+            cropModel.setCropType(jsonCropObj.getString("croptype"));
+            cropModel.setFertilizingTime(new Date(jsonCropObj.getLong("fertilizingtime")));
+            cropModel.setFieldCoverage(jsonCropObj.getDouble("fieldcoverage"));
+            cropModel.setFieldId(jsonCropObj.getInt("fieldid"));
+            cropModel.setHarvestTime(new Date(jsonCropObj.getLong("harvesttime")));
+            cropModel.setHillingTime(new Date(jsonCropObj.getLong("hillingtime")));
+            cropModel.setId(jsonCropObj.getInt("cropid"));
+            cropModel.setName(jsonCropObj.getString("name"));
+            cropModel.setTimeOfPlanting(new Date(jsonCropObj.getLong("timeofplanting")));
+            cropModel.setWateringFreq(jsonCropObj.getInt("wateringfrequency"));
+            cropModel.setWateringPeriod(jsonCropObj.getString("wateringperiod"));
+
+
+
         }catch(Exception e){
             e.printStackTrace();
         }
-        return jsonResult;
+        return cropModel;
     }
 
     public String deleteCrop(int id){

@@ -138,7 +138,12 @@ namespace WCFServiceWebRole1
                         Crop crop = new Crop();
                         crop.CropId = Int16.Parse(row[0].ToString());
                         crop.Name = row[1].ToString();
-                        crop.CropType = row[2].ToString();                  
+                        crop.CropType = row[2].ToString();
+                        crop.timeOfPlanting = DateTime.Parse(row[3].ToString());
+                        crop.HarvestTime = DateTime.Parse(row[4].ToString());
+                        crop.HillingTime = DateTime.Parse(row[5].ToString());
+                        crop.FertilizingTime = DateTime.Parse(row[6].ToString());
+
                         crops.Add(crop);
                     }
                 }
