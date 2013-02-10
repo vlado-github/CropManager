@@ -41,8 +41,10 @@
         <activity android:name=".CropMngDeleteActivity" android:label="Delete Crop"/>
         <activity android:name=".AddFieldActivity" android:label="Add Field"/>
         <activity android:name=".AddFieldMapActivity" android:label="Add Field"/>
+        <activity android:name=".JournalWriteActivity" android:label="Journal Write"/>
+        <activity android:name=".JournalReadActivity" android:label="Journal Read"/>
         <meta-data
                 android:name="com.google.android.maps.v2.API_KEY"
-                android:value="KEY_HERE"/>
+                android:value="AIzaSyCDkPdmLy8NSqVJLZ-68pvjwy3wsuqJKL4"/>
     </application>
 </manifest>

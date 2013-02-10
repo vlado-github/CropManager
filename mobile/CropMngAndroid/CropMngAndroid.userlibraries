@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<eclipse-userlibraries />
+<eclipse-userlibraries>
+  <library name="gson-2.2.2-javadoc">
+    <archive path="C:/Users/Vladimir/Documents/GitHub/CropManager/mobile/CropMngAndroid/libs/gson-2.2.2.jar" />
+  </library>
+  <library name="android-support-v4">
+    <archive path="D:/Android Development Tools/sdk/extras/android/support/v4/android-support-v4.jar" />
+  </library>
+  <library name="gson-2.2.2-sources" />
+</eclipse-userlibraries>
 

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component inherit-compiler-output="true" inheritJdk="true">
+<component inherit-compiler-output="true" jdk="Android 4.2 Platform" jdk_type="Android SDK">
 	<output-test url="file://$MODULE_DIR$/out/test/CropMngAndroid"/>
 	<exclude-output/>
 	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="D:\Android Development Tools\sdk\extras\google\google_play_services\libproject\google-play-services_lib\libs\google-play-services.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://D:/Android Development Tools/sdk/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar!/"/>
+	</lib>
 </component>

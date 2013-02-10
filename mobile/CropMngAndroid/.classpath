@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/gson-2.2.2-javadoc"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/gson-2.2.2-sources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/android-support-v4"/>
+	<classpathentry kind="lib" path="/google-play-services_lib/libs/google-play-services.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/google-play-services_lib"/>
 	<classpathentry kind="output" path="out/production/CropMngAndroid"/>
 </classpath>

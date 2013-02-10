@@ -1,6 +1,7 @@
 package at.fhooe.CropMngAndroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -43,10 +44,18 @@ public class JournalActivity extends Activity {
     public void btnHandler(View v){
         switch (v.getId()){
             case R.id.writeBtn:
+                Intent toWrite = new Intent(this, JournalWriteActivity.class);
+                toWrite.putExtra("cropid", ((CropViewModel) cropSpinner.getSelectedItem()).getId());
+                startActivity(toWrite);
                 break;
             case R.id.readBtn:
+                Intent toRead = new Intent(this, JournalReadActivity.class);
+                toRead.putExtra("cropid", ((CropViewModel) cropSpinner.getSelectedItem()).getId());
+                startActivity(toRead);
                 break;
             case R.id.cancelBtn:
+                Intent toMainView = new Intent(this, MainActivity.class);
+                startActivity(toMainView);
                 break;
         }
     }
