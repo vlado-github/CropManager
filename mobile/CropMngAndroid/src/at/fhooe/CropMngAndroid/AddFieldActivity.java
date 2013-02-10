@@ -66,6 +66,8 @@ public class AddFieldActivity extends Activity {
     public void btnHandler(View v){
         switch(v.getId()){
             case R.id.nextBtn:
+                Intent toFieldMap = new Intent(this, AddFieldMapActivity.class);
+                startActivity(toFieldMap);
                 break;
             case R.id.cancelBtn:
                 Intent toCropMng = new Intent(this, CropMngActivity.class);
