@@ -1,6 +1,8 @@
 package at.fhooe.ViewModel;
 
 import at.fhooe.ServiceRepository.WeatherServiceRepository;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -24,9 +26,56 @@ public class WeatherViewModel {
 
     public ArrayList<WeatherViewModel> getWeatherInfo(String city, String country){
         ArrayList<WeatherViewModel> weatherInfo = null;
+        String weatherJson = null;
         try{
             WeatherServiceRepository weatherRep = new WeatherServiceRepository();
-            weatherInfo = (ArrayList<WeatherViewModel>) weatherRep.execute(new String[]{city, country}).get();
+            weatherJson = (String) weatherRep.execute(new String[]{city, country}).get();
+            weatherInfo = parseWeatherJson(weatherJson);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return weatherInfo;
+    }
+
+    public ArrayList<WeatherViewModel> parseWeatherJson(String json){
+        ArrayList<WeatherViewModel> weatherInfo = null;
+        try{
+            JSONObject jsonObj = new JSONObject(json);
+            JSONArray currentWeather = jsonObj.getJSONObject("data").getJSONArray("current_condition");
+            JSONArray futureWeather = jsonObj.getJSONObject("data").getJSONArray("weather");
+            WeatherViewModel currentWeatherModel = new WeatherViewModel();
+            String weatherCurDesc = currentWeather.getJSONObject(0).getJSONArray("weatherDesc").getJSONObject(0).getString("value");
+            String dayTime = currentWeather.getJSONObject(0).getString("observation_time");
+            String temp = currentWeather.getJSONObject(0).getString("temp_C");
+            String windCurDir = currentWeather.getJSONObject(0).getString("winddir16Point");
+            String windCurSpeed = currentWeather.getJSONObject(0).getString("windspeedKmph");
+
+            currentWeatherModel.setCondition(weatherCurDesc);
+            currentWeatherModel.setDayTime(dayTime);
+            currentWeatherModel.setTempCMin(temp);
+            currentWeatherModel.setTempCMax("");
+            currentWeatherModel.setWind(">"+windCurDir+" "+windCurSpeed+"kmph");
+
+            weatherInfo = new ArrayList<WeatherViewModel>();
+            weatherInfo.add(currentWeatherModel);
+
+
+            for(int i=0; i<futureWeather.length(); i++){
+                WeatherViewModel weatherDailyData = new WeatherViewModel();
+                String date = futureWeather.getJSONObject(i).getString("date");
+                String weatherDesc = futureWeather.getJSONObject(i).getJSONArray("weatherDesc").getJSONObject(0).getString("value");
+                String tempMin = futureWeather.getJSONObject(i).getString("tempMinC");
+                String tempMax = futureWeather.getJSONObject(i).getString("tempMaxC");
+                String windDir = futureWeather.getJSONObject(i).getString("winddir16Point");
+                String windSpeed = futureWeather.getJSONObject(i).getString("windspeedKmph");
+                weatherDailyData.setDayTime(date);
+                weatherDailyData.setCondition(weatherDesc);
+                weatherDailyData.setTempCMin(tempMin);
+                weatherDailyData.setTempCMax(tempMax);
+                weatherDailyData.setWind(">"+windDir+" "+windSpeed+"kmph");
+                weatherInfo.add(weatherDailyData);
+            }
+
         }catch(Exception e){
             e.printStackTrace();
         }

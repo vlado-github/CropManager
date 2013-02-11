@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import at.fhooe.ViewModel.WeatherViewModel;
 
 import java.util.ArrayList;
@@ -33,6 +35,26 @@ public class WeatherActivity extends Activity {
     public void loadData(String city, String country){
         WeatherViewModel weatherModel = new WeatherViewModel();
         ArrayList<WeatherViewModel> weatherInfo = weatherModel.getWeatherInfo(city,country);
+        for(int i=0; i<weatherInfo.size(); i++){
+            TableRow tr = new TableRow(this);
+            tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                    TableRow.LayoutParams.WRAP_CONTENT));
+            addToView(weatherInfo.get(i).getDayTime(), tr);
+            addToView(weatherInfo.get(i).getCondition(), tr);
+            addToView(weatherInfo.get(i).getTempCMin(), tr);
+            addToView(weatherInfo.get(i).getTempCMax(), tr);
+            addToView(weatherInfo.get(i).getWind(), tr);
+            layout.addView(tr, new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT,
+                    TableLayout.LayoutParams.WRAP_CONTENT));
+        }
+    }
+
+    private void addToView(String value, TableRow tr){
+        TextView tv = new TextView(this);
+        tv.setText(value);
+        tv.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                TableRow.LayoutParams.WRAP_CONTENT));
+        tr.addView(tv);
     }
 
     public void btnHandler(View v){
