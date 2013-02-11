@@ -44,11 +44,14 @@ namespace PhoneApp1.Views
             foreach (JournalModel jm in journals)
             {
                 byte[] photoByte = jm.Photo;
-                using (MemoryStream ms = new MemoryStream(photoByte))
+                if (photoByte != null)
                 {
-                    BitmapImage bmpImage = new BitmapImage();
-                    bmpImage.SetSource(ms);
-                    jm.BitmapPhoto = bmpImage;
+                    using (MemoryStream ms = new MemoryStream(photoByte))
+                    {
+                        BitmapImage bmpImage = new BitmapImage();
+                        bmpImage.SetSource(ms);
+                        jm.BitmapPhoto = bmpImage;
+                    }
                 }
                 journalsWithImage.Add(jm);
             }

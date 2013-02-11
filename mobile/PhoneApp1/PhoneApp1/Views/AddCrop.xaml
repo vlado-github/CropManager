@@ -87,7 +87,6 @@
                     <toolkit:DatePicker Name="timeOfHarvest" Margin="148,111,32,319" Height="68" Width="240" />
                     <TextBlock Height="30" HorizontalAlignment="Left" Margin="13,190,0,0" Name="textBlock11" Text="Hilling Time:" VerticalAlignment="Top" />
                     <TextBlock Height="30" HorizontalAlignment="Left" Margin="11,254,0,0" Name="textBlock12" Text="Fertilizing Time:" VerticalAlignment="Top" />
-                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="9,317,0,0" Name="textBlock13" Text="Previous illnesses:" VerticalAlignment="Top" />
                     
                     <toolkit:DatePicker Height="68" Margin="145,175,35,255" Name="timeOfHilling" Width="240" />
                     <toolkit:DatePicker Height="68" Margin="146,238,34,192" Name="timeOfFertilizing" Width="240" />

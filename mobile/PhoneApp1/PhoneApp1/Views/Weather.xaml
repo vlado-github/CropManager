@@ -48,18 +48,14 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="35"></RowDefinition>
-                                    <RowDefinition Height="35"></RowDefinition>
-                                    <RowDefinition Height="35"></RowDefinition>
-                                    <RowDefinition Height="35"></RowDefinition>
                                 </Grid.RowDefinitions>
 
-
-                                <TextBlock Grid.Column="0" Text="{Binding DayTime}" Margin="12 0 0 0"/>
+                                <TextBlock Grid.Column="0" Text="{Binding DayTime}" Margin="12 0 0 0" />
                                 <TextBlock Grid.Column="1" Text="{Binding Condition}" Margin="12 0 0 0" />
-                                <TextBlock Grid.Column="2" Text="{Binding TempCMin}" Margin="12 0 0 0"/>
-                                <TextBlock Grid.Column="3" Text="{Binding TempCMax}" Margin="12 0 0 0"/>
+                                <TextBlock Grid.Column="2" Text="{Binding TempCMin}" Margin="12 0 0 0" />
+                                <TextBlock Grid.Column="3" Text="{Binding TempCMax}" Margin="12 0 0 0" />
                                 <TextBlock Grid.Column="4" Text="{Binding Wind}" Margin="12 0 0 0"/>
-                            </Grid>
+                             </Grid>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

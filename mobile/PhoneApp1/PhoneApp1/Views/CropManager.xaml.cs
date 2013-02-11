@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using System.ComponentModel;
 
 namespace PhoneApp1.Views
 {
@@ -18,6 +19,12 @@ namespace PhoneApp1.Views
         public CropManager()
         {
             InitializeComponent();
+            BackKeyPress += OnBackKeyPressed;
+        }
+
+        public void OnBackKeyPressed(object sender, CancelEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/MainPage.xaml", UriKind.Relative));
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

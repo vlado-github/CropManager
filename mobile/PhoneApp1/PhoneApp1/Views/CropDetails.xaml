@@ -56,7 +56,7 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,37,0,0" x:Name="textBlock1" Text="Select Crop for more details:" VerticalAlignment="Top" />
-            <toolkit:ListPicker x:Name="cropPicker" ItemsSource="{Binding CropModel}" ItemTemplate="{StaticResource CropItemTemplate}" Margin="12,112,56,413" Height="82" d:LayoutOverrides="HorizontalAlignment"/>
+            <toolkit:ListPicker x:Name="cropPicker" ItemsSource="{Binding CropModel}" ItemTemplate="{StaticResource CropItemTemplate}" Margin="12,112,56,17" d:LayoutOverrides="HorizontalAlignment"/>
             <Button Content="Show details" Height="72" HorizontalAlignment="Left" Margin="0,223,0,0" x:Name="showDetailsBtn" VerticalAlignment="Top" Width="204" Click="button1_Click" />
             <Button Content="Cancel" Height="72" HorizontalAlignment="Left" Margin="240,223,0,0" x:Name="cancelDetailsBtn" VerticalAlignment="Top" Width="160" >
             	<i:Interaction.Triggers>
