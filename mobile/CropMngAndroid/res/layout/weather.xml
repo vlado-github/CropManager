@@ -5,4 +5,44 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="left|center_vertical"
+            android:id="@+id/weatherLayout">
+        <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent" android:layout_gravity="left|center_vertical">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City:"
+                    android:id="@+id/textView"/>
+            <EditText
+                    android:layout_width="@dimen/MainBtnDim"
+                    android:layout_height="wrap_content"
+                    android:text="Linz"
+                    android:id="@+id/cityTxt"/>
+        </TableRow>
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Country: "
+                    android:id="@+id/textView1"/>
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Austria"
+                    android:id="@+id/countryTxt"/>
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Load"
+                    android:id="@+id/ldBtn"
+                    android:onClick="btnHandler"/>
+        </TableRow>
+    </TableLayout>
 </LinearLayout>
