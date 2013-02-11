@@ -9,8 +9,10 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.support.v4.app.FragmentActivity;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapController;
+import org.osmdroid.views.MapView;
 
 
 /**
@@ -20,21 +22,25 @@ import com.google.android.gms.maps.MapFragment;
  * Time: 12:10 PM
  * To change this template use File | Settings | File Templates.
  */
-public class AddFieldMapActivity extends FragmentActivity{
-    private GoogleMap map;
+public class AddFieldMapActivity extends Activity{
+    public MapView mapView;
+    private MapController mapController;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cropmngfieldmap);
 
-        FragmentManager manager = getFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        MapFragment mapFragment = MapFragment.newInstance();
-        map = mapFragment.getMap();
-        transaction.add(R.id.map, mapFragment);
-        transaction.commit();
+        mapView = (MapView) findViewById(R.id.mapview);
+        mapView.setTileSource(TileSourceFactory.MAPNIK);
+        mapView.setBuiltInZoomControls(true);
+        mapController = mapView.getController();
+        mapController.setZoom(15);
+        GeoPoint point2 = new GeoPoint(51496994, -134733);
+        mapController.setCenter(point2);
+    }
 
-//        map.addMarker(new MarkerOptions()
-//                .position(new LatLng(48.355336, 14.516373))
-//                .title("Hello world"));
+    protected boolean isRouteDisplayed() {
+        // TODO Auto-generated method stub
+        return false;
     }
 }
