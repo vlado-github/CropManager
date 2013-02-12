@@ -17,5 +17,21 @@
             android:clickable="true"
 
             />
+    <Button android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Save"
+            android:id="@+id/saveField"
+            android:layout_gravity="center"
+            android:onClick="btnHandler">
+
+    </Button>
+    <Button android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Cancel"
+            android:id="@+id/cancelField"
+            android:layout_gravity="center"
+            android:onClick="btnHandler">
+
+    </Button>
 </LinearLayout>
 

@@ -44,6 +44,8 @@ public class CropMngActivity extends Activity {
                 startActivity(toAddField);
                 break;
             case R.id.fieldDetailsBtn:
+                Intent toFieldDetails = new Intent(this, FieldDetailsActivity.class);
+                startActivity(toFieldDetails);
                 break;
         }
     }

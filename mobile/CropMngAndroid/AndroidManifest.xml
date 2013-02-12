@@ -45,6 +45,8 @@
         <activity android:name=".AddFieldMapActivity" android:label="Add Field"/>
         <activity android:name=".JournalWriteActivity" android:label="Journal Write"/>
         <activity android:name=".JournalReadActivity" android:label="Journal Read"/>
+        <activity android:name=".FieldDetailsActivity" android:label="Field Details"/>
+        <activity android:name=".FieldDetailsMapActivity" android:label="Field Map Details"/>
         <meta-data
                 android:name="com.google.android.maps.v2.API_KEY"
                 android:value="AIzaSyCDkPdmLy8NSqVJLZ-68pvjwy3wsuqJKL4"/>
