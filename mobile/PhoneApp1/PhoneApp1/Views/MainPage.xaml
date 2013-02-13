@@ -50,6 +50,11 @@
             	</Button.Background>
             </Button>
             <Button x:Name="NotificationBtn" Grid.Row="0" Grid.Column="0" Margin="8,287,0,133" Content="Notifications" HorizontalAlignment="Left" Width="219">
+            	<i:Interaction.Triggers>
+            		<i:EventTrigger EventName="Click">
+            			<ec:NavigateToPageAction TargetPage="/Views/Notification.xaml"/>
+            		</i:EventTrigger>
+            	</i:Interaction.Triggers>
             	<Button.Background>
                     <ImageBrush ImageSource="/Resources/notification.png"/>
             	</Button.Background>

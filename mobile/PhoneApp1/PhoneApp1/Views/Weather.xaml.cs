@@ -25,13 +25,15 @@ namespace PhoneApp1.Views
         private void loadWeatherBtn_Click(object sender, RoutedEventArgs e)
         {
             String location = locationTxt.Text;
+            String country = countryTxt.Text;
             WeatherModel weatherModel = new WeatherModel();
             GetWeatherForcastCallback handler = new GetWeatherForcastCallback(GetWeatherForcastCompleted);
-            weatherModel.GetWeatherForcast(new Action<List<WeatherModel>>(handler),location, "Austria");
+            weatherModel.GetWeatherForcast(new Action<List<WeatherModel>>(handler), location, country);
         }
 
         public void GetWeatherForcastCompleted(List<WeatherModel> weather)
         {
+            weatherListBox.ItemsSource = null;
             weatherListBox.ItemsSource = weather;
         }
     }
