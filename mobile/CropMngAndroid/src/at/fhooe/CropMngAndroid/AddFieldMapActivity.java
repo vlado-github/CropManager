@@ -1,6 +1,7 @@
 package at.fhooe.CropMngAndroid;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -37,7 +38,7 @@ import java.util.ArrayList;
  * Time: 12:10 PM
  * To change this template use File | Settings | File Templates.
  */
-public class AddFieldMapActivity extends Activity{
+public class AddFieldMapActivity extends Activity implements View.OnTouchListener{
     public MapView mapView;
     private MapController mapController;
 
@@ -47,40 +48,7 @@ public class AddFieldMapActivity extends Activity{
 
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setTileSource(TileSourceFactory.MAPNIK);
-        mapView.setBuiltInZoomControls(true);
         mapView.getOverlays().clear();
-
-        mapView.setMapListener(new MapListener() {
-            @Override
-            public boolean onScroll(ScrollEvent scrollEvent) {
-                return false;  //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-            @Override
-            public boolean onZoom(ZoomEvent zoomEvent) {
-                return false;  //To change body of implemented methods use File | Settings | File Templates.
-            }
-
-
-        });
-
-        ArrayList<FieldMarkerItem> overlayItems = new ArrayList<FieldMarkerItem>();
-        FieldMarkerItem fieldMarker = new FieldMarkerItem(getApplicationContext());
-        fieldMarker.setLocation(new GeoPoint(48.3669, 14.5172));
-        fieldMarker.draw(new Canvas(), mapView, false);
-        overlayItems.add(fieldMarker);
-
-        mapView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                double x = view.getX();
-                double y = view.getY();
-            }
-        });
-        mapView.getOverlays().addAll(0, overlayItems);
-        overlayItems.clear();
-
-        mapView.getOverlays().add(fieldMarker);
         mapController = mapView.getController();
         mapController.setZoom(15);
         Location loc = getCurrentLocation();
@@ -90,6 +58,9 @@ public class AddFieldMapActivity extends Activity{
         }
         point = new GeoPoint(48.3669, 14.5172);
         mapController.setCenter(point);
+
+        mapView.setOnTouchListener(this);
+
     }
 
     public Location getCurrentLocation(){
@@ -107,7 +78,16 @@ public class AddFieldMapActivity extends Activity{
         return null;
     }
 
-
+    public boolean onTouch(View v, MotionEvent e) {
+        if (e.getAction() == MotionEvent.ACTION_DOWN){
+            FieldMarkerItem fieldMarker = new FieldMarkerItem(getApplicationContext());
+            GeoPoint gp = (GeoPoint)mapView.getProjection().fromPixels(e.getX(), e.getY());
+            fieldMarker.setLocation(gp);
+            fieldMarker.draw(new Canvas(), mapView, false);
+            mapView.getOverlays().add(fieldMarker);
+        }
+        return false;
+    }
 
     private Location getLocationByProvider(String provider) {
         Location location = null;
