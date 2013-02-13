@@ -3,6 +3,8 @@ package at.fhooe.ViewModel;
 import at.fhooe.ServiceRepository.MapFieldServiceRepository;
 import org.json.JSONArray;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Vladimir
@@ -29,6 +31,17 @@ public class MapFieldViewModel {
             e.printStackTrace();
         }
         return mapIds;
+    }
+
+    public String saveMapField(MapFieldViewModel mapField){
+        String status = null;
+        try{
+            MapFieldServiceRepository mapFieldRep = new MapFieldServiceRepository();
+            status = mapFieldRep.execute("/InsertMapField", mapField).get();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return status;
     }
 
     public int getMapId() {

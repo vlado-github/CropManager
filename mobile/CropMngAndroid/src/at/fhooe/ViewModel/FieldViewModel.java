@@ -73,6 +73,17 @@ public class FieldViewModel {
         return field;
     }
 
+    public String saveField(FieldViewModel fm){
+        String status = "";
+        try{
+            FieldServiceRepository fieldRep = new FieldServiceRepository();
+            status = fieldRep.execute("/InsertField", fm).get();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return status;
+    }
+
     public int getId() {
         return id;
     }

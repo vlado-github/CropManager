@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.location.Location;
 import android.location.LocationListener;
@@ -16,6 +17,9 @@ import android.support.v4.app.FragmentActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
+import at.fhooe.ViewModel.FieldViewModel;
+import at.fhooe.ViewModel.MapFieldViewModel;
+import at.fhooe.ViewModel.MapViewModel;
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.events.MapListener;
 import org.osmdroid.events.ScrollEvent;
@@ -40,11 +44,23 @@ import java.util.ArrayList;
  */
 public class AddFieldMapActivity extends Activity implements View.OnTouchListener{
     public MapView mapView;
+    private ArrayList<GeoPoint> geoPoints = new ArrayList<GeoPoint>();
     private MapController mapController;
+    private String measure;
+    private String name;
+    private double altitude;
+    private double areaSize;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cropmngfieldmap);
+
+        Intent intent = getIntent();
+        name = intent.getExtras().getString("name");
+        altitude = Double.parseDouble(intent.getExtras().getString("altitude"));
+        areaSize = Double.parseDouble(intent.getExtras().getString("areasize"));
+        measure = intent.getExtras().getString("measure");
 
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setTileSource(TileSourceFactory.MAPNIK);
@@ -82,6 +98,7 @@ public class AddFieldMapActivity extends Activity implements View.OnTouchListene
         if (e.getAction() == MotionEvent.ACTION_DOWN){
             FieldMarkerItem fieldMarker = new FieldMarkerItem(getApplicationContext());
             GeoPoint gp = (GeoPoint)mapView.getProjection().fromPixels(e.getX(), e.getY());
+            geoPoints.add(gp);
             fieldMarker.setLocation(gp);
             fieldMarker.draw(new Canvas(), mapView, false);
             mapView.getOverlays().add(fieldMarker);
@@ -110,5 +127,55 @@ public class AddFieldMapActivity extends Activity implements View.OnTouchListene
     protected boolean isRouteDisplayed() {
         // TODO Auto-generated method stub
         return false;
+    }
+
+    public void saveField(){
+        ArrayList<Integer> mapIds = new ArrayList<Integer>();
+        int fieldId = 0;
+
+        for(GeoPoint gp : geoPoints){
+            MapViewModel mapModel = new MapViewModel();
+            mapModel.setLatitude(gp.getLatitudeE6()/1E6);
+            mapModel.setLongitude(gp.getLongitudeE6()/1E6);
+            mapModel.setFieldId(0);
+            String returnValId = mapModel.saveMap(mapModel);
+            if(returnValId != null){
+                mapIds.add(Integer.parseInt(returnValId));
+            }
+        }
+
+        FieldViewModel fieldModel = new FieldViewModel();
+        fieldModel.setAltitude(altitude);
+        fieldModel.setAreaSize(areaSize);
+        fieldModel.setAreaSizeMeasure(measure);
+        fieldModel.setName(name);
+        String returnValFieldId = fieldModel.saveField(fieldModel);
+        if(returnValFieldId != null){
+            fieldId = Integer.parseInt(returnValFieldId);
+        }
+
+        for(Integer id : mapIds){
+            MapFieldViewModel mapFieldModel = new MapFieldViewModel();
+            mapFieldModel.setFieldId(fieldId);
+            mapFieldModel.setMapId(id);
+            String saveStatus = mapFieldModel.saveMapField(mapFieldModel);
+            if(!saveStatus.equals("200")){
+                Toast.makeText(this, "Error - save unsuccessful.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, CropMngActivity.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "Save successful.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, CropMngActivity.class);
+                startActivity(intent);
+            }
+        }
+    }
+
+    public void btnHandler(View v){
+        switch(v.getId()){
+            case R.id.saveFieldBtn:
+                saveField();
+                break;
+        }
     }
 }

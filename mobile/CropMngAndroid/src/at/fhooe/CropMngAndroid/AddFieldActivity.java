@@ -67,6 +67,10 @@ public class AddFieldActivity extends Activity {
         switch(v.getId()){
             case R.id.nextBtn:
                 Intent toFieldMap = new Intent(this, AddFieldMapActivity.class);
+                toFieldMap.putExtra("name",fieldName.getText().toString());
+                toFieldMap.putExtra("altitude", String.valueOf(altitudeBar.getProgress()));
+                toFieldMap.putExtra("areasize",areaSize.getText().toString());
+                toFieldMap.putExtra("measure",((FieldMeasureViewModel)measures.getSelectedItem()).getType());
                 startActivity(toFieldMap);
                 break;
             case R.id.cancelBtn:

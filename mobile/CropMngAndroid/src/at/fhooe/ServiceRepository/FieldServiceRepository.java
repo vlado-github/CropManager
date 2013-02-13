@@ -10,6 +10,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONStringer;
@@ -99,7 +100,7 @@ public class FieldServiceRepository extends AsyncTask<Object, Void, String> {
     }
 
     protected String saveField(String action, FieldViewModel fieldModel){
-        int statusCode = 400;
+        String returnVal = null;
         try{
             // POST request to <service>/SaveCrop
             HttpPost request = new HttpPost(GetFieldsSVCUri + action);
@@ -111,9 +112,9 @@ public class FieldServiceRepository extends AsyncTask<Object, Void, String> {
                     .object()
                     .key("field")
                     .object()
+                    .key("Id").value(0)
                     .key("Name").value(fieldModel.name)
                     .key("Altitude").value(fieldModel.altitude)
-                    .key("AreaSize").value(fieldModel.areaSize)
                     .key("AreaSize").value(fieldModel.areaSize)
                     .key("AreaSizeMeasure").value(fieldModel.areaSizeMeasure)
                     .key("Map_fk").value(fieldModel.map_fk)
@@ -127,14 +128,12 @@ public class FieldServiceRepository extends AsyncTask<Object, Void, String> {
             // Send request to WCF service
             DefaultHttpClient httpClient = new DefaultHttpClient();
             HttpResponse response = httpClient.execute(request);
-
-            statusCode = response.getStatusLine().getStatusCode();
-
-
+            HttpEntity httpEntity = response.getEntity();
+            returnVal = EntityUtils.toString(httpEntity);
         }catch(Exception e){
             e.printStackTrace();
         }
-        return String.valueOf(statusCode);
+        return returnVal;
     }
 
     @Override

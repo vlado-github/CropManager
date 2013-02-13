@@ -35,6 +35,17 @@ public class MapViewModel {
         return map;
     }
 
+    public String saveMap(MapViewModel map){
+        String status = null;
+        try{
+            MapServiceRepository mapRep = new MapServiceRepository();
+            status = mapRep.execute("/InsertMap", map).get();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return status;
+    }
+
     public int getMapId() {
         return mapId;
     }

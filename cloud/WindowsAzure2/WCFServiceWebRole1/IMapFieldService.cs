@@ -44,11 +44,11 @@ namespace WCFServiceWebRole1
     [DataContract]
     public class MapField
     {
-        [DataMember]
+        [DataMember(Name = "mapfieldid")]
         public int MapFieldId { get; set; }
-        [DataMember]
+        [DataMember(Name = "fieldid")]
         public int FieldId { get; set; }
-        [DataMember]
+        [DataMember(Name = "mapid")]
         public int MapId { get; set; }
     }
 }
