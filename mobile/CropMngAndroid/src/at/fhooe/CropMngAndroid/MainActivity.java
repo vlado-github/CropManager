@@ -26,6 +26,8 @@ public class MainActivity extends Activity {
                 startActivity(toJournal);
                 break;
             case R.id.notificationBtn:
+                Intent toTasks = new Intent(this, TaskActivity.class);
+                startActivity(toTasks);
                 break;
             case R.id.weatherBtn:
                 Intent toWeather = new Intent(this, WeatherActivity.class);
